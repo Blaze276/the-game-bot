@@ -272,7 +272,72 @@ async def origin(ctx, option: str):
 
 @bot.command()
 async def invite(ctx):
-    await ctx.send("You can invite the Game bot with this link!\nhttps://discord.com/api/oauth2/authorize?client_id=1145327542723686451&permissions=8&scope=bot")
+    await ctx.send("You can invite the Game bot with this link! https://discord.com/api/oauth2/authorize?client_id=1145327542723686451&permissions=8&scope=bot")
+    print(f'Someone ran the command ?invite')
+
+@bot.command()
+async def mute(ctx, member: discord.Member):
+    # Check if the command invoker has the required role
+    allowed_roles = ["Moderation Team", "Founder"]
+    invoker_roles = [role.name for role in ctx.author.roles]
+    
+    if any(role in allowed_roles for role in invoker_roles):
+        # Check if the muted role already exists in the server
+        muted_role = discord.utils.get(ctx.guild.roles, name="Muted")
+        
+        if not muted_role:
+            # If the muted role doesn't exist, create it
+            muted_role = await ctx.guild.create_role(name="Muted")
+            for channel in ctx.guild.channels:
+                await channel.set_permissions(muted_role, send_messages=False)
+        
+        # Add the muted role to the specified user
+        await member.add_roles(muted_role)
+        await ctx.send(f"{member.mention} has been muted.")
+    else:
+        await ctx.send("You don't have the required role to use this command.")
+        print(f'Someone ran the command ?mute')
+
+@bot.command()
+async def unmute(ctx, member: discord.Member):
+    # Check if the command invoker has the required role
+    allowed_roles = ["Moderation Team", "Founder"]
+    invoker_roles = [role.name for role in ctx.author.roles]
+    
+    if any(role in allowed_roles for role in invoker_roles):
+        # Check if the muted role exists in the server
+        muted_role = discord.utils.get(ctx.guild.roles, name="Muted")
+        
+        if muted_role:
+            # Remove the muted role from the specified user
+            await member.remove_roles(muted_role)
+            await ctx.send(f"{member.mention} has been unmuted.")
+        else:
+            await ctx.send("The Muted role doesn't exist.")
+    else:
+        await ctx.send("You don't have the required role to use this command.")
+        print(f'Someone ran the command ?unmute')
+
+@bot.command()
+async def ban(ctx, member: discord.Member, *, reason="No reason provided."):
+    # Check if the command invoker has the "Founder" role
+    allowed_role = "Founder"
+    
+    if any(role.name == allowed_role for role in ctx.author.roles):
+        # Ban the specified user
+        await member.ban(reason=reason)
+        
+        # Send a DM to the banned user
+        dm_message = f"You have been banned from {ctx.guild.name} for the following reason: {reason}"
+        try:
+            await member.send(dm_message)
+        except discord.errors.Forbidden:
+            pass  # Ignore if the DM cannot be sent
+        
+        await ctx.send(f"{member.mention} has been banned.")
+    else:
+        await ctx.send("You don't have the required role to use this command.")
+        print(f'Someone ran the command ?ban')
 
 # Bot token. DO NOT TOUCH!
 TOKEN = 'MTE0NTMyNzU0MjcyMzY4NjQ1MQ.Gf2yMI.BsRN-ru8GalrXl3eHMmvWCgBIrshGoi7xgTnbI'
