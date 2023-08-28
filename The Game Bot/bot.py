@@ -1,5 +1,6 @@
 import discord
 from discord.ext import commands
+from discord import app_commands
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -16,8 +17,13 @@ async def on_message(message):
 async def on_ready():
     await bot.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.listening, name='The Minecraft OST'))
     print(f'Logged in as {bot.user.name} successfully!')
+    try:
+        synced = await bot.tree.sync()
+        print(f"Synced {len(synced)} command(s)")
+    except Exception as e:
+        print(f'nah, no app cmds for you bitch')
 
-# save arguement command that save the last 200 messages when run into the file "argument.txt"
+# save arguement command that save the last 250 messages when run into the file "argument.txt"
 @bot.command()
 async def saveargument(ctx):
     MESSAGE_LIMIT = 250
@@ -61,7 +67,7 @@ async def credits(ctx):
     )
     embed.add_field(name="@Blaze276", value="For Creating and maintaining the bot", inline=False)
     embed.add_field(name="@RACSpeedster", value="For Providing a basic bot that the game bot was built off of", inline=False)
-    embed.set_footer(text="Subsribe on patreon pls i need money.")
+    embed.set_footer(text="Subsribe on patreon or ko-fi pls i need money.")
     
     await ctx.send(embed=embed)
     print(f'Someone ran the command ?credits')
@@ -83,7 +89,11 @@ async def commands(ctx):
     embed.add_field(name="?ping", value="returns the ping of the bot", inline=False)
     embed.add_field(name="?origins", value="Gets a list of all the core origins in the GenisisMC Plugin", inline=False)
     embed.add_field(name="?gttpcredits", value="Gets the credits for Gaming To The People", inline=False)
-    embed.add_field(name="?origin", value="Gets Information on a certain Core Origin")
+    embed.add_field(name="?origin", value="Gets Information on a certain Core Origin", inline=False)
+    embed.add_field(name="?invite", value="Gets the invite link for the Game bot", inline=False)
+    embed.add_field(name="?mute/?unmute", value="Mutes/Unmutes a user", inline=False)
+    embed.add_field(name="?kick", value="Kicks a user from the guild", inline=False)
+    embed.set_footer(text="Subsribe on patreon or ko-fi pls i need money.")
 
     await ctx.send(embed=embed)
     print(f'Someone ran the commands ?commands')
@@ -110,13 +120,27 @@ async def modapply(ctx):
     print(f'Someone ran the command ?modapply')
 
 @bot.command()
-async def subscribe(ctx):
+async def patreon(ctx):
     embed=discord.Embed(
         title="Subscribe to us on Patreon!",
         description="Thank You so much for considering to subscribe to us! It really means the world to our team!",
     )
     embed.set_image(url="https://cdn.discordapp.com/attachments/1138942994683269261/1141135170628485120/asset-preview.png")
     embed.url = "https://patreon.com/GamingToThePeople"
+    embed.set_footer(text="Subsribe on patreon or ko-fi pls i need money.")
+
+    await ctx.send(embed=embed)
+    print(f'Someone ran the command ?patreon')
+
+@bot.command()
+async def kofi(ctx):
+    embed=discord.Embed(
+        title="Subscribe to us on Ko-Fi!",
+        description="Thank You so much for considering to subscribe to us! It really means the world to our team!",
+    )
+    embed.set_image(url="https://cdn.discordapp.com/attachments/1138942994683269261/1145809835556864091/ko-fi.png")
+    embed.url = "https://ko-fi.com/gamingtothepeople"
+    embed.set_footer(text="Subsribe on patreon or ko-fi pls i need money.")
 
     await ctx.send(embed=embed)
     print(f'Someone ran the command ?subscribe')
@@ -153,6 +177,7 @@ async def origins(ctx):
     embed.add_field(name="Slimeling", value="Boing... Boing.. Boing. Boing! BOING! **BOING!**", inline=False)
     embed.add_field(name="Piglin", value="If you don't have any gold on you stay faarrr away, like another dimension far away.", inline=False)
     embed.url = "http://genesismc.duckdns.org/origins.html"
+    embed.set_footer(text="Subsribe on patreon or ko-fi pls i need money.")
     await ctx.send(embed=embed)
     print(f'Someone ran the command ?origins')
 
@@ -165,14 +190,16 @@ async def gttpcredits(ctx):
     )
     embed.add_field(name="Blaze276", value="Creating GTTP and organizing the events",inline=False)
     embed.add_field(name="Dork7", value="Helped to test Geyser functionaltity and test the Minecraft servers, one of the Five Musketeers", inline=False)
-    embed.add_field(name="RACSpeedster", value="Developing plugins for GTTP minecraft servers",inline=False)
-    embed.add_field(name="Orangatan banana", value="Helping create the future GTTP roadmap and heling around in lots of little ways", inline=False)
+    embed.add_field(name="RACSpeedster", value="Developing plugins and the arsenal remake for GTTP",inline=False)
+    embed.add_field(name="Orangatan banana", value="Helping create the future GTTP roadmap and helping around in lots of little ways", inline=False)
+    embed.set_footer(text="Subsribe on patreon or ko-fi pls i need money.")
     await ctx.send(embed=embed)
     print(f'Someone ran the command ?gttpcredits')
 
 @bot.command()
 async def say(ctx, *, content: str):
     await ctx.send(content)
+    print(f'Someone ran the command ?say')
 
 @bot.command()
 async def origin(ctx, option: str):
@@ -269,6 +296,7 @@ async def origin(ctx, option: str):
     else:
         embed = discord.Embed(title="Invalid Option", description="Please use '?origins for a list of valid args.", color=discord.Color.red())
         await ctx.send(embed=embed)
+        print(f'Someone ran the command ?origin')
 
 @bot.command()
 async def invite(ctx):
@@ -319,25 +347,112 @@ async def unmute(ctx, member: discord.Member):
         print(f'Someone ran the command ?unmute')
 
 @bot.command()
-async def ban(ctx, member: discord.Member, *, reason="No reason provided."):
-    # Check if the command invoker has the "Founder" role
-    allowed_role = "Founder"
-    
-    if any(role.name == allowed_role for role in ctx.author.roles):
-        # Ban the specified user
-        await member.ban(reason=reason)
-        
-        # Send a DM to the banned user
-        dm_message = f"You have been banned from {ctx.guild.name} for the following reason: {reason}"
-        try:
-            await member.send(dm_message)
-        except discord.errors.Forbidden:
-            pass  # Ignore if the DM cannot be sent
-        
-        await ctx.send(f"{member.mention} has been banned.")
+async def kick(ctx, member: discord.Member):
+    # Check if the command sender has the necessary permissions to kick members
+    if ctx.author.guild_permissions.kick_members:
+        await member.kick()
+        await ctx.send(f'Kicked {member.display_name} from the server.')
     else:
-        await ctx.send("You don't have the required role to use this command.")
-        print(f'Someone ran the command ?ban')
+        await ctx.send("You don't have permission to kick members.")
+
+@bot.tree.command(name="help", description="Gets the help menu")
+async def help(interaction: discord.Interaction):
+    embed = discord.Embed(
+        title="Bot Commands",
+        description="",
+        color=discord.Color.pink()
+    )
+    embed.add_field(name="?ip", value="Gets The Origins Minecraft server IP", inline=False)
+    embed.add_field(name="?ipalt", value="Gets The Alternative Minecraft server IP", inline=False)
+    embed.add_field(name="?credits", value="Gets the credits for the bot", inline=False)
+    embed.add_field(name="?saveargument", value="Saves The last 250 messages to a txt file", inline=False)
+    embed.add_field(name="?modapply", value="Gets the link for the Mod application Form", inline=False)
+    embed.add_field(name="?patreon", value="Subscribe to Us on Patreon!", inline=False)
+    embed.add_field(name="?ping", value="returns the ping of the bot", inline=False)
+    embed.add_field(name="?origins", value="Gets a list of all the core origins in the GenisisMC Plugin", inline=False)
+    embed.add_field(name="?gttpcredits", value="Gets the credits for Gaming To The People", inline=False)
+    embed.add_field(name="?origin", value="Gets Information on a certain Core Origin", inline=False)
+    embed.add_field(name="?invite", value="Gets the invite link for the Game bot", inline=False)
+    embed.add_field(name="?mute/?unmute", value="Mutes/Unmutes a user", inline=False)
+    embed.add_field(name="?kick", value="Kicks a user from the guild", inline=False)
+    embed.add_field(name="?kofi", value="Subscribe to Us on Ko-Fi.", inline=False)
+    embed.set_footer(text="Subsribe on patreon or ko-fi pls i need money.")
+
+    await interaction.response.send_message(embed=embed)
+    print(f'Someone ran the app command /help')
+
+@bot.tree.command(name="patreon", description="Subscribe to us on Patreon!")
+async def patreon(interaction: discord.Interaction):
+    embed=discord.Embed(
+        title="Subscribe to us on Patreon!",
+        description="Thank You so much for considering to subscribe to us! It really means the world to our team!",
+    )
+    embed.set_image(url="https://cdn.discordapp.com/attachments/1138942994683269261/1141135170628485120/asset-preview.png")
+    embed.url = "https://patreon.com/GamingToThePeople"
+    embed.set_footer(text="Subsribe on patreon or ko-fi pls i need money.")
+
+    await interaction.response.send_message(embed=embed)
+    print(f'Someone ran the app command /subscribe')
+
+@bot.command()
+async def promote(ctx, member: discord.Member):
+    founder_role = discord.utils.get(ctx.guild.roles, name="Founder")
+    moderation_role = discord.utils.get(ctx.guild.roles, name="Moderation Team")
+
+    if founder_role in ctx.author.roles:
+        await member.add_roles(moderation_role)
+        await ctx.send(f"{member.mention} has been added to the Moderation Team.")
+    else:
+        await ctx.send("You do not have permission to use this command.")
+
+@bot.command()
+async def demote(ctx, member: discord.Member):
+    founder_role = discord.utils.get(ctx.guild.roles, name="Founder")
+    moderation_role = discord.utils.get(ctx.guild.roles, name="Moderation Team")
+
+    if founder_role in ctx.author.roles:
+        await member.remove_roles(moderation_role)
+        await ctx.send(f"Removed {member.mention} from the Moderation Team.")
+    else:
+        await ctx.send("You do not have permission to use this command.")
+
+@bot.tree.command(name="credits", description="Gets the credits for the bot")
+async def credits(interaction: discord.Interaction):
+    embed = discord.Embed(
+        title="The Game Bot Credits",
+        description="These are cool people!",
+        color=discord.Color.pink()
+    )
+    embed.add_field(name="@Blaze276", value="For Creating and maintaining the bot", inline=False)
+    embed.add_field(name="@RACSpeedster", value="For Providing a basic bot that the game bot was built off of", inline=False)
+    embed.set_footer(text="Subsribe on patreon or ko-fi pls i need money.")
+    
+    await interaction.response.send_message(embed=embed)
+    print(f'Someone ran the app command /credits')
+
+@bot.tree.command(name="ping", description="Gets the bot's Ping")
+async def ping(interaction: discord.Interaction):
+    latency = round(bot.latency * 1000)  # Convert to milliseconds and round
+    await interaction.response.send_message(f'Pong! Bot latency is {latency}ms')
+    print(f'Someone ran the app command /ping')
+
+@bot.tree.command(name="prefix", description="Gets the bot's prefix for commands")
+async def prefix(interaction: discord.Interaction):
+    await interaction.response.send_message(f"The Bot Prefix is ?", ephemeral=True)
+    print(f'Someone ran the app command /prefix')
+
+@bot.tree.command(name="kofi", description="Subscribe to us on Ko-Fi!")
+async def kofi(interaction: discord.Interaction):
+    embed=discord.Embed(
+        title="Subscribe to us on Ko-Fi!",
+        description="Thank You so much for considering to subscribe to us! It really means the world to our team!",
+    )
+    embed.set_image(url="https://cdn.discordapp.com/attachments/1138942994683269261/1145809835556864091/ko-fi.png")
+    embed.url = "https://ko-fi.com/GamingToThePeople"
+    embed.set_footer(text="Subsribe on patreon or ko-fi pls i need money.")
+
+    await interaction.response.send_message(embed=embed)
+    print(f'Someone ran the app command /kofi')
 
 # Bot token. DO NOT TOUCH!
 TOKEN = 'MTE0NTMyNzU0MjcyMzY4NjQ1MQ.Gf2yMI.BsRN-ru8GalrXl3eHMmvWCgBIrshGoi7xgTnbI'
