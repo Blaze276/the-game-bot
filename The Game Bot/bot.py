@@ -1,11 +1,14 @@
 import discord
 from discord.ext import commands
-from discord import app_commands
+import asyncio
+import datetime
+import time
 
 intents = discord.Intents.default()
 intents.message_content = True
 intents.members = True
 bot = commands.Bot(command_prefix="?", intents=intents)
+start_time = time.time()
 
 # register commands
 @bot.event
@@ -72,47 +75,25 @@ async def credits(ctx):
     await ctx.send(embed=embed)
     print(f'Someone ran the command ?credits')
 
-# NOTICE add new commands to this!
-@bot.command()
-async def commands(ctx):
-    embed = discord.Embed(
-        title="Bot Commands",
-        description="",
-        color=discord.Color.pink()
-    )
-    embed.add_field(name="?ip", value="Gets The Origins Minecraft server IP", inline=False)
-    embed.add_field(name="?ipalt", value="Gets The Alternative Minecraft server IP", inline=False)
-    embed.add_field(name="?credits", value="Gets the credits for the bot", inline=False)
-    embed.add_field(name="?saveargument", value="Saves The last 250 messages to a txt file", inline=False)
-    embed.add_field(name="?modapply", value="Gets the link for the Mod application Form", inline=False)
-    embed.add_field(name="?subscribe", value="Subscribe to Us on patreon!", inline=False)
-    embed.add_field(name="?ping", value="returns the ping of the bot", inline=False)
-    embed.add_field(name="?origins", value="Gets a list of all the core origins in the GenisisMC Plugin", inline=False)
-    embed.add_field(name="?gttpcredits", value="Gets the credits for Gaming To The People", inline=False)
-    embed.add_field(name="?origin", value="Gets Information on a certain Core Origin", inline=False)
-    embed.add_field(name="?invite", value="Gets the invite link for the Game bot", inline=False)
-    embed.add_field(name="?mute/?unmute", value="Mutes/Unmutes a user", inline=False)
-    embed.add_field(name="?kick", value="Kicks a user from the guild", inline=False)
-    embed.set_footer(text="Subsribe on patreon or ko-fi pls i need money.")
-
-    await ctx.send(embed=embed)
-    print(f'Someone ran the commands ?commands')
-
 @bot.command()
 async def dmmess(ctx, user: discord.User, *, message: str):
-    try:
-        await user.send(message)
-        await ctx.send(f"Sent '{message}' to {user.name}'s DM.")
-    except discord.Forbidden:
-        await ctx.send("I don't have permission to send a DM to that user.")
-        print(f'Someone ran the command ?dmmess')
+    founder_role = discord.utils.get(ctx.guild.roles, name="Founder")
+    if founder_role in ctx.author.roles:
+        try:
+            await user.send(message)
+            await ctx.send(f"Sent '{message}' to {user.name}'s DM.")
+        except discord.Forbidden:
+            await ctx.send("I don't have permission to send a DM to that user.")
+            print(f'Someone ran the command ?dmmess')
+    else:
+        await ctx.send("You do not have permission to use this command.")
 
 @bot.command()
 async def modapply(ctx):
     embed = discord.Embed(
         title="Mod Form",
         description="Thanks for applying. Please allow at most 48hrs for your mod application to be looked at.",
-        color=discord.Color.dark_green()
+        color=discord.Color.purple()
     )
     embed.url = "https://forms.gle/euSvwrb6JyoW8cPr8"
 
@@ -191,15 +172,19 @@ async def gttpcredits(ctx):
     embed.add_field(name="Blaze276", value="Creating GTTP and organizing the events",inline=False)
     embed.add_field(name="Dork7", value="Helped to test Geyser functionaltity and test the Minecraft servers, one of the Five Musketeers", inline=False)
     embed.add_field(name="RACSpeedster", value="Developing plugins and the arsenal remake for GTTP",inline=False)
-    embed.add_field(name="Orangatan banana", value="Helping create the future GTTP roadmap and helping around in lots of little ways", inline=False)
+    embed.add_field(name="Orangatan banana", value="Helping create the future GTTP roadmap, one of the Five Musketeers", inline=False)
     embed.set_footer(text="Subsribe on patreon or ko-fi pls i need money.")
     await ctx.send(embed=embed)
     print(f'Someone ran the command ?gttpcredits')
 
 @bot.command()
 async def say(ctx, *, content: str):
-    await ctx.send(content)
-    print(f'Someone ran the command ?say')
+    founder_role = discord.utils.get(ctx.guild.roles, name="Founder")
+    if founder_role in ctx.author.roles:
+        await ctx.send(content)
+        print(f'Someone ran the command ?say')
+    else:
+        await ctx.send("You do not have permission to use this command.")
 
 @bot.command()
 async def origin(ctx, option: str):
@@ -354,7 +339,9 @@ async def kick(ctx, member: discord.Member):
         await ctx.send(f'Kicked {member.display_name} from the server.')
     else:
         await ctx.send("You don't have permission to kick members.")
+        print(f'Someone ran the command ?kick')
 
+# NOTICE add new commands to this!
 @bot.tree.command(name="help", description="Gets the help menu")
 async def help(interaction: discord.Interaction):
     embed = discord.Embed(
@@ -376,6 +363,10 @@ async def help(interaction: discord.Interaction):
     embed.add_field(name="?mute/?unmute", value="Mutes/Unmutes a user", inline=False)
     embed.add_field(name="?kick", value="Kicks a user from the guild", inline=False)
     embed.add_field(name="?kofi", value="Subscribe to Us on Ko-Fi.", inline=False)
+    embed.add_field(name="?purge", value="deletes an amount of messages", inline=False)
+    embed.add_field(name="?promote/?demote", value="Promotes/Demotes a user to/from the Moderation Team", inline=False)
+    embed.add_field(name="?uptime", value="Gets the bots uptime", inline=False)
+    embed.add_field(name="?addrole/removerole", value="add/removes a role from a user", inline=False)
     embed.set_footer(text="Subsribe on patreon or ko-fi pls i need money.")
 
     await interaction.response.send_message(embed=embed)
@@ -402,6 +393,7 @@ async def promote(ctx, member: discord.Member):
     if founder_role in ctx.author.roles:
         await member.add_roles(moderation_role)
         await ctx.send(f"{member.mention} has been added to the Moderation Team.")
+        print(f'Someone ran the command ?promote')
     else:
         await ctx.send("You do not have permission to use this command.")
 
@@ -413,6 +405,7 @@ async def demote(ctx, member: discord.Member):
     if founder_role in ctx.author.roles:
         await member.remove_roles(moderation_role)
         await ctx.send(f"Removed {member.mention} from the Moderation Team.")
+        print(f'Someone ran the command ?demote')
     else:
         await ctx.send("You do not have permission to use this command.")
 
@@ -453,6 +446,75 @@ async def kofi(interaction: discord.Interaction):
 
     await interaction.response.send_message(embed=embed)
     print(f'Someone ran the app command /kofi')
+
+@bot.command()
+async def ban(ctx, member: discord.Member, *, reason=None):
+    if ctx.author.guild_permissions.ban_members:
+        mod_roles = ["Moderation Team", "Founder"]  # List of roles that can't be banned
+        for role in member.roles:
+            if role.name in mod_roles:
+                await ctx.send(f"You can't ban a member with the '{role.name}' role.")
+                return
+
+        if member == ctx.author:
+            await ctx.send("You can't ban yourself!")
+        elif member == bot.user:
+            await ctx.send("You can't ban bots!")
+        else:
+            await member.send(f'You have been banned from {ctx.guild.name} for the following reason: {reason}')
+            await member.ban(reason=reason)
+            await ctx.send(f'{member.display_name} has been banned for {reason}')
+            print(f'Someone ran the command ?ban')
+    else:
+        await ctx.send("You don't have the necessary permissions to use this command.")
+
+@bot.command()
+async def purge(ctx, amt):
+    founder_role = discord.utils.get(ctx.guild.roles, name="Founder")
+
+    if founder_role in ctx.author.roles:
+        await ctx.channel.purge(limit = int(amt) + 1)
+        msg = await ctx.send(f"Purged {amt} messages")
+        await asyncio.sleep(1)
+        await msg.delete()
+        print(f'Someone ran the command ?purge')
+    else:
+        await ctx.send("You do not have permission to use this command.")
+
+@bot.command()
+async def uptime(ctx):
+    current_time = time.time()
+    uptime_seconds = int(current_time - start_time)
+    uptime_str = str(datetime.timedelta(seconds=uptime_seconds))
+    await ctx.send(f'Uptime: {uptime_str}')
+
+@bot.command()
+async def addrole(ctx, member: discord.Member, role_name: str):
+    founder_role = discord.utils.get(ctx.guild.roles, name="Founder")
+    role = discord.utils.get(ctx.guild.roles, name=role_name)
+
+    if founder_role in ctx.author.roles:
+        if role:
+            await member.add_roles(role)
+            await ctx.send(f'Added role {role_name} to {member.display_name}')
+        else:
+            await ctx.send(f'Role {role_name} not found')
+    else:
+        await ctx.send("You do not have permission to use this command.")
+
+@bot.command()
+async def removerole(ctx, member: discord.Member, role_name: str):
+    founder_role = discord.utils.get(ctx.guild.roles, name="Founder")
+    role = discord.utils.get(ctx.guild.roles, name=role_name)
+    
+    if founder_role in ctx.author.roles:
+        if role and role in member.roles:
+            await member.remove_roles(role)
+            await ctx.send(f'Removed role {role_name} from {member.display_name}')
+        else:
+            await ctx.send(f'Role {role_name} not found on {member.display_name}')
+    else:
+        await ctx.send("You do not have permission to use this command.")
 
 # Bot token. DO NOT TOUCH!
 TOKEN = 'MTE0NTMyNzU0MjcyMzY4NjQ1MQ.Gf2yMI.BsRN-ru8GalrXl3eHMmvWCgBIrshGoi7xgTnbI'
