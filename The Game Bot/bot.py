@@ -14,7 +14,7 @@ start_time = time.time()
 # register commands
 @bot.event
 async def on_message(message):
-    await bot.process_commands(message)  # You need this line to process commands
+    await bot.process_commands(message)  # You need this line to process commands!
     
 # set bot status
 @bot.event
