@@ -3,6 +3,7 @@ from discord.ext import commands
 import asyncio
 import datetime
 import time
+import random
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -367,6 +368,9 @@ async def help(interaction: discord.Interaction):
     embed.add_field(name="?promote/?demote", value="Promotes/Demotes a user to/from the Moderation Team", inline=False)
     embed.add_field(name="?uptime", value="Gets the bots uptime", inline=False)
     embed.add_field(name="?addrole/removerole", value="add/removes a role from a user", inline=False)
+    embed.add_field(name="?flip", value="Flip a coin and send the result.", inline=False)
+    embed.add_field(name="?roll", value="Roll a dice with optional size parameter.", inline=False)
+    embed.add_field(name="?fandom", value="Gets information of specific users", inline=False)
     embed.set_footer(text="Subsribe on patreon or ko-fi pls i need money.")
 
     await interaction.response.send_message(embed=embed)
@@ -515,6 +519,69 @@ async def removerole(ctx, member: discord.Member, role_name: str):
             await ctx.send(f'Role {role_name} not found on {member.display_name}')
     else:
         await ctx.send("You do not have permission to use this command.")
+
+@bot.command()
+async def flip(ctx):
+    """Flip a coin and send the result."""
+    # me when the bobot goes ffffffff
+    result = random.choice(["Heads", "Tails"])
+    
+    await ctx.send(f"The coin landed on {result}!")
+    print(f'Someone ran the command ?flip')
+
+@bot.command()
+async def roll(ctx, size: str = "d4"):
+    """Roll a dice with optional size parameter."""
+    # Parse the size parameter
+    if size.lower() in ["d4", "d6", "d8", "d10", "d12", "d20", "d100"]:
+        dice_size = int(size[1:])
+    else:
+        await ctx.send("Invalid dice size. Available sizes: d4, d6, d8, d10, d12, d20, d100")
+        return
+    
+    # Roll the dice
+    result = random.randint(1, dice_size)
+    
+    # Send the result to the channel where the command was invoked
+    await ctx.send(f"You rolled a {dice_size}-sided dice and got: {result}")
+
+@bot.command()
+async def fandom(ctx, option: str):
+    if option == 'Blaze276':
+        embed = discord.Embed(title="Blaze276", description=f"Blaze276, also known as Taavi Nehemia is the creator and owner of GTTP. he is described as \"Annoying\", \"Bald\", and \"Handsome\", Blaze has also cheated in a Minecraft survival by mining resources with baritone, he is from australia and has lived there for all his life up until the tail end of 2019. He currently resides in Brooklyn, NY. He is decently skilled at coding with python and has made this bot right here.", color=discord.Color.dark_blue())
+        embed.add_field(name="Quote:", value="\"Continuity is pretty bloodthirsty, i will admit.\" -Blaze276 talking to almond man about Continuity (netherite axe)", inline=False)
+        embed.add_field(name="Age:", value="13, born september 9 2010", inline=False)
+        embed.add_field(name="School:", value="Urban assembly unison school, 8th Grade, class of 2024", inline=False)
+        embed.add_field(name="Join Date:", value="june 14th 2023", inline=False)
+        embed.add_field(name="leave date: N/A", inline=False)
+        await ctx.send(embed=embed)
+    elif option == 'Bl8ze':
+        embed = discord.Embed(title="Bl8ze360", description=f"Bl8ze360, also known as Otto Rippel was a member of GTTP and an original Musketeer, (suceeded by dork7) who played on the original alt and origins servers. He is described as \"a dingus\" -dork7,\"Cold\", and \"Unforgiving\". Bl8ze later left gttp after being killed in minecraft by Blaze276 in Minecraft with Coninuity. He is originally from Great Britain, he also has 2 siblings: eammon and mary rippel. He has said that he hates Blaze276 and severed their friendship after the events of the OG origins server. \"He is not the better Blaze i am\" -Blaze276", color=discord.Color.lighter_grey())
+        embed.add_field(name="Quote:", value="\"Skill Issue.\" -Bl8ze360s main word, overused.")
+        embed.add_field(name="Age:", value="13, born unknown 2010", inline=False)
+        embed.add_field(name="School:", value="Urban assembly unison school, 8th Grade, class of 2024", inline=False)
+        embed.add_field(name="Join Date:", value="Sometime around june", inline=False)
+        embed.add_field(name="leave date:", value="sometime around july", inline=False)
+        await ctx.send(embed=embed)
+    elif option == 'Dork7':
+        embed = discord.Embed(title="Dork7", description="Dork7, also known as Leevi Nehemia, is a notable member of GTTP and a member of the five musketeers, (preceded by Bl8ze) he is described as \"Funny\",\"Good\", and \"Dork\". He is Blaze276s little Brother", color=discord.Color.gold())
+        embed.add_field(name="Quote:", value="\"If your reading this give me 10 dollars\" -dork7 asking for money to buy a minecraft Java edition account", inline=False)
+        embed.add_field(name="Age:", value="11, born October 16 2012", inline=False)
+        embed.add_field(name="School:", value="Urban assembly unison school, 6th Grade, class of 2026. Formerly PS9", inline=False)
+        embed.add_field(name="Join Date:", value="Sometime around July/june", inline=False)
+        embed.add_field(name="leave date: N/A", value="", inline=False)
+        await ctx.send(embed=embed)
+    elif option == 'RACSpeedster':
+        embed = discord.Embed(title="RACSpeedster", description="RACSpeedster, also known as Kaleb Prince, is a notable member of GTTP and a co-Developer to The Game Bot and the sole developer of the arsenal remake. he is described as \"Funny\",\"Good\", and \"a coding genius -Blaze276\". He describes himself as the Literal definition of a computer nerd. Got a programming problem? Ask him.", color=discord.Color.red())
+        embed.add_field(name="Quote:", value="\"OH NOES!! Line 1730 of A2Client.lua is giving me an error! Oh.. I missed a single character. BLAZE! LOOK AT THIS!!! LOOK AT MY MISTAKE!!!!\" -RACSpeedster telling Blaze about an error in his code", inline=False)
+        embed.add_field(name="Age:", value="13, born September 24 2010", inline=False)
+        embed.add_field(name="School:", value="Urban assembly unison school, 8th Grade, class of 2024.", inline=False)
+        embed.add_field(name="Join Date:", value="june 17 2023", inline=False)
+        embed.add_field(name="leave date: N/A", value="", inline=False)
+        await ctx.send(embed=embed)
+    else:
+        embed = discord.Embed(title="Invalid Option", description="only certain users with a server history are listed. More will be added soon...", color=discord.Color.default())
+        await ctx.send(embed=embed)
 
 # Bot token. DO NOT TOUCH!
 TOKEN = 'MTE0NTMyNzU0MjcyMzY4NjQ1MQ.Gf2yMI.BsRN-ru8GalrXl3eHMmvWCgBIrshGoi7xgTnbI'
