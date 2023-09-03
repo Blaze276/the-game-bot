@@ -14,7 +14,7 @@ start_time = time.time()
 # register commands
 @bot.event
 async def on_message(message):
-    await bot.process_commands(message)  # You need this line to process commands!
+    await bot.process_commands(message)  # You need this line to process commands
     
 # set bot status
 @bot.event
@@ -441,7 +441,7 @@ async def prefix(interaction: discord.Interaction):
 @bot.tree.command(name="kofi", description="Subscribe to us on Ko-Fi!")
 async def kofi(interaction: discord.Interaction):
     embed=discord.Embed(
-        title="Subscribe to us on Ko-Fi!",
+        title="Subscribe to us on Ko-fi!",
         description="Thank You so much for considering to subscribe to us! It really means the world to our team!",
     )
     embed.set_image(url="https://cdn.discordapp.com/attachments/1138942994683269261/1145809835556864091/ko-fi.png")
@@ -454,7 +454,7 @@ async def kofi(interaction: discord.Interaction):
 @bot.command()
 async def ban(ctx, member: discord.Member, *, reason=None):
     if ctx.author.guild_permissions.ban_members:
-        mod_roles = ["Moderation Team", "Founder"]  # List of roles that can't be banned
+        mod_roles = ["Moderation Team", "Founder"]
         for role in member.roles:
             if role.name in mod_roles:
                 await ctx.send(f"You can't ban a member with the '{role.name}' role.")
@@ -490,7 +490,7 @@ async def uptime(ctx):
     current_time = time.time()
     uptime_seconds = int(current_time - start_time)
     uptime_str = str(datetime.timedelta(seconds=uptime_seconds))
-    await ctx.send(f'Uptime: {uptime_str}')
+    await ctx.send(f'Uptime: `{uptime_str}`')
 
 @bot.command()
 async def addrole(ctx, member: discord.Member, role_name: str):
@@ -553,15 +553,17 @@ async def fandom(ctx, option: str):
         embed.add_field(name="Age:", value="13, born september 9 2010", inline=False)
         embed.add_field(name="School:", value="Urban assembly unison school, 8th Grade, class of 2024", inline=False)
         embed.add_field(name="Join Date:", value="june 14th 2023", inline=False)
-        embed.add_field(name="leave date: N/A", inline=False)
+        embed.add_field(name="leave date: N/A", value="", inline=False)
+        embed.set_thumbnail(name="https://cdn.discordapp.com/avatars/960887298533244928/4da595b6b17eefed26d1c8111f008ed7.png?size=4096")
         await ctx.send(embed=embed)
     elif option == 'Bl8ze':
-        embed = discord.Embed(title="Bl8ze360", description=f"Bl8ze360, also known as Otto Rippel was a member of GTTP and an original Musketeer, (suceeded by dork7) who played on the original alt and origins servers. He is described as \"a dingus\" -dork7,\"Cold\", and \"Unforgiving\". Bl8ze later left gttp after being killed in minecraft by Blaze276 in Minecraft with Coninuity. He is originally from Great Britain, he also has 2 siblings: eammon and mary rippel. He has said that he hates Blaze276 and severed their friendship after the events of the OG origins server. \"He is not the better Blaze i am\" -Blaze276", color=discord.Color.lighter_grey())
+        embed = discord.Embed(title="Bl8ze360", description=f"Bl8ze360, also known as Otto Rippel was a member of GTTP and an original Musketeer, (suceeded by dork7) who played on the original alt and origins servers. He is described as \"a dingus\" -dork7,\"Cold\", and \"Unforgiving\". Bl8ze later left gttp after being killed in minecraft by Blaze276 with Coninuity. He is originally from Great Britain, he also has 2 siblings: eammon and mary rippel. He has said that he hates Blaze276 and severed their friendship after the events of the OG origins server. \"He is not the better Blaze i am\" -Blaze276", color=discord.Color.lighter_grey())
         embed.add_field(name="Quote:", value="\"Skill Issue.\" -Bl8ze360s main word, overused.")
-        embed.add_field(name="Age:", value="13, born unknown 2010", inline=False)
+        embed.add_field(name="Age:", value="13, born March 10 2010", inline=False)
         embed.add_field(name="School:", value="Urban assembly unison school, 8th Grade, class of 2024", inline=False)
         embed.add_field(name="Join Date:", value="Sometime around june", inline=False)
         embed.add_field(name="leave date:", value="sometime around july", inline=False)
+        embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/1138942994683269261/1147665431503568906/image1.png")
         await ctx.send(embed=embed)
     elif option == 'Dork7':
         embed = discord.Embed(title="Dork7", description="Dork7, also known as Leevi Nehemia, is a notable member of GTTP and a member of the five musketeers, (preceded by Bl8ze) he is described as \"Funny\",\"Good\", and \"Dork\". He is Blaze276s little Brother", color=discord.Color.gold())
@@ -570,6 +572,7 @@ async def fandom(ctx, option: str):
         embed.add_field(name="School:", value="Urban assembly unison school, 6th Grade, class of 2026. Formerly PS9", inline=False)
         embed.add_field(name="Join Date:", value="Sometime around July/june", inline=False)
         embed.add_field(name="leave date: N/A", value="", inline=False)
+        embed.set_thumbnail(url="https://cdn.discordapp.com/avatars/964970830377390140/a_f8de8dc517ddb7a576aed56b90e8d57e.gif?size=4096")
         await ctx.send(embed=embed)
     elif option == 'RACSpeedster':
         embed = discord.Embed(title="RACSpeedster", description="RACSpeedster, also known as Kaleb Prince, is a notable member of GTTP and a co-Developer to The Game Bot and the sole developer of the arsenal remake. he is described as \"Funny\",\"Good\", and \"a coding genius -Blaze276\". He describes himself as the Literal definition of a computer nerd. Got a programming problem? Ask him.", color=discord.Color.red())
@@ -578,10 +581,40 @@ async def fandom(ctx, option: str):
         embed.add_field(name="School:", value="Urban assembly unison school, 8th Grade, class of 2024.", inline=False)
         embed.add_field(name="Join Date:", value="june 17 2023", inline=False)
         embed.add_field(name="leave date: N/A", value="", inline=False)
+        embed.set_thumbnail(url="https://cdn.discordapp.com/avatars/973292238618636369/59bd864a40948444219206c9634db92b.png?size=4096")
+        await ctx.send(embed=embed)
+    elif option == 'Star':
+        embed = discord.Embed(title="Star2080", description="Star2080, also known as Kendall Anderson, is a notable member of GTTP and one of the original Five Musketeers, She is described as \"Playful\",\"Mean\", and \"Cheerful\". She is the best at Minecraft compared to the other users of GTTP, being able to build an amazing looking house (ref: Alt survival) and able to get lots of resources easy. She was accused of X-raying on multiple occasions, mainly by Blaze276. Her best friend is Mary Rippel who was a member of GTTP but later left after Blaze didnt care about a joke she made. She is the second moderator to ever be appointed, (preceded by Orangutang Banana). She was falsely kicked from GTTP when a fake star joined the server", color=discord.Color.og_blurple())
+        embed.add_field(name="Quote:", value="um.. help :peeposhorts:... i died with all the elytras -Star talking to Blaze about falling to her death while carrying all of the elytras", inline=False)
+        embed.add_field(name="Age:", value="13, born June 4th 2010", inline=False)
+        embed.add_field(name="School:", value="Urban assembly unison school, 8th Grade, class of 2024", inline=False)
+        embed.add_field(name="Join Date:", value="june 27 2023", inline=False)
+        embed.add_field(name="leave date: N/A", value="", inline=False)
+        embed.set_thumbnail(url="https://cdn.discordapp.com/guilds/1118509755984515092/users/697921517698416762/avatars/d228db2c1093f9eef8939500887717e0.png?size=4096")
+        await ctx.send(embed=embed)
+    elif option == 'Almondman':
+        embed = discord.Embed(title="Almond man the wise", description="almond man the wise, also known as eammon Ripple is a member of GTTP. He is described as \"adventurous\",\"annoying\",\"a btd6 pro -dork7\". He is siblings with Bl8ze and is the only Rippel left in GTTP. He was part of the original origins server and is an original musketeer.", color=discord.Color.default())
+        embed.add_field(name="Quote:", value="\"Loser alert... fr tho\" -almond telling live_laugh_leave_me_alone that he was a loser", inline=False)
+        embed.add_field(name="Age:", value="11, born unknown 2012", inline=False)
+        embed.add_field(name="School:", value="Urban assembly unison school, 6th Grade, class of 2026.", inline=False)
+        embed.add_field(name="Join Date:", value="Sometime around July/june", inline=False)
+        embed.add_field(name="leave date: N/A", value="", inline=False)
+        embed.set_thumbnail(url="https://cdn.discordapp.com/avatars/1044740815743897730/7f4cea419723b26d0de0f68d268fea72.png?size=4096")
+        await ctx.send(embed=embed)
+    elif option == 'OrangutanBanana':
+        embed = discord.Embed(title="Orangutang Banana", description="Orangutang Banana, also known as Jaxx Marquez is a notable member of GTTP. He is described as \"uplifting\",\"Playful\",\"legend -dork7\". He is the first ever moderator on GTTP history, (succeded by Star2080) and the fifth member of the current Musketeers. He helped to create the future GTTP roadmap.", color=discord.Color.dark_blue())
+        embed.add_field(name="Quote:", value="\"it would be funny tho\" -Orangutang Banana telling Racspeedster that keeping a bug in the arsenal remkae would be funny", inline=False)
+        embed.add_field(name="Age:", value="14, born september 24 2009", inline=False)
+        embed.add_field(name="School:", value="removed as per request", inline=False)
+        embed.add_field(name="Join Date:", value="july 15 2023", inline=False)
+        embed.add_field(name="leave date: N/A", value="", inline=False)
+        embed.set_thumbnail(url="https://cdn.discordapp.com/avatars/700515277904805989/630859fe042250736e9fe8c5f4541c29.png?size=4096")
         await ctx.send(embed=embed)
     else:
-        embed = discord.Embed(title="Invalid Option", description="only certain users with a server history are listed. More will be added soon...", color=discord.Color.default())
-        await ctx.send(embed=embed)
+        embed = discord.Embed(title="Invalid Option", description="only certain users with a server history are listed. More will be added soon... DONT FORGET TO CAPITOLIZE THE FIRST LETTER OF EACH USER!", color=discord.Color.default())
+        msg = await ctx.send(embed=embed)
+        await asyncio.sleep(5)
+        await msg.delete()
 
 # Bot token. DO NOT TOUCH!
 TOKEN = 'MTE0NTMyNzU0MjcyMzY4NjQ1MQ.Gf2yMI.BsRN-ru8GalrXl3eHMmvWCgBIrshGoi7xgTnbI'
