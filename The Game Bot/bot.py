@@ -4,6 +4,7 @@ import asyncio
 import datetime
 import time
 import random
+from config import TOKEN
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -652,5 +653,4 @@ async def dm(ctx, user: discord.User):
         await ctx.send("You do not have permission to use this command.")
 
 # Bot token. DO NOT TOUCH!
-TOKEN = 'MTE0NTMyNzU0MjcyMzY4NjQ1MQ.Gf2yMI.BsRN-ru8GalrXl3eHMmvWCgBIrshGoi7xgTnbI'
 bot.run(TOKEN)
