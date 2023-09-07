@@ -652,5 +652,16 @@ async def dm(ctx, user: discord.User):
     else:
         await ctx.send("You do not have permission to use this command.")
 
+@bot.command()
+async def github(ctx):
+    embed = discord.Embed(
+        title="The Game Bot GitHub repo",
+        description="The Game Bots official github page! contribute to our bot and get rewards! (python and discord.py)",
+    )
+    embed.url = "https://github.com/Blaze276/the-game-bot-python"
+    embed.set_author(url="https://cdn.discordapp.com/avatars/960887298533244928/4da595b6b17eefed26d1c8111f008ed7.png?size=4096")
+    embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/965008664815624192/1149436544223019140/Untitled.png")
+    await ctx.send(embed=embed)
+
 # Bot token. DO NOT TOUCH!
 bot.run(TOKEN)
