@@ -664,5 +664,11 @@ async def github(ctx):
     await ctx.send(embed=embed)
     print(f'Someone ran the command ?github')
 
+@bot.command()
+async def rizz(ctx):
+    await ctx.send("rizzard")
+    await asyncio.sleep(1)
+    await ctx.send("just like my lizard")
+
 # Bot token. DO NOT TOUCH!
 bot.run(TOKEN)
