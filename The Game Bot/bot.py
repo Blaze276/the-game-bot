@@ -559,15 +559,6 @@ async def fandom(ctx, option: str):
         embed.add_field(name="leave date: N/A", value="", inline=False)
         embed.set_thumbnail(name="https://cdn.discordapp.com/avatars/960887298533244928/4da595b6b17eefed26d1c8111f008ed7.png?size=4096")
         await ctx.send(embed=embed)
-    elif option == 'Bl8ze':
-        embed = discord.Embed(title="Bl8ze360", description=f"Bl8ze360, also known as Otto Rippel was a member of GTTP and an original Musketeer, (suceeded by dork7) who played on the original alt and origins servers. He is described as \"a dingus\" -dork7,\"Cold\", and \"Unforgiving\". Bl8ze later left gttp after being killed in minecraft by Blaze276 with Coninuity. He is originally from Great Britain, he also has 2 siblings: eammon and mary rippel. He has said that he hates Blaze276 and severed their friendship after the events of the OG origins server. \"He is not the better Blaze i am\" -Blaze276", color=discord.Color.lighter_grey())
-        embed.add_field(name="Quote:", value="\"Skill Issue.\" -Bl8ze360s main word, overused.")
-        embed.add_field(name="Age:", value="13, born March 10 2010", inline=False)
-        embed.add_field(name="School:", value="Urban assembly unison school, 8th Grade, class of 2024", inline=False)
-        embed.add_field(name="Join Date:", value="Sometime around june", inline=False)
-        embed.add_field(name="leave date:", value="sometime around july", inline=False)
-        embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/1138942994683269261/1147665431503568906/image1.png")
-        await ctx.send(embed=embed)
     elif option == 'Dork7':
         embed = discord.Embed(title="Dork7", description="Dork7, also known as Leevi Nehemia, is a notable member of GTTP and a member of the five musketeers, (preceded by Bl8ze) he is described as \"Funny\",\"Good\", and \"Dork\". He is Blaze276s little Brother", color=discord.Color.gold())
         embed.add_field(name="Quote:", value="\"If your reading this give me 10 dollars\" -dork7 asking for money to buy a minecraft Java edition account", inline=False)
@@ -587,7 +578,7 @@ async def fandom(ctx, option: str):
         embed.set_thumbnail(url="https://cdn.discordapp.com/avatars/973292238618636369/59bd864a40948444219206c9634db92b.png?size=4096")
         await ctx.send(embed=embed)
     elif option == 'Star':
-        embed = discord.Embed(title="Star2080", description="Star2080, also known as Kendall Anderson, is a notable member of GTTP and one of the original Five Musketeers, She is described as \"Playful\",\"Mean\", and \"Cheerful\". She is the best at Minecraft compared to the other users of GTTP, being able to build an amazing looking house (ref: Alt survival) and able to get lots of resources easy. She was accused of X-raying on multiple occasions, mainly by Blaze276. Her best friend is Mary Rippel who was a member of GTTP but later left after Blaze didnt care about a joke she made. She is the second moderator to ever be appointed, (preceded by Orangutang Banana). She was falsely kicked from GTTP when a fake star joined the server", color=discord.Color.og_blurple())
+        embed = discord.Embed(title="Star2080", description="Star2080, also known as Kendall Anderson, is a notable member of GTTP and one of the original Five Musketeers, She is described as \"Playful\",\"Mean\", and \"Cheerful\". She is the best at Minecraft compared to the other users of GTTP, being able to build an amazing looking house (ref: Alt survival) and able to get lots of resources easy. She was accused of X-raying on multiple occasions, mainly by Blaze276. Her best friend is Mary Rippel who was a member of GTTP but later left after Blaze didnt care about a joke she made, then rejoined a time later. She is the second moderator to ever be appointed, (preceded by Orangutang Banana). She was falsely kicked from GTTP when a fake star joined the server", color=discord.Color.og_blurple())
         embed.add_field(name="Quote:", value="um.. help :peeposhorts:... i died with all the elytras -Star talking to Blaze about falling to her death while carrying all of the elytras", inline=False)
         embed.add_field(name="Age:", value="13, born June 4th 2010", inline=False)
         embed.add_field(name="School:", value="Urban assembly unison school, 8th Grade, class of 2024", inline=False)
@@ -596,7 +587,7 @@ async def fandom(ctx, option: str):
         embed.set_thumbnail(url="https://cdn.discordapp.com/guilds/1118509755984515092/users/697921517698416762/avatars/d228db2c1093f9eef8939500887717e0.png?size=4096")
         await ctx.send(embed=embed)
     elif option == 'Almondman':
-        embed = discord.Embed(title="Almond man the wise", description="almond man the wise, also known as eammon Ripple is a member of GTTP. He is described as \"adventurous\",\"annoying\",\"a btd6 pro -dork7\". He is siblings with Bl8ze and is the only Rippel left in GTTP. He was part of the original origins server and is an original musketeer.", color=discord.Color.default())
+        embed = discord.Embed(title="Almond man the wise", description="almond man the wise, also known as [removed] is a member of GTTP. He is described as \"adventurous\",\"annoying\",\"a btd6 pro -dork7\". He is siblings with Bl8ze and is the only Rippel left in GTTP. He was part of the original origins server and is an original musketeer. He had a tantrum about Bl8zes page to the fandom page and threatened to report Blaze276 for having a page about Bl8ze", color=discord.Color.default())
         embed.add_field(name="Quote:", value="\"Loser alert... fr tho\" -almond telling live_laugh_leave_me_alone that he was a loser", inline=False)
         embed.add_field(name="Age:", value="11, born unknown 2012", inline=False)
         embed.add_field(name="School:", value="Urban assembly unison school, 6th Grade, class of 2026.", inline=False)
@@ -669,6 +660,16 @@ async def rizz(ctx):
     await ctx.send("rizzard")
     await asyncio.sleep(1)
     await ctx.send("just like my lizard")
+
+@bot.command()
+async def forks(ctx):
+    embed = discord.Embed(
+        title="The Game Bot Forks",
+        description="Forks of the Game Bot in different languages"
+    )
+    embed.add_field(name="The Game Bot LUA", value="A fork of the game bot to lua. incomplete")
+    embed.add_field(name="The Game Bot Java", value="A fork of the game bot to Java. work in progress")
+    await ctx.send(embed=embed)
 
 # Bot token. DO NOT TOUCH!
 bot.run(TOKEN)
