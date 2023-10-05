@@ -4,7 +4,7 @@ import asyncio
 import datetime
 import time
 import random
-from config import TOKEN
+from config import UWU
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -322,7 +322,6 @@ async def mute(ctx, member: discord.Member):
 @bot.command()
 async def unmute(ctx, member: discord.Member):
 
-    invoker_roles = [role.name for role in ctx.author.roles]
     
     if ctx.author.guild_permissions.kick_members:
         # Check if the muted role exists in the server
@@ -378,6 +377,8 @@ async def help(interaction: discord.Interaction):
     embed.add_field(name="?roll", value="Roll a dice with optional size parameter.", inline=False)
     embed.add_field(name="?fandom", value="Gets information of specific users", inline=False)
     embed.add_field(name="?github", value="Gets a link to the Game Bot's Github repository", inline=False)
+    embed.add_field(name="?forks", value="Gets The Game Bot's Forks to other languages", inline=False)
+    embed.add_field(name="?reset", value="sends a message to a user warning them to not break rules", inline=False)
     embed.set_footer(text="Subsribe on patreon or ko-fi pls i need money.")
 
     await interaction.response.send_message(embed=embed)
@@ -671,5 +672,35 @@ async def forks(ctx):
     embed.add_field(name="The Game Bot Java", value="A fork of the game bot to Java. work in progress")
     await ctx.send(embed=embed)
 
-# Bot token. DO NOT TOUCH!
-bot.run(TOKEN)
+@bot.command()
+async def reset(ctx, user: discord.User):
+    if ctx.author.guild_permissions.kick_members:
+        await ctx.send(f"{user} was reset")
+        embed = discord.Embed(
+            title="Discipline Alert",
+            description="You have been reset. Please remember to uphold the guild rules and guidelines.",
+            color=discord.Color.red()  # Added a color for the embed (you can choose any color you like)
+        )
+        embed.add_field(name="Warning Number 1", value="No action will be taken, but you will be muted until you acknowledge this message. (DM your server owner or moderator with a screenshot.)")
+        embed.add_field(name="Warning Number 2", value="you will be muted for 30 minutes.")
+    
+        try:
+            await user.send(embed=embed)
+        except discord.Forbidden:
+            await ctx.send("I couldn't send a direct message to the user. Make sure the user allows DMs from this server or has a common server with the bot.")
+        except Exception as e:
+            await ctx.send(f"An error occurred: {e}")
+    else:
+        await ctx.send("You do not have permission to use this command.")
+
+@bot.command()
+async def devmode(ctx):
+    if ctx.author.guild_permissions.administrator:
+        await bot.change_presence(status=discord.Status.do_not_disturb, activity=discord.Activity(type=discord.ActivityType.listening, name='Developer Mode active!'))
+        print(f'Logged in as {bot.user.name} in dev mode successfully!')
+        await ctx.send(f"Logged in as {bot.user.name} in dev mode successfully! Reboot to change back.")
+    else:
+        await ctx.send("You do not have permission to use this command.")
+        
+# Bot token.
+bot.run(UWU)
