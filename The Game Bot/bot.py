@@ -51,10 +51,10 @@ async def saveargument(ctx):
     except Exception as e:
         print(f"An error occurred: {e}")
 
-# sends the Minecraft Origins Server ip in the channel the command was run in
+# sends the Minecraft Server ip in the channel the command was run in
 @bot.command()
 async def ip(ctx):
-    await ctx.send("The IP is;\nJava: gttporigins.my.pebble.host\nBedrock: 54.39.13.158 port: 8048")
+    await ctx.send("The IP is; gttpmc.my.pebble.host, JAVA Only!")
     print(f'Someone ran The command ?ip')
 
 # same as the one above but with a different IP
@@ -605,6 +605,13 @@ async def fandom(ctx, option: str):
         embed.add_field(name="leave date: N/A", value="", inline=False)
         embed.set_thumbnail(url="https://cdn.discordapp.com/avatars/700515277904805989/630859fe042250736e9fe8c5f4541c29.png?size=4096")
         await ctx.send(embed=embed)
+    elif option =='Bl8ze':
+        embed = discord.Embed(title="Bl8ze360", description="Bl8ze is a notable member of gttp. He was an original member of the five musketeers (suceeded by dork7), and played in the original Gttp (now ALT) Survival server. He is one of the few members to get their own custom role in the discord server. Bl8ze left Gttp in july of 2023 and rejoined in september on the grounds of \"I just want to use the voice channels and play the minecraft server\", since that statement he has done much more than that. He is a \"questionable\" person, (not my words -Blaze276)", color=discord.Color.light_grey())
+        embed.add_field(name="Quote:", value="\"yeah..., cuz im just so cool.\" -Bl8ze talking to Blaze about him \"being cool\".", inline=False)
+        embed.add_field(name="Age:", value="13, born [unknown] 2010", inline=False)
+        embed.add_field(name="School:", value="Urban assembly unison school, 8th Grade, class of 2024", inline=False)
+        embed.add_field(name="Join Date:", value="Sometime around september", inline=False)
+        embed.add_field(name="leave date: N/A", value="left at one point but then rejoined", inline=False)
     else:
         embed = discord.Embed(title="Invalid Option", description="only certain users with a server history are listed. More will be added soon... DONT FORGET TO CAPITOLIZE THE FIRST LETTER OF EACH USER!", color=discord.Color.default())
         msg = await ctx.send(embed=embed)
@@ -679,7 +686,7 @@ async def reset(ctx, user: discord.User):
         embed = discord.Embed(
             title="Discipline Alert",
             description="You have been reset. Please remember to uphold the guild rules and guidelines.",
-            color=discord.Color.red()  # Added a color for the embed (you can choose any color you like)
+            color=discord.Color.red()
         )
         embed.add_field(name="Warning Number 1", value="No action will be taken, but you will be muted until you acknowledge this message. (DM your server owner or moderator with a screenshot.)")
         embed.add_field(name="Warning Number 2", value="you will be muted for 30 minutes.")
@@ -701,6 +708,6 @@ async def devmode(ctx):
         await ctx.send(f"Logged in as {bot.user.name} in dev mode successfully! Reboot to change back.")
     else:
         await ctx.send("You do not have permission to use this command.")
-        
+
 # Bot token.
 bot.run(UWU)
