@@ -1,8 +1,8 @@
 # the-game-bot-python
 
-IMPORTANT: this project will not be python forever. we are planning to port the bot to either lua or kotlin
+IMPORTANT: this project will not be python forever. we are planning to port the bot to lua
 
-UPDATE: this project will be moved to java very soon, it is already in developement.
+UPDATE: this project will be moved to lua very soon, it is already in developement and almost complete!
 
 Port of the game bot to python.
 Now available as a public repo and available to everyone
