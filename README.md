@@ -1,12 +1,8 @@
-# the-game-bot-python
+# the-game-bot-lua
 
-IMPORTANT: this project will not be python forever. we are planning to port the bot to lua
-
-UPDATE: this project will be moved to lua very soon, it is already in developement and almost complete!
-
-Port of the game bot to python.
+Port of the game bot to lua. Now Official Game Bot 
 Now available as a public repo and available to everyone
-Currently fully ported to Python with Discord.py.
+Currently 95% ported to Lua with Discordia.
 Made by @Blaze276 and @RACSpeedster for exclusive use with Gaming To The People.
 
 terms of Testing your code and forking the project:
