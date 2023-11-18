@@ -1,0 +1,597 @@
+2023-10-20 19:50:08 | [INFO]    | Discordia 2.11.2
+2023-10-20 19:50:08 | [INFO]    | Connecting to Discord...
+2023-10-20 19:50:08 | [INFO]    | Authenticated as GameBot.lua#1957
+2023-10-20 19:50:09 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-10-20 19:50:09 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-10-20 19:50:09 | [INFO]    | Shard 0 : Received HELLO
+2023-10-20 19:50:09 | [INFO]    | Shard 0 : Received READY
+2023-10-20 19:52:02 | [INFO]    | Discordia 2.11.2
+2023-10-20 19:52:02 | [INFO]    | Connecting to Discord...
+2023-10-20 19:52:02 | [INFO]    | Authenticated as GameBot.lua#1957
+2023-10-20 19:52:02 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-10-20 19:52:02 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-10-20 19:52:02 | [INFO]    | Shard 0 : Received HELLO
+2023-10-20 19:52:02 | [INFO]    | Shard 0 : Received READY
+2023-10-20 19:54:07 | [INFO]    | Discordia 2.11.2
+2023-10-20 19:54:07 | [INFO]    | Connecting to Discord...
+2023-10-20 19:54:07 | [INFO]    | Authenticated as GameBot.lua#1957
+2023-10-20 19:54:07 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-10-20 19:54:07 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-10-20 19:54:07 | [INFO]    | Shard 0 : Received HELLO
+2023-10-20 19:54:07 | [INFO]    | Shard 0 : Received READY
+2023-10-21 09:03:07 | [INFO]    | Discordia 2.11.2
+2023-10-21 09:03:07 | [INFO]    | Connecting to Discord...
+2023-10-21 09:03:07 | [INFO]    | Authenticated as GameBot.lua#1957
+2023-10-21 09:03:07 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-10-21 09:03:07 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-10-21 09:03:07 | [INFO]    | Shard 0 : Received HELLO
+2023-10-21 09:03:08 | [INFO]    | Shard 0 : Received READY
+2023-10-21 09:09:41 | [INFO]    | Discordia 2.11.2
+2023-10-21 09:09:41 | [INFO]    | Connecting to Discord...
+2023-10-21 09:09:41 | [INFO]    | Authenticated as GameBot.lua#1957
+2023-10-21 09:09:41 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-10-21 09:09:41 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-10-21 09:09:41 | [INFO]    | Shard 0 : Received HELLO
+2023-10-21 09:09:41 | [INFO]    | Shard 0 : Received READY
+2023-10-21 10:10:13 | [INFO]    | Discordia 2.11.2
+2023-10-21 10:10:13 | [INFO]    | Connecting to Discord...
+2023-10-21 10:10:13 | [INFO]    | Authenticated as GameBot.lua#1957
+2023-10-21 10:10:13 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-10-21 10:10:13 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-10-21 10:10:13 | [INFO]    | Shard 0 : Received HELLO
+2023-10-21 10:10:14 | [INFO]    | Shard 0 : Received READY
+2023-10-22 08:28:32 | [INFO]    | Discordia 2.11.2
+2023-10-22 08:28:32 | [INFO]    | Connecting to Discord...
+2023-10-22 08:28:32 | [ERROR]   | Could not authenticate, check token: C:/Users/rigsa/IdeaProjects/gamebot.lua/deps/coro-http.lua:74: EAI_NONAME
+2023-10-22 11:20:37 | [INFO]    | Discordia 2.11.2
+2023-10-22 11:20:37 | [INFO]    | Connecting to Discord...
+2023-10-22 11:20:38 | [INFO]    | Authenticated as The Game Bot#1957
+2023-10-22 11:20:38 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-10-22 11:20:38 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-10-22 11:20:38 | [INFO]    | Shard 0 : Received HELLO
+2023-10-22 11:20:39 | [INFO]    | Shard 0 : Received READY
+2023-10-22 11:21:39 | [INFO]    | Discordia 2.11.2
+2023-10-22 11:21:39 | [INFO]    | Connecting to Discord...
+2023-10-22 11:21:39 | [INFO]    | Authenticated as The Game Bot#1957
+2023-10-22 11:21:39 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-10-22 11:21:39 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-10-22 11:21:39 | [INFO]    | Shard 0 : Received HELLO
+2023-10-22 11:21:40 | [INFO]    | Shard 0 : Received READY
+2023-10-22 11:22:33 | [INFO]    | Discordia 2.11.2
+2023-10-22 11:22:33 | [INFO]    | Connecting to Discord...
+2023-10-22 11:22:33 | [INFO]    | Authenticated as The Game Bot#1957
+2023-10-22 11:22:33 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-10-22 11:22:33 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-10-22 11:22:33 | [INFO]    | Shard 0 : Received HELLO
+2023-10-22 11:22:34 | [INFO]    | Shard 0 : Received READY
+2023-10-22 11:24:57 | [INFO]    | Discordia 2.11.2
+2023-10-22 11:24:57 | [INFO]    | Connecting to Discord...
+2023-10-22 11:24:57 | [INFO]    | Authenticated as The Game Bot#1957
+2023-10-22 11:24:57 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-10-22 11:24:57 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-10-22 11:24:57 | [INFO]    | Shard 0 : Received HELLO
+2023-10-22 11:24:58 | [INFO]    | Shard 0 : Received READY
+2023-10-25 20:18:50 | [INFO]    | Discordia 2.11.2
+2023-10-25 20:18:50 | [INFO]    | Connecting to Discord...
+2023-10-25 20:18:50 | [INFO]    | Authenticated as The Game Bot#1957
+2023-10-25 20:18:50 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-10-25 20:18:50 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-10-25 20:18:50 | [INFO]    | Shard 0 : Received HELLO
+2023-10-25 20:18:51 | [INFO]    | Shard 0 : Received READY
+2023-10-26 19:44:47 | [INFO]    | Discordia 2.11.2
+2023-10-26 19:44:47 | [INFO]    | Connecting to Discord...
+2023-10-26 19:44:47 | [INFO]    | Authenticated as The Game Bot#1957
+2023-10-26 19:44:48 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-10-26 19:44:48 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-10-26 19:44:48 | [INFO]    | Shard 0 : Received HELLO
+2023-10-26 19:44:48 | [INFO]    | Shard 0 : Received READY
+2023-10-27 18:36:31 | [INFO]    | Discordia 2.11.2
+2023-10-27 18:36:31 | [INFO]    | Connecting to Discord...
+2023-10-27 18:36:31 | [INFO]    | Authenticated as The Game Bot#1957
+2023-10-27 18:36:31 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-10-27 18:36:31 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-10-27 18:36:31 | [INFO]    | Shard 0 : Received HELLO
+2023-10-27 18:36:32 | [INFO]    | Shard 0 : Received READY
+2023-11-10 07:58:16 | [INFO]    | Discordia 2.11.2
+2023-11-10 07:58:16 | [INFO]    | Connecting to Discord...
+2023-11-10 07:58:16 | [INFO]    | Authenticated as The Game Bot#1957
+2023-11-10 07:58:16 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-10 07:58:16 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-10 07:58:16 | [INFO]    | Shard 0 : Received HELLO
+2023-11-10 07:58:16 | [INFO]    | Shard 0 : Received READY
+2023-11-10 08:14:11 | [INFO]    | Discordia 2.11.2
+2023-11-10 08:14:11 | [INFO]    | Connecting to Discord...
+2023-11-10 08:14:11 | [INFO]    | Authenticated as The Game Bot#1957
+2023-11-10 08:14:11 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-10 08:14:11 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-10 08:14:11 | [INFO]    | Shard 0 : Received HELLO
+2023-11-10 08:14:11 | [INFO]    | Shard 0 : Received READY
+2023-11-10 17:24:04 | [INFO]    | Discordia 2.11.2
+2023-11-10 17:24:04 | [INFO]    | Connecting to Discord...
+2023-11-10 17:24:05 | [INFO]    | Authenticated as The Game Bot#1957
+2023-11-10 17:24:05 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-10 17:24:05 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-10 17:24:05 | [INFO]    | Shard 0 : Received HELLO
+2023-11-10 17:24:05 | [INFO]    | Shard 0 : Received READY
+2023-11-10 21:26:21 | [INFO]    | Discordia 2.11.2
+2023-11-10 21:26:21 | [INFO]    | Connecting to Discord...
+2023-11-10 21:26:21 | [INFO]    | Authenticated as The Game Bot#1957
+2023-11-10 21:26:21 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-10 21:26:21 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-10 21:26:21 | [INFO]    | Shard 0 : Received HELLO
+2023-11-10 21:26:21 | [INFO]    | Shard 0 : Received READY
+2023-11-10 21:29:13 | [INFO]    | Discordia 2.11.2
+2023-11-10 21:29:13 | [INFO]    | Connecting to Discord...
+2023-11-10 21:29:13 | [INFO]    | Authenticated as The Game Bot#1957
+2023-11-10 21:29:13 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-10 21:29:13 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-10 21:29:13 | [INFO]    | Shard 0 : Received HELLO
+2023-11-10 21:29:13 | [INFO]    | Shard 0 : Received READY
+2023-11-10 21:31:43 | [INFO]    | Discordia 2.11.2
+2023-11-10 21:31:43 | [INFO]    | Connecting to Discord...
+2023-11-10 21:31:43 | [INFO]    | Authenticated as The Game Bot#1957
+2023-11-10 21:31:43 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-10 21:31:43 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-10 21:31:43 | [INFO]    | Shard 0 : Received HELLO
+2023-11-10 21:31:43 | [INFO]    | Shard 0 : Received READY
+2023-11-10 21:32:24 | [INFO]    | Discordia 2.11.2
+2023-11-10 21:32:24 | [INFO]    | Connecting to Discord...
+2023-11-10 21:32:24 | [INFO]    | Authenticated as The Game Bot#1957
+2023-11-10 21:32:24 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-10 21:32:24 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-10 21:32:24 | [INFO]    | Shard 0 : Received HELLO
+2023-11-10 21:32:24 | [INFO]    | Shard 0 : Received READY
+2023-11-10 21:33:18 | [INFO]    | Discordia 2.11.2
+2023-11-10 21:33:18 | [INFO]    | Connecting to Discord...
+2023-11-10 21:33:18 | [INFO]    | Authenticated as The Game Bot#1957
+2023-11-10 21:33:18 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-10 21:33:18 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-10 21:33:18 | [INFO]    | Shard 0 : Received HELLO
+2023-11-10 21:33:18 | [INFO]    | Shard 0 : Received READY
+2023-11-10 21:36:28 | [INFO]    | Discordia 2.11.2
+2023-11-10 21:36:28 | [INFO]    | Connecting to Discord...
+2023-11-10 21:36:29 | [INFO]    | Authenticated as The Game Bot#1957
+2023-11-10 21:36:29 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-10 21:36:29 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-10 21:36:29 | [INFO]    | Shard 0 : Received HELLO
+2023-11-10 21:36:29 | [INFO]    | Shard 0 : Received READY
+2023-11-10 21:47:43 | [INFO]    | Discordia 2.11.2
+2023-11-10 21:47:43 | [INFO]    | Connecting to Discord...
+2023-11-10 21:47:43 | [INFO]    | Authenticated as The Game Bot#1957
+2023-11-10 21:47:43 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-10 21:47:43 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-10 21:47:43 | [INFO]    | Shard 0 : Received HELLO
+2023-11-10 21:47:43 | [INFO]    | Shard 0 : Received READY
+2023-11-10 21:52:09 | [INFO]    | Discordia 2.11.2
+2023-11-10 21:52:09 | [INFO]    | Connecting to Discord...
+2023-11-10 21:52:10 | [INFO]    | Authenticated as The Game Bot#1957
+2023-11-10 21:52:10 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-10 21:52:10 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-10 21:52:10 | [INFO]    | Shard 0 : Received HELLO
+2023-11-10 21:52:10 | [INFO]    | Shard 0 : Received READY
+2023-11-10 21:52:52 | [INFO]    | Discordia 2.11.2
+2023-11-10 21:52:52 | [INFO]    | Connecting to Discord...
+2023-11-10 21:52:53 | [INFO]    | Authenticated as The Game Bot#1957
+2023-11-10 21:52:53 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-10 21:52:53 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-10 21:52:53 | [INFO]    | Shard 0 : Received HELLO
+2023-11-10 21:52:53 | [INFO]    | Shard 0 : Received READY
+2023-11-10 21:55:40 | [INFO]    | Discordia 2.11.2
+2023-11-10 21:55:40 | [INFO]    | Connecting to Discord...
+2023-11-10 21:55:40 | [INFO]    | Authenticated as The Game Bot#1957
+2023-11-10 21:55:40 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-10 21:55:40 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-10 21:55:40 | [INFO]    | Shard 0 : Received HELLO
+2023-11-10 21:55:40 | [INFO]    | Shard 0 : Received READY
+2023-11-11 06:58:42 | [INFO]    | Discordia 2.11.2
+2023-11-11 06:58:42 | [INFO]    | Connecting to Discord...
+2023-11-11 06:58:42 | [INFO]    | Authenticated as The Game Bot#1957
+2023-11-11 06:58:43 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-11 06:58:43 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-11 06:58:43 | [INFO]    | Shard 0 : Received HELLO
+2023-11-11 06:58:43 | [INFO]    | Shard 0 : Received READY
+2023-11-11 06:59:17 | [INFO]    | Discordia 2.11.2
+2023-11-11 06:59:17 | [INFO]    | Connecting to Discord...
+2023-11-11 06:59:17 | [INFO]    | Authenticated as The Game Bot#1957
+2023-11-11 06:59:17 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-11 06:59:17 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-11 06:59:17 | [INFO]    | Shard 0 : Received HELLO
+2023-11-11 06:59:17 | [INFO]    | Shard 0 : Received READY
+2023-11-11 07:02:48 | [INFO]    | Discordia 2.11.2
+2023-11-11 07:02:48 | [INFO]    | Connecting to Discord...
+2023-11-11 07:02:48 | [INFO]    | Authenticated as The Game Bot#1957
+2023-11-11 07:02:48 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-11 07:02:48 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-11 07:02:48 | [INFO]    | Shard 0 : Received HELLO
+2023-11-11 07:02:48 | [INFO]    | Shard 0 : Received READY
+2023-11-11 07:06:39 | [INFO]    | Discordia 2.11.2
+2023-11-11 07:06:39 | [INFO]    | Connecting to Discord...
+2023-11-11 07:06:39 | [INFO]    | Authenticated as The Game Bot#1957
+2023-11-11 07:06:39 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-11 07:06:39 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-11 07:06:39 | [INFO]    | Shard 0 : Received HELLO
+2023-11-11 07:06:40 | [INFO]    | Shard 0 : Received READY
+2023-11-11 07:09:32 | [INFO]    | Discordia 2.11.2
+2023-11-11 07:09:32 | [INFO]    | Connecting to Discord...
+2023-11-11 07:09:32 | [INFO]    | Authenticated as The Game Bot#1957
+2023-11-11 07:09:32 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-11 07:09:33 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-11 07:09:33 | [INFO]    | Shard 0 : Received HELLO
+2023-11-11 07:09:33 | [INFO]    | Shard 0 : Received READY
+2023-11-11 07:11:58 | [INFO]    | Discordia 2.11.2
+2023-11-11 07:11:58 | [INFO]    | Connecting to Discord...
+2023-11-11 07:11:58 | [INFO]    | Authenticated as The Game Bot#1957
+2023-11-11 07:11:58 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-11 07:11:58 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-11 07:11:58 | [INFO]    | Shard 0 : Received HELLO
+2023-11-11 07:11:58 | [INFO]    | Shard 0 : Received READY
+2023-11-11 07:12:47 | [INFO]    | Discordia 2.11.2
+2023-11-11 07:12:47 | [INFO]    | Connecting to Discord...
+2023-11-11 07:12:47 | [INFO]    | Authenticated as The Game Bot#1957
+2023-11-11 07:12:47 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-11 07:12:47 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-11 07:12:47 | [INFO]    | Shard 0 : Received HELLO
+2023-11-11 07:12:47 | [INFO]    | Shard 0 : Received READY
+2023-11-11 07:13:42 | [INFO]    | Discordia 2.11.2
+2023-11-11 07:13:42 | [INFO]    | Connecting to Discord...
+2023-11-11 07:13:42 | [INFO]    | Authenticated as The Game Bot#1957
+2023-11-11 07:13:42 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-11 07:13:42 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-11 07:13:42 | [INFO]    | Shard 0 : Received HELLO
+2023-11-11 07:13:42 | [INFO]    | Shard 0 : Received READY
+2023-11-11 07:14:24 | [INFO]    | Discordia 2.11.2
+2023-11-11 07:14:24 | [INFO]    | Connecting to Discord...
+2023-11-11 07:14:24 | [INFO]    | Authenticated as The Game Bot#1957
+2023-11-11 07:14:24 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-11 07:14:25 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-11 07:14:25 | [INFO]    | Shard 0 : Received HELLO
+2023-11-11 07:14:25 | [INFO]    | Shard 0 : Received READY
+2023-11-11 07:14:44 | [INFO]    | Discordia 2.11.2
+2023-11-11 07:14:44 | [INFO]    | Connecting to Discord...
+2023-11-11 07:14:44 | [INFO]    | Authenticated as The Game Bot#1957
+2023-11-11 07:14:44 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-11 07:14:44 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-11 07:14:44 | [INFO]    | Shard 0 : Received HELLO
+2023-11-11 07:14:45 | [INFO]    | Shard 0 : Received READY
+2023-11-11 07:17:07 | [INFO]    | Discordia 2.11.2
+2023-11-11 07:17:07 | [INFO]    | Connecting to Discord...
+2023-11-11 07:17:07 | [INFO]    | Authenticated as The Game Bot#1957
+2023-11-11 07:17:07 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-11 07:17:07 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-11 07:17:07 | [INFO]    | Shard 0 : Received HELLO
+2023-11-11 07:17:07 | [INFO]    | Shard 0 : Received READY
+2023-11-11 07:22:59 | [INFO]    | Discordia 2.11.2
+2023-11-11 07:22:59 | [INFO]    | Connecting to Discord...
+2023-11-11 07:22:59 | [INFO]    | Authenticated as The Game Bot#1957
+2023-11-11 07:22:59 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-11 07:22:59 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-11 07:22:59 | [INFO]    | Shard 0 : Received HELLO
+2023-11-11 07:22:59 | [INFO]    | Shard 0 : Received READY
+2023-11-11 07:23:33 | [ERROR]   | 400 - Bad Request : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:23:33 | [ERROR]   | 400 - Bad Request : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:23:33 | [ERROR]   | 400 - Bad Request : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:23:34 | [ERROR]   | 400 - Bad Request : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:23:34 | [ERROR]   | 400 - Bad Request : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:23:35 | [ERROR]   | 400 - Bad Request : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:23:39 | [ERROR]   | 400 - Bad Request : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:23:39 | [ERROR]   | 400 - Bad Request : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:23:40 | [ERROR]   | 400 - Bad Request : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:23:40 | [ERROR]   | 400 - Bad Request : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:23:40 | [ERROR]   | 400 - Bad Request : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:23:41 | [ERROR]   | 400 - Bad Request : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:23:45 | [ERROR]   | 400 - Bad Request : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:23:45 | [ERROR]   | 400 - Bad Request : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:23:46 | [ERROR]   | 400 - Bad Request : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:23:46 | [ERROR]   | 400 - Bad Request : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:23:46 | [ERROR]   | 400 - Bad Request : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:23:47 | [ERROR]   | 400 - Bad Request : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:23:51 | [ERROR]   | 400 - Bad Request : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:23:52 | [ERROR]   | 400 - Bad Request : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:23:52 | [ERROR]   | 400 - Bad Request : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:23:52 | [ERROR]   | 400 - Bad Request : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:23:53 | [WARNING] | 429 - Too Many Requests : retrying after 0 ms : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:23:53 | [WARNING] | 429 - Too Many Requests : retrying after 0 ms : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:23:53 | [WARNING] | 429 - Too Many Requests : retrying after 0 ms : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:23:53 | [WARNING] | 429 - Too Many Requests : retrying after 0 ms : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:23:53 | [WARNING] | 429 - Too Many Requests : retrying after 0 ms : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:23:53 | [ERROR]   | 400 - Bad Request : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:23:58 | [ERROR]   | 400 - Bad Request : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:23:59 | [WARNING] | 429 - Too Many Requests : retrying after 0 ms : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:23:59 | [WARNING] | 429 - Too Many Requests : retrying after 0 ms : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:23:59 | [WARNING] | 429 - Too Many Requests : retrying after 0 ms : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:23:59 | [WARNING] | 429 - Too Many Requests : retrying after 0 ms : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:23:59 | [WARNING] | 429 - Too Many Requests : retrying after 0 ms : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:23:59 | [ERROR]   | 429 - Too Many Requests : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:23:59 | [ERROR]   | 400 - Bad Request : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:24:04 | [ERROR]   | 400 - Bad Request : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:24:05 | [WARNING] | 429 - Too Many Requests : retrying after 0 ms : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:24:05 | [WARNING] | 429 - Too Many Requests : retrying after 0 ms : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:24:05 | [WARNING] | 429 - Too Many Requests : retrying after 0 ms : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:24:05 | [WARNING] | 429 - Too Many Requests : retrying after 0 ms : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:24:05 | [WARNING] | 429 - Too Many Requests : retrying after 0 ms : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:28:43 | [INFO]    | Discordia 2.11.2
+2023-11-11 07:28:43 | [INFO]    | Connecting to Discord...
+2023-11-11 07:28:44 | [INFO]    | Authenticated as The Game Bot#1957
+2023-11-11 07:28:44 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-11 07:28:44 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-11 07:28:44 | [INFO]    | Shard 0 : Received HELLO
+2023-11-11 07:28:44 | [INFO]    | Shard 0 : Received READY
+2023-11-11 07:31:18 | [INFO]    | Discordia 2.11.2
+2023-11-11 07:31:18 | [INFO]    | Connecting to Discord...
+2023-11-11 07:31:19 | [INFO]    | Authenticated as The Game Bot#1957
+2023-11-11 07:31:19 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-11 07:31:19 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-11 07:31:19 | [INFO]    | Shard 0 : Received HELLO
+2023-11-11 07:31:19 | [INFO]    | Shard 0 : Received READY
+2023-11-11 07:33:30 | [INFO]    | Discordia 2.11.2
+2023-11-11 07:33:30 | [INFO]    | Connecting to Discord...
+2023-11-11 07:33:30 | [INFO]    | Authenticated as The Game Bot#1957
+2023-11-11 07:33:30 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-11 07:33:30 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-11 07:33:30 | [INFO]    | Shard 0 : Received HELLO
+2023-11-11 07:33:30 | [INFO]    | Shard 0 : Received READY
+2023-11-11 07:33:52 | [INFO]    | Discordia 2.11.2
+2023-11-11 07:33:52 | [INFO]    | Connecting to Discord...
+2023-11-11 07:33:52 | [INFO]    | Authenticated as The Game Bot#1957
+2023-11-11 07:33:52 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-11 07:33:52 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-11 07:33:52 | [INFO]    | Shard 0 : Received HELLO
+2023-11-11 07:33:52 | [INFO]    | Shard 0 : Received READY
+2023-11-11 07:35:08 | [INFO]    | Discordia 2.11.2
+2023-11-11 07:35:08 | [INFO]    | Connecting to Discord...
+2023-11-11 07:35:09 | [INFO]    | Authenticated as The Game Bot#1957
+2023-11-11 07:35:09 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-11 07:35:09 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-11 07:35:09 | [INFO]    | Shard 0 : Received HELLO
+2023-11-11 07:35:09 | [INFO]    | Shard 0 : Received READY
+2023-11-11 07:35:13 | [ERROR]   | 400 - Bad Request : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:35:13 | [ERROR]   | 400 - Bad Request : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:35:13 | [ERROR]   | 400 - Bad Request : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:35:14 | [ERROR]   | 400 - Bad Request : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:35:14 | [ERROR]   | 400 - Bad Request : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:35:19 | [ERROR]   | 400 - Bad Request : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:35:19 | [ERROR]   | 400 - Bad Request : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:35:19 | [ERROR]   | 400 - Bad Request : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:35:20 | [ERROR]   | 400 - Bad Request : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:35:20 | [ERROR]   | 400 - Bad Request : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:35:21 | [ERROR]   | 400 - Bad Request : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:35:25 | [ERROR]   | 400 - Bad Request : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:35:25 | [ERROR]   | 400 - Bad Request : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:35:26 | [ERROR]   | 400 - Bad Request : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:35:26 | [ERROR]   | 400 - Bad Request : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:35:26 | [ERROR]   | 400 - Bad Request : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:35:27 | [ERROR]   | 400 - Bad Request : POST https://discord.com/api/v8/channels/1119586233161621525/messages
+2023-11-11 07:35:54 | [INFO]    | Discordia 2.11.2
+2023-11-11 07:35:54 | [INFO]    | Connecting to Discord...
+2023-11-11 07:35:54 | [INFO]    | Authenticated as The Game Bot#1957
+2023-11-11 07:35:54 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-11 07:35:54 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-11 07:35:54 | [INFO]    | Shard 0 : Received HELLO
+2023-11-11 07:35:54 | [INFO]    | Shard 0 : Received READY
+2023-11-11 07:48:17 | [INFO]    | Discordia 2.11.2
+2023-11-11 07:48:17 | [INFO]    | Connecting to Discord...
+2023-11-11 07:48:17 | [INFO]    | Authenticated as The Game Bot#1957
+2023-11-11 07:48:17 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-11 07:48:17 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-11 07:48:17 | [INFO]    | Shard 0 : Received HELLO
+2023-11-11 07:48:18 | [INFO]    | Shard 0 : Received READY
+2023-11-11 07:49:04 | [INFO]    | Discordia 2.11.2
+2023-11-11 07:49:04 | [INFO]    | Connecting to Discord...
+2023-11-11 07:49:04 | [INFO]    | Authenticated as The Game Bot#1957
+2023-11-11 07:49:04 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-11 07:49:04 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-11 07:49:04 | [INFO]    | Shard 0 : Received HELLO
+2023-11-11 07:49:04 | [INFO]    | Shard 0 : Received READY
+2023-11-11 07:54:51 | [INFO]    | Discordia 2.11.2
+2023-11-11 07:54:51 | [INFO]    | Connecting to Discord...
+2023-11-11 07:54:51 | [INFO]    | Authenticated as The Game Bot#1957
+2023-11-11 07:54:51 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-11 07:54:51 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-11 07:54:51 | [INFO]    | Shard 0 : Received HELLO
+2023-11-11 07:54:51 | [INFO]    | Shard 0 : Received READY
+2023-11-11 07:59:40 | [INFO]    | Discordia 2.11.2
+2023-11-11 07:59:40 | [INFO]    | Connecting to Discord...
+2023-11-11 07:59:40 | [INFO]    | Authenticated as The Game Bot#1957
+2023-11-11 07:59:41 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-11 07:59:41 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-11 07:59:41 | [INFO]    | Shard 0 : Received HELLO
+2023-11-11 07:59:41 | [INFO]    | Shard 0 : Received READY
+2023-11-11 08:01:16 | [INFO]    | Discordia 2.11.2
+2023-11-11 08:01:16 | [INFO]    | Connecting to Discord...
+2023-11-11 08:01:17 | [INFO]    | Authenticated as The Game Bot#1957
+2023-11-11 08:01:17 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-11 08:01:17 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-11 08:01:17 | [INFO]    | Shard 0 : Received HELLO
+2023-11-11 08:01:17 | [INFO]    | Shard 0 : Received READY
+2023-11-11 08:01:51 | [ERROR]   | 400 - Bad Request : PUT https://discord.com/api/v8/guilds/1119586232708649000/bans/1155890951450005517?delete%2Dmessage%2Ddays=asdf%20skibbidy%20toilet&reason=7
+2023-11-11 08:04:34 | [INFO]    | Discordia 2.11.2
+2023-11-11 08:04:34 | [INFO]    | Connecting to Discord...
+2023-11-11 08:04:34 | [INFO]    | Authenticated as The Game Bot#1957
+2023-11-11 08:04:34 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-11 08:04:35 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-11 08:04:35 | [INFO]    | Shard 0 : Received HELLO
+2023-11-11 08:04:35 | [INFO]    | Shard 0 : Received READY
+2023-11-11 08:04:51 | [ERROR]   | 400 - Bad Request : PUT https://discord.com/api/v8/guilds/1119586232708649000/bans/1155890951450005517?delete%2Dmessage%2Ddays=iewuifewiufgiquwd%20asdf%20skibbidy%20toliet&reason=7
+2023-11-11 08:05:43 | [ERROR]   | 400 - Bad Request : PUT https://discord.com/api/v8/guilds/1119586232708649000/bans/1155890951450005517?delete%2Dmessage%2Ddays=Skillissue&reason=7
+2023-11-11 08:06:20 | [INFO]    | Discordia 2.11.2
+2023-11-11 08:06:20 | [INFO]    | Connecting to Discord...
+2023-11-11 08:06:20 | [INFO]    | Authenticated as The Game Bot#1957
+2023-11-11 08:06:20 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-11 08:06:21 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-11 08:06:21 | [INFO]    | Shard 0 : Received HELLO
+2023-11-11 08:06:21 | [INFO]    | Shard 0 : Received READY
+2023-11-11 08:07:56 | [INFO]    | Discordia 2.11.2
+2023-11-11 08:07:56 | [INFO]    | Connecting to Discord...
+2023-11-11 08:07:56 | [INFO]    | Authenticated as The Game Bot#1957
+2023-11-11 08:07:56 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-11 08:07:56 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-11 08:07:56 | [INFO]    | Shard 0 : Received HELLO
+2023-11-11 08:07:56 | [INFO]    | Shard 0 : Received READY
+2023-11-11 08:08:14 | [ERROR]   | 403 - Forbidden : POST https://discord.com/api/v8/channels/1172877186089361500/messages
+2023-11-11 08:11:25 | [INFO]    | Discordia 2.11.2
+2023-11-11 08:11:25 | [INFO]    | Connecting to Discord...
+2023-11-11 08:11:25 | [INFO]    | Authenticated as The Game Bot#1957
+2023-11-11 08:11:25 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-11 08:11:25 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-11 08:11:25 | [INFO]    | Shard 0 : Received HELLO
+2023-11-11 08:11:25 | [INFO]    | Shard 0 : Received READY
+2023-11-11 08:14:10 | [INFO]    | Discordia 2.11.2
+2023-11-11 08:14:10 | [INFO]    | Connecting to Discord...
+2023-11-11 08:14:10 | [INFO]    | Authenticated as The Game Bot#1957
+2023-11-11 08:14:10 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-11 08:14:10 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-11 08:14:10 | [INFO]    | Shard 0 : Received HELLO
+2023-11-11 08:14:10 | [INFO]    | Shard 0 : Received READY
+2023-11-11 08:16:41 | [INFO]    | Discordia 2.11.2
+2023-11-11 08:16:41 | [INFO]    | Connecting to Discord...
+2023-11-11 08:16:41 | [INFO]    | Authenticated as The Game Bot#1957
+2023-11-11 08:16:41 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-11 08:16:41 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-11 08:16:41 | [INFO]    | Shard 0 : Received HELLO
+2023-11-11 08:16:41 | [INFO]    | Shard 0 : Received READY
+2023-11-11 08:16:52 | [INFO]    | Discordia 2.11.2
+2023-11-11 08:16:52 | [INFO]    | Connecting to Discord...
+2023-11-11 08:16:52 | [INFO]    | Authenticated as The Game Bot#1957
+2023-11-11 08:16:52 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-11 08:16:52 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-11 08:16:52 | [INFO]    | Shard 0 : Received HELLO
+2023-11-11 08:16:53 | [INFO]    | Shard 0 : Received READY
+2023-11-11 08:26:09 | [INFO]    | Discordia 2.11.2
+2023-11-11 08:26:09 | [INFO]    | Connecting to Discord...
+2023-11-11 08:26:09 | [INFO]    | Authenticated as The Game Bot#1957
+2023-11-11 08:26:09 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-11 08:26:09 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-11 08:26:09 | [INFO]    | Shard 0 : Received HELLO
+2023-11-11 08:26:09 | [INFO]    | Shard 0 : Received READY
+2023-11-11 08:30:57 | [INFO]    | Discordia 2.11.2
+2023-11-11 08:30:57 | [INFO]    | Connecting to Discord...
+2023-11-11 08:30:57 | [INFO]    | Authenticated as The Game Bot#1957
+2023-11-11 08:30:57 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-11 08:30:58 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-11 08:30:58 | [INFO]    | Shard 0 : Received HELLO
+2023-11-11 08:30:58 | [INFO]    | Shard 0 : Received READY
+2023-11-11 08:31:16 | [INFO]    | Discordia 2.11.2
+2023-11-11 08:31:16 | [INFO]    | Connecting to Discord...
+2023-11-11 08:31:17 | [INFO]    | Authenticated as The Game Bot#1957
+2023-11-11 08:31:17 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-11 08:31:17 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-11 08:31:17 | [INFO]    | Shard 0 : Received HELLO
+2023-11-11 08:31:17 | [INFO]    | Shard 0 : Received READY
+2023-11-11 08:32:01 | [INFO]    | Discordia 2.11.2
+2023-11-11 08:32:01 | [INFO]    | Connecting to Discord...
+2023-11-11 08:32:01 | [INFO]    | Authenticated as The Game Bot#1957
+2023-11-11 08:32:01 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-11 08:32:01 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-11 08:32:01 | [INFO]    | Shard 0 : Received HELLO
+2023-11-11 08:32:01 | [INFO]    | Shard 0 : Received READY
+2023-11-11 08:35:38 | [INFO]    | Discordia 2.11.2
+2023-11-11 08:35:38 | [INFO]    | Connecting to Discord...
+2023-11-11 08:35:38 | [INFO]    | Authenticated as The Game Bot#1957
+2023-11-11 08:35:38 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-11 08:35:38 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-11 08:35:38 | [INFO]    | Shard 0 : Received HELLO
+2023-11-11 08:35:38 | [INFO]    | Shard 0 : Received READY
+2023-11-11 08:36:38 | [INFO]    | Discordia 2.11.2
+2023-11-11 08:36:38 | [INFO]    | Connecting to Discord...
+2023-11-11 08:36:38 | [INFO]    | Authenticated as The Game Bot#1957
+2023-11-11 08:36:38 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-11 08:36:38 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-11 08:36:38 | [INFO]    | Shard 0 : Received HELLO
+2023-11-11 08:36:38 | [INFO]    | Shard 0 : Received READY
+2023-11-12 10:10:03 | [INFO]    | Discordia 2.11.2
+2023-11-12 10:10:03 | [INFO]    | Connecting to Discord...
+2023-11-12 10:10:03 | [ERROR]   | 401 - Unauthorized : GET https://discord.com/api/v8/users/@me
+2023-11-12 10:10:03 | [ERROR]   | Could not authenticate, check token: HTTP Error 0 : 401: Unauthorized
+2023-11-12 10:10:17 | [INFO]    | Discordia 2.11.2
+2023-11-12 10:10:17 | [INFO]    | Connecting to Discord...
+2023-11-12 10:10:17 | [ERROR]   | 401 - Unauthorized : GET https://discord.com/api/v8/users/@me
+2023-11-12 10:10:17 | [ERROR]   | Could not authenticate, check token: HTTP Error 0 : 401: Unauthorized
+2023-11-13 17:35:35 | [INFO]    | Discordia 2.11.2
+2023-11-13 17:35:35 | [INFO]    | Connecting to Discord...
+2023-11-13 17:35:56 | [ERROR]   | Could not authenticate, check token: C:/Users/rigsa/IdeaProjects/gamebot.lua/deps/coro-http.lua:74: ETIMEDOUT
+2023-11-13 19:33:07 | [INFO]    | Discordia 2.11.2
+2023-11-13 19:33:07 | [INFO]    | Connecting to Discord...
+2023-11-13 19:33:07 | [INFO]    | Authenticated as The Dev Bot#9172
+2023-11-13 19:33:07 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-13 19:33:07 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-13 19:33:07 | [INFO]    | Shard 0 : Received HELLO
+2023-11-13 19:33:07 | [INFO]    | Shard 0 : Received READY
+2023-11-13 20:11:28 | [INFO]    | Shard 0 : Disconnected
+2023-11-13 20:11:28 | [INFO]    | Shard 0 : Reconnecting after 1052 ms...
+2023-11-13 20:11:29 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-13 20:11:29 | [INFO]    | Shard 0 : Received HELLO
+2023-11-13 20:11:29 | [INFO]    | Shard 0 : Session invalidated, re-identifying...
+2023-11-13 20:11:30 | [INFO]    | Shard 0 : Received READY
+2023-11-15 19:59:53 | [INFO]    | Discordia 2.11.2
+2023-11-15 19:59:53 | [INFO]    | Connecting to Discord...
+2023-11-15 19:59:53 | [ERROR]   | 401 - Unauthorized : GET https://discord.com/api/v8/users/@me
+2023-11-15 19:59:53 | [ERROR]   | Could not authenticate, check token: HTTP Error 0 : 401: Unauthorized
+2023-11-15 20:00:59 | [INFO]    | Discordia 2.11.2
+2023-11-15 20:00:59 | [INFO]    | Connecting to Discord...
+2023-11-15 20:00:59 | [ERROR]   | 401 - Unauthorized : GET https://discord.com/api/v8/users/@me
+2023-11-15 20:00:59 | [ERROR]   | Could not authenticate, check token: HTTP Error 0 : 401: Unauthorized
+2023-11-15 20:01:20 | [INFO]    | Discordia 2.11.2
+2023-11-15 20:01:20 | [INFO]    | Connecting to Discord...
+2023-11-15 20:01:21 | [INFO]    | Authenticated as The Game Bot#1957
+2023-11-15 20:01:21 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-15 20:01:21 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-15 20:01:21 | [INFO]    | Shard 0 : Received HELLO
+2023-11-15 20:01:21 | [INFO]    | Shard 0 : Received READY
+2023-11-17 08:14:06 | [INFO]    | Discordia 2.11.2
+2023-11-17 08:14:06 | [INFO]    | Connecting to Discord...
+2023-11-17 08:14:07 | [INFO]    | Authenticated as The Game Bot#1957
+2023-11-17 08:14:07 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-17 08:14:07 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-17 08:14:07 | [INFO]    | Shard 0 : Received HELLO
+2023-11-17 08:14:07 | [INFO]    | Shard 0 : Received READY
+2023-11-17 18:40:14 | [INFO]    | Discordia 2.11.2
+2023-11-17 18:40:14 | [INFO]    | Connecting to Discord...
+2023-11-17 18:40:15 | [INFO]    | Authenticated as The Game Bot#1957
+2023-11-17 18:40:15 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-17 18:40:16 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-17 18:40:16 | [INFO]    | Shard 0 : Received HELLO
+2023-11-17 18:40:16 | [INFO]    | Shard 0 : Received READY
+2023-11-17 21:28:10 | [INFO]    | Discordia 2.11.2
+2023-11-17 21:28:10 | [INFO]    | Connecting to Discord...
+2023-11-17 21:28:10 | [INFO]    | Authenticated as The Game Bot#7861
+2023-11-17 21:28:10 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-17 21:28:11 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-17 21:28:11 | [INFO]    | Shard 0 : Received HELLO
+2023-11-17 21:28:11 | [INFO]    | Shard 0 : Received READY
+2023-11-17 21:38:01 | [INFO]    | Discordia 2.11.2
+2023-11-17 21:38:01 | [INFO]    | Connecting to Discord...
+2023-11-17 21:38:06 | [INFO]    | Authenticated as The Game Bot#2401
+2023-11-17 21:38:06 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-17 21:38:06 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-17 21:38:06 | [INFO]    | Shard 0 : Received HELLO
+2023-11-17 21:38:06 | [INFO]    | Shard 0 : Received READY
+2023-11-17 21:38:58 | [INFO]    | Discordia 2.11.2
+2023-11-17 21:38:58 | [INFO]    | Connecting to Discord...
+2023-11-17 21:38:59 | [INFO]    | Authenticated as The Game Bot#2401
+2023-11-17 21:39:00 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-17 21:39:00 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-17 21:39:00 | [INFO]    | Shard 0 : Received HELLO
+2023-11-17 21:39:00 | [INFO]    | Shard 0 : Received READY
+2023-11-17 21:42:49 | [INFO]    | Discordia 2.11.2
+2023-11-17 21:42:49 | [INFO]    | Connecting to Discord...
+2023-11-17 21:42:50 | [INFO]    | Authenticated as The Game Bot#2401
+2023-11-17 21:42:50 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-17 21:42:50 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-17 21:42:50 | [INFO]    | Shard 0 : Received HELLO
+2023-11-17 21:42:50 | [INFO]    | Shard 0 : Received READY
+2023-11-17 21:54:23 | [INFO]    | Discordia 2.11.2
+2023-11-17 21:54:23 | [INFO]    | Connecting to Discord...
+2023-11-17 21:54:23 | [INFO]    | Authenticated as The Game Bot#2401
+2023-11-17 21:54:23 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-17 21:54:23 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-17 21:54:23 | [INFO]    | Shard 0 : Received HELLO
+2023-11-17 21:54:24 | [INFO]    | Shard 0 : Received READY
+2023-11-17 21:58:50 | [ERROR]   | 401 - Unauthorized : GET https://discord.com/api/v8/oauth2/applications/@me
+2023-11-17 21:59:55 | [ERROR]   | 401 - Unauthorized : GET https://discord.com/api/v8/oauth2/applications/@me
+2023-11-17 22:03:41 | [INFO]    | Discordia 2.11.2
+2023-11-17 22:03:41 | [INFO]    | Connecting to Discord...
+2023-11-17 22:03:42 | [INFO]    | Authenticated as The Game Bot#2401
+2023-11-17 22:03:42 | [INFO]    | Launching shard 0 (1 out of 1)...
+2023-11-17 22:03:42 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2023-11-17 22:03:42 | [INFO]    | Shard 0 : Received HELLO
+2023-11-17 22:03:42 | [INFO]    | Shard 0 : Received READY
