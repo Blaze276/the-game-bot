@@ -1,0 +1,14 @@
+{
+  "name": "thegamebot",
+  "version": "1.0.0",
+  "description": "The Game bot. Now on Node!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Blaze276",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^13.17.1"
+  }
+}
