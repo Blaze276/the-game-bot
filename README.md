@@ -15,6 +15,12 @@ Made by @Blaze276 for exclusive use with Gaming To The People and other partnere
 
 // legacy readme 
 
+
+
+
+
+
+
 Port of the game bot to lua. Now Official Game Bot 
 
 Now available as a public repo and available to everyone
