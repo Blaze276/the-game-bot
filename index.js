@@ -1,1 +1,652 @@
-const _0x33fd93=_0x5d75;(function(_0x2ad698,_0x2750af){const _0x147060=_0x5d75,_0x337e28=_0x2ad698();while(!![]){try{const _0x12ce93=parseInt(_0x147060(0x172))/0x1*(-parseInt(_0x147060(0x18e))/0x2)+-parseInt(_0x147060(0x127))/0x3*(parseInt(_0x147060(0x179))/0x4)+parseInt(_0x147060(0x153))/0x5*(-parseInt(_0x147060(0xc9))/0x6)+parseInt(_0x147060(0x192))/0x7*(parseInt(_0x147060(0x1a5))/0x8)+parseInt(_0x147060(0x1c3))/0x9+-parseInt(_0x147060(0x1c4))/0xa*(parseInt(_0x147060(0xf0))/0xb)+parseInt(_0x147060(0x177))/0xc;if(_0x12ce93===_0x2750af)break;else _0x337e28['push'](_0x337e28['shift']());}catch(_0x5e78ca){_0x337e28['push'](_0x337e28['shift']());}}}(_0x3aa4,0x7ec2a));function _0x5d75(_0x5d86cc,_0x37495e){const _0x3aa4c1=_0x3aa4();return _0x5d75=function(_0x5d75c1,_0x19f1b4){_0x5d75c1=_0x5d75c1-0xba;let _0x311edf=_0x3aa4c1[_0x5d75c1];return _0x311edf;},_0x5d75(_0x5d86cc,_0x37495e);}const config=require(_0x33fd93(0x175)),{Collection}=require('discord.js'),Discord=require(_0x33fd93(0x155)),{REST}=require('@discordjs/rest'),{Routes}=require('discord-api-types/v9'),{clientId,guildId,token}=require(_0x33fd93(0x175)),fs=require('fs'),client=new Discord[(_0x33fd93(0x125))]({'intents':[Discord['Intents'][_0x33fd93(0x19b)]['GUILDS'],Discord[_0x33fd93(0xca)][_0x33fd93(0x19b)][_0x33fd93(0xee)]]});client[_0x33fd93(0x1c5)]=new Collection();const rest=new REST({'version':'9'})[_0x33fd93(0xc4)](config[_0x33fd93(0x1b4)]),commands=[],commandFiles=fs['readdirSync']('./commands')[_0x33fd93(0x186)](_0x176b49=>_0x176b49[_0x33fd93(0xbe)](_0x33fd93(0x15f))),commandMap=new Map();for(const file of commandFiles){const command=require(_0x33fd93(0x1b6)+file),fs=require('fs');if(commandMap[_0x33fd93(0xe9)](command['data'][_0x33fd93(0xdc)])){console['error'](_0x33fd93(0x154)+command[_0x33fd93(0xbb)][_0x33fd93(0xdc)]+_0x33fd93(0xe8));continue;}commandMap[_0x33fd93(0xcc)](command[_0x33fd93(0xbb)]['name'],!![]),commands[_0x33fd93(0xeb)](command[_0x33fd93(0xbb)][_0x33fd93(0x1b7)]()),client[_0x33fd93(0x1c5)]['set'](command[_0x33fd93(0xbb)]['name'],command);}function _0x3aa4(){const _0x184d0b=['RACSpeedster','get','.\x20Reason:\x20','Slash\x20commands\x20registered\x20locally!','that\x20doesn\x27t\x20seem\x20to\x20be\x20a\x20valid\x20number.','error','**\x20Has\x20been\x20promoted\x20to\x20the\x20**Admin**\x20role!','send','The\x20Man\x20Himself!','𝖠𝖽𝗆𝗂𝗇','The\x20Geometry\x20Dash\x20OST','mute','Error\x20muting\x20member:','MANAGE_MESSAGES','Error\x20banning\x20**<@960887298533244928>**:\x20No\x20Permissions.','Warns\x20a\x20user','cache','online','Gaming\x20to\x20the\x20People','Shows\x20this\x20menu','readFile','Error\x20sending\x20direct\x20message\x20to\x20member:','There\x20are\x20no\x20banned\x20users\x20in\x20this\x20server!','stringify','You\x20didn\x27t\x20mention\x20the\x20user\x20to\x20unmute!','remove','?warnings','setPresence','trim','You\x20didn\x27t\x20mention\x20the\x20user\x20to\x20mute!','?unlock','floor','Support\x20us\x20on\x20Ko-fi!','Successfully\x20unlocked\x20the\x20channel\x20**','production','Makes\x20the\x20bot\x20say\x20something','permissionOverwrites','**!','size','1451845ReefYr','Duplicate\x20command\x20name\x20found:\x20','discord.js','Muted','warns.json','unlock','You\x20didn\x27t\x20mention\x20the\x20user\x20to\x20view\x20warnings\x20for!','The\x20user\x20is\x20not\x20muted!','#FF0000','The\x20Game\x20Bot\x20was\x20made\x20by\x20**Blaze276**\x20and\x20other\x20cool\x20people!','You\x20were\x20kicked\x20from\x20the\x20server.\x20Reason:\x20','execute','.js','Successfully\x20kicked\x20**','bot','find','secret\x20command\x20(hint:\x20september\x209th)','Locks\x20a\x20channel','?kick','Error\x20writing\x20to\x20warns.json:','credits','unable\x20to\x20kick\x20the\x20member.\x20Check\x20the\x20console\x20for\x20more\x20information.','length','unban','join','Deprecated.\x20use\x20/ip\x20for\x20better\x20results!\x0aThe\x20IP\x20is\x20**purpursmp.my.pebble.host**\x20\x0aversion\x20**1.17.1**','?promote','GitHub\x20Copilot','purge','setTitle','then','263196dnWNgf','bans','client_id','./config.json','roles','9653004RUBFOJ','Support\x20Us\x20on\x20Ko-fi!','53684JjGRne','same\x20as\x20promote\x20but\x20administrator\x20role','This\x20command\x20only\x20works\x20in\x20a\x20server.','Created\x20a\x20basic\x20python\x20bot\x20that\x20started\x20it\x20all!,\x20(and\x20made\x20the\x20lua\x20version)','warnings','The\x20Game\x20Bot\x20commands','channel','The\x20place\x20where\x20the\x20code\x20is\x20stored','utf8','addFields','help','parse','isCommand','filter','?delwarn','**\x20messages!','**\x20Has\x20been\x20promoted\x20to\x20The\x20**Moderators**!','setColor','You\x20don\x27t\x20have\x20permission\x20to\x20use\x20this\x20command.','resolve','Error\x20unlocking\x20channel:','2QdefKc','Coming\x20Soon!','Error\x20deleting\x20message:','You\x20didn\x27t\x20mention\x20the\x20user\x20to\x20delete\x20warns\x20for!','655893Eapyps','?credits','https://www.patreon.com/gamingtothepeople','BAN_MEMBERS','toDateString','MANAGE_CHANNELS','delete','The\x20Minecraft\x20OST','?unban','FLAGS','KICK_MEMBERS','?unmute','warn','The\x20AI\x20that\x20helped\x20with\x20the\x20code\x20_(a\x20lot,\x20helped\x20make\x20purge,\x20kick,\x20ban,\x20unban)_','unable\x20to\x20fetch\x20the\x20bans.\x20Check\x20the\x20console\x20for\x20more\x20information.','sigma','Support\x20us\x20on\x20Patreon!','reason','writeFile','8ncYNft','unable\x20to\x20send\x20a\x20direct\x20message\x20to\x20the\x20member.\x20Check\x20the\x20console\x20for\x20more\x20information.','Successfully\x20warned\x20**','setTimestamp','Unbans\x20a\x20user\x20from\x20the\x20server','setAuthor','Support\x20Us\x20on\x20Patreon!','setDescription','The\x20user\x20you\x20mentioned\x20is\x20not\x20banned!','The\x20language\x20that\x20made\x20this\x20bot\x20possible','unable\x20to\x20unlock\x20the\x20channel.\x20Check\x20the\x20console\x20for\x20more\x20information.','setURL','\x20said:`\x20','Thank\x20you\x20so\x20much\x20for\x20considering\x20to\x20support\x20us!\x20It\x20really\x20means\x20the\x20world\x20to\x20our\x20team!','random','token','members','./commands/','toJSON','you\x20need\x20to\x20input\x20a\x20number\x20between\x201\x20and\x20100.','member','permissions','Successfully\x20deleted\x20all\x20warns\x20for\x20**','**\x20Has\x20been\x20promoted\x20to\x20The\x20**Administrators**!','LISTENING','reply','toLowerCase','user','Kicks\x20a\x20user\x20from\x20the\x20server','#000000','5512140cdBnBG','3304330WxCLUz','commands','Moderator','?purge','kick','There\x20was\x20an\x20error\x20adding\x20the\x20role.','data','log','Bans\x20a\x20user\x20from\x20the\x20server','endsWith','add','shift','Error\x20reading\x20warns.json:','Unlocks\x20a\x20channel','MessageEmbed','setToken','fetch','Error\x20kicking\x20**<@960887298533244928>**:\x20No\x20Permissions.','The\x20library\x20that\x20made\x20this\x20bot\x20possible','map','6EytFKa','Intents','You\x20do\x20not\x20have\x20permission\x20to\x20use\x20this\x20command.','set','setThumbnail','You\x20were\x20banned\x20from\x20the\x20server.\x20Reason:\x20','?mute','create','unable\x20to\x20mute\x20the\x20member.\x20Check\x20the\x20console\x20for\x20more\x20information.','tag','unable\x20to\x20ban\x20the\x20member.\x20Check\x20the\x20console\x20for\x20more\x20information.','a\x20list\x20of\x20commands\x20included\x20with\x20The\x20Game\x20Bot','That\x20user\x20isn\x27t\x20in\x20this\x20server!','You\x20must\x20be\x20in\x20a\x20server\x20to\x20use\x20this\x20command.','?say','More\x20commands\x20will\x20be\x20added\x20soon.\x20Keep\x20an\x20eye\x20out!','catch','Blaze276','https://cdn.discordapp.com/avatars/960887298533244928/0f96a702500b6f698980da9df708f38f.png?size=4096','name','Error,\x20role\x20not\x20found.\x20Check\x20code.','Kotlin\x27s\x20just\x20better.','delwarn','?help','Received\x20HELLO.\x20Running\x20The\x20Game\x20Bot','Successfully\x20locked\x20the\x20channel\x20**','Promotes\x20a\x20user\x20to\x20the\x20moderators','Warnings\x20for\x20','everyone','#0099ff','The\x20PrismGDPS\x20OST','.\x20Skipping...','has','You\x20were\x20unmuted\x20in\x20the\x20server.','push','applicationCommands','Mutes\x20a\x20user','GUILD_MESSAGES','dnd','11NSSZGc','lock','patreon','960887298533244928','MANAGE_ROLES','edit','PrismGDPS','first','command\x20disabled','Discord.js','Logged\x20in\x20as\x20','Error\x20deleting\x20messages:','The\x20Game\x20Bot','**\x20from\x20the\x20server\x20for\x20**','Successfully\x20deleted\x20**','put','unable\x20to\x20lock\x20the\x20channel.\x20Check\x20the\x20console\x20for\x20more\x20information.','Shows\x20the\x20credits\x20for\x20the\x20bot','slice','Error\x20locking\x20channel:','channels','You\x20didn\x27t\x20mention\x20the\x20user\x20to\x20kick!','Error\x20fetching\x20bans:','author','bulkDelete','Please\x20mention\x20a\x20user\x20to\x20promote.','The\x20OG\x20MW2\x20OST','idk','?ip','startsWith','users','messageCreate','gdps','unmute','mentions','The\x20Fortnite\x20OST','ban','Error\x20unmuting\x20member:','The\x20Game\x20Bot\x20Credits','Error\x20kicking\x20member:','guild','interactionCreate','The\x20Team\x20that\x20made\x20this\x20bot\x20possible','ADMINISTRATOR','**\x20from\x20the\x20server!','forEach','https://drive.google.com/file/d/1IDdS28mTogrMDm9GZ4-2fcJ7Lg-yMifa/view?usp=sharing','Slash\x20commands\x20registered!','promote','kofi','?ban','Administrator','Successfully\x20unbanned\x20**','Client','You\x20didn\x27t\x20mention\x20the\x20user\x20to\x20warn!','24yOGuwP','The\x20Hitman\x20III\x20OST','?sigma','https://ko-fi.com/gamingtothepeople','pack-god'];_0x3aa4=function(){return _0x184d0b;};return _0x3aa4();}client['once']('ready',async()=>{const _0x25cd64=_0x33fd93;console[_0x25cd64(0xbc)](_0x25cd64(0xe1));const _0x32d176=client[_0x25cd64(0x1c0)]['id'];try{config[_0x25cd64(0x1b4)]===_0x25cd64(0x14e)?(await rest[_0x25cd64(0xff)](Routes[_0x25cd64(0xec)](_0x32d176),{'body':commands}),console[_0x25cd64(0xbc)](_0x25cd64(0x11f))):(await rest[_0x25cd64(0xff)](Routes[_0x25cd64(0xec)](_0x32d176,config[_0x25cd64(0x174)]),{'body':commands}),console[_0x25cd64(0xbc)](_0x25cd64(0x12f)));}catch(_0x4e090c){console[_0x25cd64(0x131)]('Error\x20registering\x20slash\x20commands:',_0x4e090c);}client['on'](_0x25cd64(0x119),async _0xe29808=>{const _0x4c2a90=_0x25cd64;if(!_0xe29808[_0x4c2a90(0x185)]())return;const {commandName:_0x420b41}=_0xe29808;if(!client[_0x4c2a90(0x1c5)][_0x4c2a90(0xe9)](_0x420b41))return;try{await client[_0x4c2a90(0x1c5)][_0x4c2a90(0x12d)](_0x420b41)[_0x4c2a90(0x15e)](_0xe29808);}catch(_0x59d894){console[_0x4c2a90(0x131)](_0x59d894),await _0xe29808[_0x4c2a90(0x1be)]({'content':'There\x20was\x20an\x20error\x20while\x20executing\x20this\x20command!','ephemeral':!![]});}});const _0x36f05d=[_0x25cd64(0x199),_0x25cd64(0x136),_0x25cd64(0x128),'The\x20Terraria\x20OST',_0x25cd64(0x113),_0x25cd64(0xe7),_0x25cd64(0x10a)];setInterval(()=>{const _0x3db506=_0x25cd64,_0x3eab03=Math[_0x3db506(0x14b)](Math[_0x3db506(0x1b3)]()*_0x36f05d[_0x3db506(0x169)]),_0x532ae4=_0x36f05d[_0x3eab03];client[_0x3db506(0x1c0)]['setPresence']({'status':_0x3db506(0x13d),'activities':[{'name':_0x532ae4,'type':_0x3db506(0x1bd)}]});},0x1b7740);const _0x546119=_0x25cd64(0xde),_0x530f78=Math[_0x25cd64(0x14b)](Math[_0x25cd64(0x1b3)]()*0x64)+0x1;_0x530f78===0x1&&client[_0x25cd64(0x1c0)][_0x25cd64(0x147)]({'status':_0x25cd64(0xef),'activities':[{'name':_0x546119,'type':'WATCHING'}]});});const icon='https://cdn.discordapp.com/avatars/1145327542723686451/e4c781dee18a7f1146e53c45f0c3350c.png?size=4096',accentColour='#095de3',prefix='?';client['on']('ready',()=>{const _0x39149=_0x33fd93;console[_0x39149(0xbc)](_0x39149(0xfa)+client['user'][_0x39149(0xd2)]+'!');}),client['on'](_0x33fd93(0x10f),async _0x311c8e=>{const _0x4a7180=_0x33fd93;if(!_0x311c8e['content'][_0x4a7180(0x10d)](prefix)||_0x311c8e[_0x4a7180(0x107)][_0x4a7180(0x161)])return;const _0x4c1e54=_0x311c8e['content']['slice'](prefix['length'])[_0x4a7180(0x148)]()['split'](/ +/),_0x205d05=_0x4c1e54[_0x4a7180(0xc0)]()[_0x4a7180(0x1bf)]();if(_0x205d05==='ip')_0x311c8e[_0x4a7180(0x17f)][_0x4a7180(0x133)](_0x4a7180(0x16c));else{if(_0x205d05===_0x4a7180(0x183)){const _0x21459c=new Discord[(_0x4a7180(0xc3))]()[_0x4a7180(0x18a)](accentColour)['setTitle'](_0x4a7180(0x17e))[_0x4a7180(0x1ac)](_0x4a7180(0xd4))[_0x4a7180(0x182)]({'name':_0x4a7180(0x10c),'value':'Gets\x20The\x20Minecraft\x20Server\x20IP\x20address'},{'name':_0x4a7180(0xe0),'value':_0x4a7180(0x13f)},{'name':_0x4a7180(0x16d),'value':_0x4a7180(0xe3)},{'name':'?adminify','value':_0x4a7180(0x17a)},{'name':_0x4a7180(0xd7),'value':_0x4a7180(0x14f)},{'name':_0x4a7180(0x165),'value':_0x4a7180(0x1c1)},{'name':_0x4a7180(0x122),'value':_0x4a7180(0xbd)},{'name':_0x4a7180(0x19a),'value':_0x4a7180(0x1a9)},{'name':_0x4a7180(0x1c7),'value':'Deletes\x20a\x20certain\x20amount\x20of\x20messages\x20from\x20the\x20channel'},{'name':_0x4a7180(0x129),'value':_0x4a7180(0x163)},{'name':'?kofi','value':_0x4a7180(0x14c)},{'name':'?patreon','value':_0x4a7180(0x1a2)},{'name':_0x4a7180(0x193),'value':_0x4a7180(0x101)},{'name':'?gdps','value':'Gets\x20the\x20PowershotGDPS\x20Download\x20link\x20and\x20info'},{'name':'?warn','value':_0x4a7180(0x13b)},{'name':_0x4a7180(0x187),'value':'Deletes\x20warnings\x20from\x20a\x20user'},{'name':_0x4a7180(0x146),'value':'Shows\x20the\x20warnings\x20of\x20a\x20user'},{'name':_0x4a7180(0xcf),'value':_0x4a7180(0xed)},{'name':_0x4a7180(0x19d),'value':'Unmutes\x20a\x20user'},{'name':'?lock','value':_0x4a7180(0x164)},{'name':_0x4a7180(0x14a),'value':_0x4a7180(0xc2)},{'name':_0x4a7180(0x18f),'value':_0x4a7180(0xd8)})[_0x4a7180(0xcd)](icon)[_0x4a7180(0x1aa)]({'name':_0x4a7180(0xfc),'iconURL':icon})[_0x4a7180(0x1a8)]();_0x311c8e[_0x4a7180(0x17f)]['send']({'embeds':[_0x21459c]});}else{if(_0x205d05===_0x4a7180(0x120)){if(!_0x311c8e[_0x4a7180(0x118)])return _0x311c8e[_0x4a7180(0x1be)](_0x4a7180(0x17b));if(!_0x311c8e[_0x4a7180(0x1b9)])return _0x311c8e[_0x4a7180(0x1be)](_0x4a7180(0xd6));if(!_0x311c8e['member'][_0x4a7180(0x1ba)]['has'](_0x4a7180(0x11b)))return _0x311c8e['reply'](_0x4a7180(0x18b));const _0x534eb6=_0x311c8e[_0x4a7180(0x112)]['members'][_0x4a7180(0xf7)]();if(!_0x534eb6)return _0x311c8e[_0x4a7180(0x1be)](_0x4a7180(0x109));const _0x10e4e6=_0x4a7180(0x1c6),_0x143623=_0x311c8e[_0x4a7180(0x118)][_0x4a7180(0x176)]['cache'][_0x4a7180(0x162)](_0x593feb=>_0x593feb[_0x4a7180(0xdc)]===_0x10e4e6);if(!_0x143623)return _0x311c8e[_0x4a7180(0x1be)]('Error,\x20role\x20not\x20found.\x20Check\x20code.');try{await _0x534eb6[_0x4a7180(0x176)][_0x4a7180(0xbf)](_0x143623),_0x311c8e['channel']['send']('**'+_0x534eb6[_0x4a7180(0x1c0)][_0x4a7180(0xd2)]+_0x4a7180(0x189));}catch(_0x272ac8){console[_0x4a7180(0x131)](_0x272ac8),_0x311c8e[_0x4a7180(0x17f)]['send'](_0x4a7180(0xba));}}else{if(_0x205d05==='adminify'){if(!_0x311c8e[_0x4a7180(0x118)])return _0x311c8e[_0x4a7180(0x1be)](_0x4a7180(0x17b));if(!_0x311c8e[_0x4a7180(0x1b9)])return _0x311c8e[_0x4a7180(0x1be)](_0x4a7180(0xd6));if(!_0x311c8e[_0x4a7180(0x1b9)][_0x4a7180(0x1ba)][_0x4a7180(0xe9)]('ADMINISTRATOR'))return _0x311c8e[_0x4a7180(0x1be)](_0x4a7180(0x18b));const _0x3a9c50=_0x311c8e[_0x4a7180(0x112)]['members']['first']();if(!_0x3a9c50)return _0x311c8e[_0x4a7180(0x1be)]('Please\x20mention\x20a\x20user\x20to\x20promote.');const _0x4578ec=_0x4a7180(0x123),_0x4eb841=_0x311c8e[_0x4a7180(0x118)][_0x4a7180(0x176)][_0x4a7180(0x13c)][_0x4a7180(0x162)](_0x34f006=>_0x34f006[_0x4a7180(0xdc)]===_0x4578ec);if(!_0x4eb841)return _0x311c8e[_0x4a7180(0x1be)](_0x4a7180(0xdd));try{await _0x3a9c50[_0x4a7180(0x176)][_0x4a7180(0xbf)](_0x4eb841),_0x311c8e[_0x4a7180(0x17f)][_0x4a7180(0x133)]('**'+_0x3a9c50[_0x4a7180(0x1c0)][_0x4a7180(0xd2)]+_0x4a7180(0x1bc));}catch(_0x471092){console['error'](_0x471092),_0x311c8e[_0x4a7180(0x17f)][_0x4a7180(0x133)]('There\x20was\x20an\x20error\x20adding\x20the\x20role.');}}else{if(_0x205d05==='say'){if(_0x311c8e[_0x4a7180(0x1b9)][_0x4a7180(0x1ba)][_0x4a7180(0xe9)](_0x4a7180(0x11b))){_0x311c8e[_0x4a7180(0x17f)]['send'](_0x4c1e54[_0x4a7180(0x16b)]('\x20'));try{await _0x311c8e[_0x4a7180(0x198)]();}catch(_0x351f81){console[_0x4a7180(0x131)](_0x4a7180(0x190),_0x351f81);}}else{_0x311c8e['channel'][_0x4a7180(0x133)]('`'+_0x311c8e['author']['tag']+_0x4a7180(0x1b1)+_0x4c1e54[_0x4a7180(0x16b)]('\x20'));try{await _0x311c8e[_0x4a7180(0x198)]();}catch(_0xe41838){console[_0x4a7180(0x131)](_0x4a7180(0x190),_0xe41838);}}}else{if(_0x205d05===_0x4a7180(0x1c8)){if(!_0x311c8e[_0x4a7180(0x1b9)][_0x4a7180(0x1ba)]['has']('KICK_MEMBERS'))return _0x311c8e[_0x4a7180(0x1be)](_0x4a7180(0xcb));const _0x1b23d5=_0x311c8e['mentions'][_0x4a7180(0x10e)][_0x4a7180(0xf7)]();if(_0x1b23d5['id']===_0x4a7180(0xf3))return _0x311c8e[_0x4a7180(0x1be)](_0x4a7180(0xc6));if(_0x1b23d5){const _0x21d6ae=_0x311c8e[_0x4a7180(0x118)][_0x4a7180(0x1b5)][_0x4a7180(0x18c)](_0x1b23d5);if(_0x21d6ae){const _0x183d61=_0x4c1e54[0x2];_0x21d6ae[_0x4a7180(0x1c8)](_0x4a7180(0x15d)+_0x183d61)['then'](()=>{const _0x80bee6=_0x4a7180;_0x311c8e[_0x80bee6(0x17f)][_0x80bee6(0x133)](_0x80bee6(0x160)+_0x1b23d5[_0x80bee6(0xd2)]+_0x80bee6(0xfd)+_0x183d61+'**!');})[_0x4a7180(0xd9)](_0x47a94f=>{const _0xc12987=_0x4a7180;_0x311c8e['reply'](_0xc12987(0x168)),console[_0xc12987(0x131)](_0xc12987(0x117),_0x47a94f);});}else _0x311c8e['reply'](_0x4a7180(0xd5));}else _0x311c8e[_0x4a7180(0x1be)](_0x4a7180(0x105));}else{if(_0x205d05===_0x4a7180(0x114)){if(!_0x311c8e[_0x4a7180(0x1b9)][_0x4a7180(0x1ba)][_0x4a7180(0xe9)](_0x4a7180(0x195)))return _0x311c8e['reply'](_0x4a7180(0xcb));const _0x266bf8=_0x311c8e[_0x4a7180(0x112)]['users'][_0x4a7180(0xf7)]();if(_0x266bf8['id']===_0x4a7180(0xf3))return _0x311c8e[_0x4a7180(0x1be)](_0x4a7180(0x13a));if(_0x266bf8){const _0x1bdc1d=_0x311c8e[_0x4a7180(0x118)][_0x4a7180(0x1b5)]['resolve'](_0x266bf8);if(_0x1bdc1d){const _0x376b44=_0x4c1e54[0x2];_0x1bdc1d[_0x4a7180(0x114)]({'reason':_0x4a7180(0xce)+_0x376b44})[_0x4a7180(0x171)](()=>{const _0x162469=_0x4a7180;_0x311c8e[_0x162469(0x17f)][_0x162469(0x133)]('Successfully\x20banned\x20**'+_0x266bf8[_0x162469(0xd2)]+'**\x20from\x20the\x20server\x20for\x20**'+_0x376b44+_0x162469(0x151));})[_0x4a7180(0xd9)](_0x129f6b=>{const _0x80b5e9=_0x4a7180;_0x311c8e['reply'](_0x80b5e9(0xd3)),console[_0x80b5e9(0x131)]('Error\x20banning\x20member:',_0x129f6b);});}else _0x311c8e[_0x4a7180(0x1be)](_0x4a7180(0xd5));}else _0x311c8e['reply']('You\x20didn\x27t\x20mention\x20the\x20user\x20to\x20ban!');}else{if(_0x205d05===_0x4a7180(0x16a)){if(!_0x311c8e[_0x4a7180(0x1b9)][_0x4a7180(0x1ba)]['has'](_0x4a7180(0x195)))return _0x311c8e['reply']('You\x20do\x20not\x20have\x20permission\x20to\x20use\x20this\x20command.');const _0x1c321e=_0x4c1e54[0x0];if(!_0x1c321e)return _0x311c8e[_0x4a7180(0x1be)]('You\x20didn\x27t\x20mention\x20the\x20user\x20to\x20unban!');_0x311c8e['guild'][_0x4a7180(0x173)][_0x4a7180(0xc5)]()[_0x4a7180(0x171)](_0x51a9d6=>{const _0x34c87e=_0x4a7180;if(_0x51a9d6[_0x34c87e(0x152)]===0x0)return _0x311c8e[_0x34c87e(0x1be)](_0x34c87e(0x142));const _0x45d831=_0x51a9d6[_0x34c87e(0x162)](_0x474404=>_0x474404[_0x34c87e(0x1c0)]['id']===_0x1c321e);if(!_0x45d831)return _0x311c8e[_0x34c87e(0x1be)](_0x34c87e(0x1ad));_0x311c8e['guild']['members'][_0x34c87e(0x16a)](_0x45d831[_0x34c87e(0x1c0)])[_0x34c87e(0x171)](()=>{const _0x97a1f=_0x34c87e;_0x311c8e['channel'][_0x97a1f(0x133)](_0x97a1f(0x124)+_0x45d831[_0x97a1f(0x1c0)][_0x97a1f(0xd2)]+_0x97a1f(0x11c));})[_0x34c87e(0xd9)](_0x5bf4e8=>{const _0x3e840a=_0x34c87e;_0x311c8e['reply']('unable\x20to\x20unban\x20the\x20member.\x20Check\x20the\x20console\x20for\x20more\x20information.'),console[_0x3e840a(0x131)]('Error\x20unbanning\x20member:',_0x5bf4e8);});})[_0x4a7180(0xd9)](_0x23b149=>{const _0x32615d=_0x4a7180;_0x311c8e[_0x32615d(0x1be)](_0x32615d(0x1a0)),console['error'](_0x32615d(0x106),_0x23b149);});}else{if(_0x205d05===_0x4a7180(0x16f)){if(!_0x311c8e[_0x4a7180(0x1b9)][_0x4a7180(0x1ba)]['has'](_0x4a7180(0x139)))return _0x311c8e[_0x4a7180(0x1be)](_0x4a7180(0xcb));const _0xaf4a1c=parseInt(_0x4c1e54[0x0],+0x1);if(isNaN(_0xaf4a1c))return _0x311c8e[_0x4a7180(0x17f)][_0x4a7180(0x133)](_0x4a7180(0x130));if(_0xaf4a1c<0x1||_0xaf4a1c>0x64)return _0x311c8e['channel'][_0x4a7180(0x133)](_0x4a7180(0x1b8));_0x311c8e[_0x4a7180(0x17f)][_0x4a7180(0x108)](_0xaf4a1c,!![])[_0x4a7180(0xd9)](_0x1407eb=>{const _0x3f7b71=_0x4a7180;console[_0x3f7b71(0x131)](_0x3f7b71(0xfb),_0x1407eb),_0x311c8e['reply']('there\x20was\x20an\x20error\x20trying\x20to\x20delete\x20messages\x20in\x20this\x20channel!');}),_0x311c8e[_0x4a7180(0x17f)]['send'](_0x4a7180(0xfe)+_0xaf4a1c+_0x4a7180(0x188));}else{if(_0x205d05===_0x4a7180(0x1a1)){const _0x248388=new Date(),_0x4928d0=new Date(_0x248388['getFullYear'](),0x8,0x9);_0x248388[_0x4a7180(0x196)]()===_0x4928d0[_0x4a7180(0x196)]()?_0x311c8e[_0x4a7180(0x17f)][_0x4a7180(0x133)]('Happy\x20Birthday\x20<@960887298533244928>!'):_0x311c8e[_0x4a7180(0x17f)][_0x4a7180(0x133)](_0x4a7180(0xf8));}else{if(_0x205d05===_0x4a7180(0x121)){const _0x11d867=new Discord[(_0x4a7180(0xc3))]()['setColor'](accentColour)['setTitle'](_0x4a7180(0x178))['setURL'](_0x4a7180(0x12a))[_0x4a7180(0x1ac)]('Thank\x20you\x20so\x20much\x20for\x20considering\x20to\x20support\x20us!\x20It\x20really\x20means\x20the\x20world\x20to\x20our\x20team!')[_0x4a7180(0xcd)](icon)[_0x4a7180(0x1aa)]({'name':_0x4a7180(0xfc),'iconURL':icon})[_0x4a7180(0x1a8)]();_0x311c8e[_0x4a7180(0x17f)][_0x4a7180(0x133)]({'embeds':[_0x11d867]});}else{if(_0x205d05===_0x4a7180(0xf2)){const _0x2f2a8b=new Discord['MessageEmbed']()[_0x4a7180(0x18a)](accentColour)[_0x4a7180(0x170)](_0x4a7180(0x1ab))[_0x4a7180(0x1b0)](_0x4a7180(0x194))['setDescription'](_0x4a7180(0x1b2))[_0x4a7180(0xcd)](icon)[_0x4a7180(0x1aa)]({'name':_0x4a7180(0xfc),'iconURL':icon})[_0x4a7180(0x1a8)]();_0x311c8e[_0x4a7180(0x17f)]['send']({'embeds':[_0x2f2a8b]});}else{if(_0x205d05===_0x4a7180(0x167)){const _0x46356f=new Discord[(_0x4a7180(0xc3))]()[_0x4a7180(0x18a)](accentColour)[_0x4a7180(0x170)](_0x4a7180(0x116))['setDescription'](_0x4a7180(0x15c))[_0x4a7180(0x182)]({'name':'Blaze276','value':_0x4a7180(0x134)},{'name':_0x4a7180(0x12c),'value':_0x4a7180(0x17c)},{'name':_0x4a7180(0x13e),'value':_0x4a7180(0x11a)},{'name':_0x4a7180(0xf9),'value':_0x4a7180(0xc7)},{'name':'Node.js','value':_0x4a7180(0x1ae)},{'name':'GitHub','value':_0x4a7180(0x180)},{'name':_0x4a7180(0x16e),'value':_0x4a7180(0x19f)})[_0x4a7180(0xcd)](_0x4a7180(0xdb))[_0x4a7180(0x1aa)]({'name':_0x4a7180(0xda),'iconURL':_0x4a7180(0xdb)})[_0x4a7180(0x1a8)]();_0x311c8e[_0x4a7180(0x17f)][_0x4a7180(0x133)]({'embeds':[_0x46356f]});}else{if(_0x205d05===_0x4a7180(0x110)){const _0x4ee5c6=new Discord[(_0x4a7180(0xc3))]()[_0x4a7180(0x18a)](_0x4a7180(0xe6))[_0x4a7180(0x170)](_0x4a7180(0xf6))[_0x4a7180(0x1ac)]('A\x20Geometry\x20Dash\x20Private\x20Server\x20made\x20by\x20Blaze.\x20You\x20can\x20join\x20the\x20server\x20with\x20the\x20link\x20on\x20the\x20embed\x20or\x20click\x20[Here](https://drive.google.com/file/d/1IDdS28mTogrMDm9GZ4-2fcJ7Lg-yMifa/view?usp=sharing)')[_0x4a7180(0x1b0)](_0x4a7180(0x11e))[_0x4a7180(0xcd)]('https://cdn.discordapp.com/attachments/1185176243134537828/1218676497557225604/icon.png?ex=660887ee&is=65f612ee&hm=d8f42595762876087a6d175ad730e65df7f3eea0c8e75cf95b2ebc3637b9ae71&')[_0x4a7180(0x1aa)]({'name':_0x4a7180(0xfc),'iconURL':icon})[_0x4a7180(0x1a8)]();_0x311c8e[_0x4a7180(0x17f)][_0x4a7180(0x133)]({'embeds':[_0x4ee5c6]});}else{if(_0x205d05===_0x4a7180(0x19e)){if(!_0x311c8e[_0x4a7180(0x1b9)][_0x4a7180(0x1ba)][_0x4a7180(0xe9)]('KICK_MEMBERS'))return _0x311c8e[_0x4a7180(0x1be)](_0x4a7180(0xcb));const _0x6f2584=_0x311c8e[_0x4a7180(0x112)][_0x4a7180(0x10e)]['first']();if(_0x6f2584){const _0x2e4135=_0x311c8e[_0x4a7180(0x118)][_0x4a7180(0x1b5)][_0x4a7180(0x18c)](_0x6f2584);if(_0x2e4135){const _0x4ac9d1=_0x4c1e54[_0x4a7180(0x102)](0x1)['join']('\x20');_0x2e4135[_0x4a7180(0x133)]('You\x20have\x20been\x20warned\x20in\x20**'+_0x311c8e['guild'][_0x4a7180(0xdc)]+'**\x20for\x20**'+_0x4ac9d1+_0x4a7180(0x151))[_0x4a7180(0x171)](()=>{const _0xe036ce=_0x4a7180;_0x311c8e[_0xe036ce(0x17f)][_0xe036ce(0x133)](_0xe036ce(0x1a7)+_0x6f2584[_0xe036ce(0xd2)]+'**\x20for\x20**'+_0x4ac9d1+_0xe036ce(0x151));const _0x75cb87={'user':_0x6f2584['id'],'guild':_0x311c8e['guild']['id'],'reason':_0x4ac9d1};fs[_0xe036ce(0x140)](_0xe036ce(0x157),_0xe036ce(0x181),(_0x50be72,_0x232169)=>{const _0x33e34b=_0xe036ce;if(_0x50be72){console[_0x33e34b(0x131)](_0x33e34b(0xc1),_0x50be72);return;}let _0x49cb43=[];_0x232169&&(_0x49cb43=JSON['parse'](_0x232169)),_0x49cb43[_0x33e34b(0xeb)](_0x75cb87),fs[_0x33e34b(0x1a4)](_0x33e34b(0x157),JSON[_0x33e34b(0x143)](_0x49cb43),_0x33e34b(0x181),_0x133523=>{const _0x5b6f02=_0x33e34b;_0x133523&&console[_0x5b6f02(0x131)]('Error\x20writing\x20to\x20warns.json:',_0x133523);});});})[_0x4a7180(0xd9)](_0x58648b=>{const _0x53ab5b=_0x4a7180;_0x311c8e[_0x53ab5b(0x1be)](_0x53ab5b(0x1a6)),console['error'](_0x53ab5b(0x141),_0x58648b);});}else _0x311c8e[_0x4a7180(0x1be)]('That\x20user\x20isn\x27t\x20in\x20this\x20server!');}else _0x311c8e[_0x4a7180(0x1be)](_0x4a7180(0x126));}else{if(_0x205d05===_0x4a7180(0xdf)){if(!_0x311c8e['member']['permissions'][_0x4a7180(0xe9)](_0x4a7180(0x19c)))return _0x311c8e[_0x4a7180(0x1be)](_0x4a7180(0xcb));const _0x124c4d=_0x311c8e[_0x4a7180(0x112)][_0x4a7180(0x10e)]['first']();if(_0x124c4d){const _0x981b4e=_0x311c8e[_0x4a7180(0x118)][_0x4a7180(0x1b5)][_0x4a7180(0x18c)](_0x124c4d);_0x981b4e?fs['readFile']('warns.json',_0x4a7180(0x181),(_0xb8a90b,_0x1eeebe)=>{const _0x4175a2=_0x4a7180;if(_0xb8a90b){console[_0x4175a2(0x131)]('Error\x20reading\x20warns.json:',_0xb8a90b);return;}let _0xdff7ea=[];_0x1eeebe&&(_0xdff7ea=JSON[_0x4175a2(0x184)](_0x1eeebe));const _0x5afb03=_0xdff7ea['filter'](_0x41b6e8=>_0x41b6e8[_0x4175a2(0x1c0)]!==_0x124c4d['id']);fs[_0x4175a2(0x1a4)](_0x4175a2(0x157),JSON[_0x4175a2(0x143)](_0x5afb03),_0x4175a2(0x181),_0x4fc8e0=>{const _0x184950=_0x4175a2;_0x4fc8e0&&console[_0x184950(0x131)](_0x184950(0x166),_0x4fc8e0);}),_0x311c8e[_0x4175a2(0x17f)][_0x4175a2(0x133)](_0x4175a2(0x1bb)+_0x124c4d[_0x4175a2(0xd2)]+'**!');}):_0x311c8e[_0x4a7180(0x1be)](_0x4a7180(0xd5));}else _0x311c8e['reply'](_0x4a7180(0x191));}else{if(_0x205d05===_0x4a7180(0x17d)){const _0x6839da=_0x311c8e[_0x4a7180(0x112)][_0x4a7180(0x10e)]['first']();if(_0x6839da){const _0x4f4d09=_0x311c8e[_0x4a7180(0x118)][_0x4a7180(0x1b5)][_0x4a7180(0x18c)](_0x6839da);_0x4f4d09?fs[_0x4a7180(0x140)](_0x4a7180(0x157),_0x4a7180(0x181),(_0x19739e,_0x235098)=>{const _0x15d320=_0x4a7180;if(_0x19739e){console[_0x15d320(0x131)](_0x15d320(0xc1),_0x19739e);return;}let _0x2fb3ff=[];_0x235098&&(_0x2fb3ff=JSON['parse'](_0x235098));const _0x56c4a4=_0x2fb3ff[_0x15d320(0x186)](_0x25e699=>_0x25e699[_0x15d320(0x1c0)]===_0x6839da['id']);if(_0x56c4a4[_0x15d320(0x169)]>0x0){const _0x4b6b30=new Discord['MessageEmbed']()[_0x15d320(0x18a)](_0x15d320(0x15b))['setTitle'](_0x15d320(0xe4)+_0x6839da[_0x15d320(0xd2)])[_0x15d320(0x1ac)](_0x56c4a4[_0x15d320(0xc8)]((_0x1d3526,_0x44a26e)=>_0x44a26e+0x1+_0x15d320(0x12e)+_0x1d3526[_0x15d320(0x1a3)])[_0x15d320(0x16b)]('\x0a'))[_0x15d320(0x1a8)]();_0x311c8e[_0x15d320(0x17f)][_0x15d320(0x133)]({'embeds':[_0x4b6b30]});}else _0x311c8e[_0x15d320(0x1be)]('This\x20user\x20has\x20no\x20warnings.');}):_0x311c8e[_0x4a7180(0x1be)](_0x4a7180(0xd5));}else _0x311c8e[_0x4a7180(0x1be)](_0x4a7180(0x159));}else{if(_0x205d05===_0x4a7180(0x137)){if(!_0x311c8e['member'][_0x4a7180(0x1ba)]['has'](_0x4a7180(0xf4)))return _0x311c8e[_0x4a7180(0x1be)](_0x4a7180(0xcb));const _0x10a629=_0x311c8e[_0x4a7180(0x112)][_0x4a7180(0x10e)][_0x4a7180(0xf7)]();if(_0x10a629){const _0x5cf874=_0x311c8e[_0x4a7180(0x118)][_0x4a7180(0x1b5)][_0x4a7180(0x18c)](_0x10a629);if(_0x5cf874){const _0x349276=_0x4c1e54[_0x4a7180(0x102)](0x1)[_0x4a7180(0x16b)]('\x20');let _0x3f1f74=_0x311c8e[_0x4a7180(0x118)][_0x4a7180(0x176)][_0x4a7180(0x13c)][_0x4a7180(0x162)](_0xe70ba0=>_0xe70ba0['name']==='Muted');!_0x3f1f74&&(_0x3f1f74=await _0x311c8e[_0x4a7180(0x118)][_0x4a7180(0x176)][_0x4a7180(0xd0)]({'name':'Muted','color':_0x4a7180(0x1c2),'permissions':[]}),_0x311c8e[_0x4a7180(0x118)][_0x4a7180(0x104)][_0x4a7180(0x13c)][_0x4a7180(0x11d)](async(_0x45b7b4,_0x58aec3)=>{const _0x444f9f=_0x4a7180;await _0x45b7b4[_0x444f9f(0x150)][_0x444f9f(0xf5)](_0x3f1f74,{'SEND_MESSAGES':![],'ADD_REACTIONS':![]});})),_0x5cf874[_0x4a7180(0x176)][_0x4a7180(0xbf)](_0x3f1f74,'You\x20were\x20muted\x20in\x20the\x20server.\x20Reason:\x20'+_0x349276)['then'](()=>{const _0x111bd3=_0x4a7180;_0x311c8e[_0x111bd3(0x17f)][_0x111bd3(0x133)]('Successfully\x20muted\x20**'+_0x10a629[_0x111bd3(0xd2)]+'**\x20for\x20**'+_0x349276+_0x111bd3(0x151));})[_0x4a7180(0xd9)](_0x3b7415=>{const _0x31b325=_0x4a7180;_0x311c8e[_0x31b325(0x1be)](_0x31b325(0xd1)),console[_0x31b325(0x131)](_0x31b325(0x138),_0x3b7415);});}else _0x311c8e['reply']('That\x20user\x20isn\x27t\x20in\x20this\x20server!');}else _0x311c8e[_0x4a7180(0x1be)](_0x4a7180(0x149));}else{if(_0x205d05===_0x4a7180(0x111)){if(!_0x311c8e['member'][_0x4a7180(0x1ba)]['has'](_0x4a7180(0xf4)))return _0x311c8e[_0x4a7180(0x1be)](_0x4a7180(0xcb));const _0x584e82=_0x311c8e[_0x4a7180(0x112)][_0x4a7180(0x10e)][_0x4a7180(0xf7)]();if(_0x584e82){const _0x1db03c=_0x311c8e[_0x4a7180(0x118)][_0x4a7180(0x1b5)][_0x4a7180(0x18c)](_0x584e82);if(_0x1db03c){let _0x85642b=_0x311c8e[_0x4a7180(0x118)][_0x4a7180(0x176)][_0x4a7180(0x13c)][_0x4a7180(0x162)](_0x46d8b1=>_0x46d8b1[_0x4a7180(0xdc)]===_0x4a7180(0x156));_0x85642b?_0x1db03c[_0x4a7180(0x176)][_0x4a7180(0x145)](_0x85642b,_0x4a7180(0xea))['then'](()=>{const _0x3a5a72=_0x4a7180;_0x311c8e[_0x3a5a72(0x17f)][_0x3a5a72(0x133)]('Successfully\x20unmuted\x20**'+_0x584e82[_0x3a5a72(0xd2)]+_0x3a5a72(0x11c));})[_0x4a7180(0xd9)](_0x55b170=>{const _0x38e0e0=_0x4a7180;_0x311c8e[_0x38e0e0(0x1be)]('unable\x20to\x20unmute\x20the\x20member.\x20Check\x20the\x20console\x20for\x20more\x20information.'),console[_0x38e0e0(0x131)](_0x38e0e0(0x115),_0x55b170);}):_0x311c8e[_0x4a7180(0x1be)](_0x4a7180(0x15a));}else _0x311c8e[_0x4a7180(0x1be)](_0x4a7180(0xd5));}else _0x311c8e['reply'](_0x4a7180(0x144));}else{if(_0x205d05===_0x4a7180(0xf1)){if(!_0x311c8e[_0x4a7180(0x1b9)][_0x4a7180(0x1ba)][_0x4a7180(0xe9)]('MANAGE_CHANNELS'))return _0x311c8e[_0x4a7180(0x1be)](_0x4a7180(0xcb));const _0x13a43b=_0x311c8e[_0x4a7180(0x112)][_0x4a7180(0x104)][_0x4a7180(0xf7)]()||_0x311c8e[_0x4a7180(0x17f)];_0x13a43b[_0x4a7180(0x150)][_0x4a7180(0xf5)](_0x311c8e[_0x4a7180(0x118)][_0x4a7180(0x176)][_0x4a7180(0xe5)],{'SEND_MESSAGES':![]})['then'](()=>{const _0x29ad48=_0x4a7180;_0x311c8e['channel']['send'](_0x29ad48(0xe2)+_0x13a43b['name']+_0x29ad48(0x151));})['catch'](_0x4cd7c0=>{const _0x3b6f1a=_0x4a7180;_0x311c8e['reply'](_0x3b6f1a(0x100)),console[_0x3b6f1a(0x131)](_0x3b6f1a(0x103),_0x4cd7c0);});}else{if(_0x205d05===_0x4a7180(0x158)){if(!_0x311c8e['member'][_0x4a7180(0x1ba)][_0x4a7180(0xe9)](_0x4a7180(0x197)))return _0x311c8e['reply']('You\x20do\x20not\x20have\x20permission\x20to\x20use\x20this\x20command.');const _0x4d0ba7=_0x311c8e[_0x4a7180(0x112)][_0x4a7180(0x104)][_0x4a7180(0xf7)]()||_0x311c8e[_0x4a7180(0x17f)];_0x4d0ba7[_0x4a7180(0x150)][_0x4a7180(0xf5)](_0x311c8e['guild']['roles'][_0x4a7180(0xe5)],{'SEND_MESSAGES':!![]})[_0x4a7180(0x171)](()=>{const _0x577dc3=_0x4a7180;_0x311c8e['channel'][_0x577dc3(0x133)](_0x577dc3(0x14d)+_0x4d0ba7[_0x577dc3(0xdc)]+_0x577dc3(0x151));})[_0x4a7180(0xd9)](_0xe3e135=>{const _0x427352=_0x4a7180;_0x311c8e[_0x427352(0x1be)](_0x427352(0x1af)),console[_0x427352(0x131)](_0x427352(0x18d),_0xe3e135);});}else{if(_0x205d05===_0x4a7180(0x12b))_0x311c8e[_0x4a7180(0x17f)][_0x4a7180(0x133)](_0x4a7180(0x10b));else{if(_0x205d05==='mod'){if(!_0x311c8e[_0x4a7180(0x118)])return _0x311c8e[_0x4a7180(0x1be)](_0x4a7180(0x17b));if(!_0x311c8e[_0x4a7180(0x1b9)])return _0x311c8e[_0x4a7180(0x1be)]('You\x20must\x20be\x20in\x20a\x20server\x20to\x20use\x20this\x20command.');const _0xfcb7e1=_0x311c8e[_0x4a7180(0x112)][_0x4a7180(0x1b5)]['first']();if(!_0xfcb7e1)return _0x311c8e[_0x4a7180(0x1be)](_0x4a7180(0x109));const _0x268930=_0x4a7180(0x135),_0x88d802=_0x311c8e['guild']['roles'][_0x4a7180(0x13c)][_0x4a7180(0x162)](_0x33dce9=>_0x33dce9[_0x4a7180(0xdc)]===_0x268930);if(!_0x88d802)return _0x311c8e[_0x4a7180(0x1be)](_0x4a7180(0xdd));try{await _0xfcb7e1[_0x4a7180(0x176)][_0x4a7180(0xbf)](_0x88d802),_0x311c8e[_0x4a7180(0x17f)][_0x4a7180(0x133)]('**'+_0xfcb7e1[_0x4a7180(0x1c0)][_0x4a7180(0xd2)]+_0x4a7180(0x132));}catch(_0x4db364){console['error'](_0x4db364),_0x311c8e['channel'][_0x4a7180(0x133)](_0x4a7180(0xba));}}}}}}}}}}}}}}}}}}}}}}}}}),client['login'](config[_0x33fd93(0x1b4)]);
+const config = require('./config.json');
+const { Collection } = require('discord.js');
+const Discord = require('discord.js');
+const { REST } = require('@discordjs/rest');
+const { Routes } = require('discord-api-types/v9');
+const { clientId, guildId, token } = require('./config.json'); 
+const fs = require("fs");
+const client = new Discord.Client({
+  intents: [
+    Discord.Intents.FLAGS.GUILDS,
+    Discord.Intents.FLAGS.GUILD_MESSAGES
+  ]
+});
+// slash commands shit
+client.commands = new Collection(); // Initialize client.commands
+
+const rest = new REST({ version: "9" }).setToken(config.token);
+const commands = [];
+const commandFiles = fs.readdirSync("./commands").filter(file => file.endsWith(".js"));
+
+const commandMap = new Map();
+
+for (const file of commandFiles) {
+  const command = require(`./commands/${file}`);
+const fs = require('fs');
+
+  // Check if the command name is already present in the map
+  if (commandMap.has(command.data.name)) {
+    console.error(`Duplicate command name found: ${command.data.name}. Skipping...`);
+    continue;
+  }
+
+  commandMap.set(command.data.name, true);
+  commands.push(command.data.toJSON());
+  client.commands.set(command.data.name, command);
+}
+
+client.once('ready', async () => {
+    console.log("Received HELLO. Running The Game Bot");
+
+    const CLIENT_ID = client.user.id;
+
+    try {
+        if (config.token === "production") {
+            await rest.put(Routes.applicationCommands(CLIENT_ID), {
+                body: commands
+            });
+            console.log("Slash commands registered!");
+        } else {
+            await rest.put(Routes.applicationCommands(CLIENT_ID, config.client_id), {
+                body: commands
+            });
+            console.log("Slash commands registered locally!");
+        }
+    } catch (error) {
+        console.error("Error registering slash commands:", error);
+    }
+  client.on('interactionCreate', async interaction => {
+    if (!interaction.isCommand()) return;
+
+    const { commandName } = interaction;
+
+    if (!client.commands.has(commandName)) return;
+
+    try {
+        await client.commands.get(commandName).execute(interaction);
+    } catch (error) {
+        console.error(error);
+        await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
+    }
+});
+
+  
+
+    // start of bot code
+    const statusMessages = [
+      'The Minecraft OST',
+      'The Geometry Dash OST',
+      'The Hitman III OST',
+      'The Terraria OST',
+      'The Fortnite OST',
+      'The PrismGDPS OST',
+      'The OG MW2 OST',
+      // Add more status messages here
+    ];
+
+    setInterval(() => {
+      const randomIndex = Math.floor(Math.random() * statusMessages.length);
+      const status = statusMessages[randomIndex];
+
+      client.user.setPresence({
+        status: 'online',
+        activities: [{
+          name: status,
+          type: 'LISTENING'
+        }]
+      });
+    }, 1800000); // 30 minutes in milliseconds
+
+  // Special status message
+  const specialStatusMessage = 'Kotlin\'s just better.';
+
+  // Generate a random number between 1 and 100
+  const randomNumber = Math.floor(Math.random() * 100) + 1;
+
+  // If the random number is 1, set the special status message
+  if (randomNumber === 1) {
+    client.user.setPresence({
+      status: 'dnd',
+      activities: [{
+        name: specialStatusMessage,
+        type: 'WATCHING'
+      }]
+    });
+  }
+});
+
+const icon = 'https://cdn.discordapp.com/avatars/1145327542723686451/e4c781dee18a7f1146e53c45f0c3350c.png?size=4096';
+const accentColour = '#095de3';
+
+
+const prefix = '?'; // command prefix
+
+client.on('ready', () => {
+  console.log(`Logged in as ${client.user.tag}!`);
+});
+
+client.on('messageCreate', async (message) => {
+  if (!message.content.startsWith(prefix) || message.author.bot) return;
+
+  const args = message.content.slice(prefix.length).trim().split(/ +/);
+  const command = args.shift().toLowerCase();
+  
+  if (command === 'ip') {
+      message.channel.send("Deprecated. use /ip for better results!\nThe IP is **purpursmp.my.pebble.host** \nversion **1.17.1**");
+
+  } else if (command === 'help') {
+  // add more commands here
+    const embed = new Discord.MessageEmbed()
+    .setColor(accentColour)
+    .setTitle('The Game Bot commands')
+    .setDescription('a list of commands included with The Game Bot')
+    .addFields(
+      { name: '?ip', value: 'Gets The Minecraft Server IP address'},
+      { name: '?help', value: 'Shows this menu'},
+      { name: '?promote', value: 'Promotes a user to the moderators'},
+      { name: '?adminify', value: 'same as promote but administrator role'},
+      { name: '?say', value: 'Makes the bot say something'},
+      { name: '?kick', value: 'Kicks a user from the server'},
+      { name: '?ban', value: 'Bans a user from the server'},
+      { name: '?unban', value: 'Unbans a user from the server'},
+      { name: '?purge', value: 'Deletes a certain amount of messages from the channel'},
+      { name: '?sigma', value: 'secret command (hint: september 9th)'},
+      { name: '?kofi', value: 'Support us on Ko-fi!'},
+      { name: '?patreon', value: 'Support us on Patreon!'},
+      { name: '?credits', value: 'Shows the credits for the bot'},
+      { name: '?gdps', value: 'Gets the PowershotGDPS Download link and info'},
+      { name: '?warn', value: 'Warns a user'},
+      { name: '?delwarn', value: 'Deletes warnings from a user'},
+      { name: '?warnings', value: 'Shows the warnings of a user'},
+      { name: '?mute', value: 'Mutes a user'},
+      { name: '?unmute', value: 'Unmutes a user'},
+      { name: '?lock', value: 'Locks a channel'},
+      { name: '?unlock', value: 'Unlocks a channel'},
+      { name: 'Coming Soon!', value: 'More commands will be added soon. Keep an eye out!'}
+  )
+  .setThumbnail(icon)
+  .setAuthor({ name: 'The Game Bot', iconURL: icon})
+  .setTimestamp()
+  
+      message.channel.send({ embeds: [embed] });
+
+
+  } else if (command === 'promote') {
+    // Check if the message was sent in a server
+    if (!message.guild) return message.reply("This command only works in a server.");
+
+    // Check if the member exists
+    if (!message.member) return message.reply("You must be in a server to use this command.");
+
+    // Check if the member has administrator permission
+    if (!message.member.permissions.has('ADMINISTRATOR')) {
+        return message.reply("You don't have permission to use this command.");
+    }
+
+    // Get the user mentioned in the command
+    const user = message.mentions.members.first();
+    if (!user) return message.reply("Please mention a user to promote.");
+
+    // Get the role to add
+    const roleName = "Moderator";
+    const role = message.guild.roles.cache.find(role => role.name === roleName);
+    if (!role) return message.reply("Error, role not found. Check code.");
+
+    // Add the role to the user
+    try {
+        await user.roles.add(role);
+        message.channel.send(`**${user.user.tag}** Has been promoted to The **Moderators**!`);
+    } catch (error) {
+        console.error(error);
+        message.channel.send("There was an error adding the role.");
+    }
+
+
+} else if (command === 'adminify') {
+  // Check if the message was sent in a server
+  if (!message.guild) return message.reply("This command only works in a server.");
+
+  // Check if the member exists
+  if (!message.member) return message.reply("You must be in a server to use this command.");
+
+  // Check if the member has administrator permission
+  if (!message.member.permissions.has('ADMINISTRATOR')) {
+      return message.reply("You don't have permission to use this command.");
+  }
+
+  // Get the user mentioned in the command
+  const user = message.mentions.members.first();
+  if (!user) return message.reply("Please mention a user to promote.");
+
+  // Get the role to add
+  const roleName = "Administrator";
+  const role = message.guild.roles.cache.find(role => role.name === roleName);
+  if (!role) return message.reply("Error, role not found. Check code.");
+
+  // Add the role to the user
+  try {
+      await user.roles.add(role);
+      message.channel.send(`**${user.user.tag}** Has been promoted to The **Administrators**!`);
+  } catch (error) {
+      console.error(error);
+      message.channel.send("There was an error adding the role.");
+  }
+
+
+  } else if (command === 'say') {
+    if (message.member.permissions.has('ADMINISTRATOR')) {
+      message.channel.send(args.join(' '));
+      try {
+        await message.delete();
+      } catch (error) {
+        console.error('Error deleting message:', error);
+      }
+    } else {
+      message.channel.send(`\`${message.author.tag} said:\` ${args.join(' ')}`);
+      try {
+        await message.delete();
+      } catch (error) {
+        console.error('Error deleting message:', error);
+      }
+    }
+  } else if (command === 'kick') {
+    if (!message.member.permissions.has('KICK_MEMBERS')) return message.reply('You do not have permission to use this command.');
+    const user = message.mentions.users.first();
+
+    if (user.id === '960887298533244928') {
+        return message.reply('Error kicking **<@960887298533244928>**: No Permissions.');
+      }
+
+    if (user) {
+      const member = message.guild.members.resolve(user);
+      if (member) {
+        const reason = args[2]; // Get the 3rd argument as the reason
+
+        member.kick(`You were kicked from the server. Reason: ${reason}`).then(() => {
+          message.channel.send(`Successfully kicked **${user.tag}** from the server for **${reason}**!`);
+        }).catch(err => {
+          message.reply('unable to kick the member. Check the console for more information.');
+          console.error('Error kicking member:', err);
+        });
+      } else {
+        message.reply('That user isn\'t in this server!');
+      }
+    } else {
+      message.reply('You didn\'t mention the user to kick!');
+    }
+
+
+  } else if (command === 'ban') {
+    if (!message.member.permissions.has('BAN_MEMBERS')) return message.reply('You do not have permission to use this command.');
+    const user = message.mentions.users.first();
+
+    if (user.id === '960887298533244928') { 
+        return message.reply('Error banning **<@960887298533244928>**: No Permissions.');
+      }
+    
+    if (user) {
+      const member = message.guild.members.resolve(user);
+      if (member) {
+        const reason = args[2]; // Get the 3rd argument as the reason
+
+        member.ban({ reason: `You were banned from the server. Reason: ${reason}` }).then(() => {
+          message.channel.send(`Successfully banned **${user.tag}** from the server for **${reason}**!`);
+        }).catch(err => {
+          message.reply('unable to ban the member. Check the console for more information.');
+          console.error('Error banning member:', err);
+        });
+      } else {
+        message.reply('That user isn\'t in this server!');
+      }
+    } else {
+      message.reply('You didn\'t mention the user to ban!');
+    }
+
+
+  } else if (command === 'unban') {
+    if (!message.member.permissions.has('BAN_MEMBERS')) return message.reply('You do not have permission to use this command.');
+    const user = args[0];
+
+    if (!user) return message.reply('You didn\'t mention the user to unban!');
+
+    message.guild.bans.fetch().then(bans => {
+      if (bans.size === 0) return message.reply('There are no banned users in this server!');
+
+      const bannedUser = bans.find(ban => ban.user.id === user);
+      if (!bannedUser) return message.reply('The user you mentioned is not banned!');
+
+      message.guild.members.unban(bannedUser.user).then(() => {
+        message.channel.send(`Successfully unbanned **${bannedUser.user.tag}** from the server!`);
+      }).catch(err => {
+        message.reply('unable to unban the member. Check the console for more information.');
+        console.error('Error unbanning member:', err);
+      });
+    }).catch(err => {
+      message.reply('unable to fetch the bans. Check the console for more information.');
+      console.error('Error fetching bans:', err);
+    });
+
+
+  } else if (command === 'purge') {
+    if (!message.member.permissions.has('MANAGE_MESSAGES')) return message.reply('You do not have permission to use this command.');
+    const amount = parseInt(args[0], +1);
+
+    if (isNaN(amount)) return message.channel.send('that doesn\'t seem to be a valid number.');
+    if (amount < 1 || amount > 100) return message.channel.send('you need to input a number between 1 and 100.');
+
+    message.channel.bulkDelete(amount, true).catch(err => {
+      console.error('Error deleting messages:', err);
+      message.reply('there was an error trying to delete messages in this channel!');
+    });
+    message.channel.send(`Successfully deleted **${amount}** messages!`)
+
+
+  } else if (command === 'sigma') {
+    const currentDate = new Date();
+    const targetDate = new Date(currentDate.getFullYear(), 8, 9); 
+    if (currentDate.toDateString() === targetDate.toDateString()) {
+      message.channel.send('Happy Birthday <@960887298533244928>!');
+    } else {
+      message.channel.send('command disabled')
+    }
+
+
+  } else if (command === 'kofi') {
+    const embed = new Discord.MessageEmbed()
+      .setColor(accentColour)
+      .setTitle('Support Us on Ko-fi!')
+      .setURL('https://ko-fi.com/gamingtothepeople')
+      .setDescription('Thank you so much for considering to support us! It really means the world to our team!')
+      .setThumbnail(icon)
+      .setAuthor({ name: 'The Game Bot', iconURL: icon})
+      .setTimestamp()
+
+      message.channel.send({ embeds: [embed] });
+
+
+  } else if (command === 'patreon') {
+    const embed = new Discord.MessageEmbed()
+      .setColor(accentColour)
+      .setTitle('Support Us on Patreon!')
+      .setURL('https://www.patreon.com/gamingtothepeople')
+      .setDescription('Thank you so much for considering to support us! It really means the world to our team!')
+      .setThumbnail(icon)
+      .setAuthor({ name: 'The Game Bot', iconURL: icon})
+      .setTimestamp()
+
+      message.channel.send({ embeds: [embed] });
+
+
+  } else if (command === 'credits') {
+    const embed = new Discord.MessageEmbed()
+      .setColor(accentColour)
+      .setTitle('The Game Bot Credits')
+      .setDescription('The Game Bot was made by **Blaze276** and other cool people!')
+      .addFields(
+        { name: 'Blaze276', value: 'The Man Himself!'},
+        { name: 'RACSpeedster', value: 'Created a basic python bot that started it all!, (and made the lua version)'},
+        { name: 'Gaming to the People', value: 'The Team that made this bot possible'},
+        { name: 'Discord.js', value: 'The library that made this bot possible'},
+        { name: 'Node.js', value: 'The language that made this bot possible'},
+        { name: 'GitHub', value: 'The place where the code is stored'},
+        { name: 'GitHub Copilot', value: 'The AI that helped with the code _(a lot, helped make purge, kick, ban, unban)_'},
+      )
+      .setThumbnail('https://cdn.discordapp.com/avatars/960887298533244928/0f96a702500b6f698980da9df708f38f.png?size=4096')
+      .setAuthor({ name: 'Blaze276', iconURL: 'https://cdn.discordapp.com/avatars/960887298533244928/0f96a702500b6f698980da9df708f38f.png?size=4096'})
+      .setTimestamp()
+
+      message.channel.send({ embeds: [embed] });
+
+
+  } else if (command === 'gdps') {
+    const embed = new Discord.MessageEmbed()
+      .setColor('#0099ff')
+      .setTitle('PrismGDPS')
+      .setDescription('A Geometry Dash Private Server made by Blaze. You can join the server with the link on the embed or click [Here](https://drive.google.com/file/d/1IDdS28mTogrMDm9GZ4-2fcJ7Lg-yMifa/view?usp=sharing)')
+      .setURL('https://drive.google.com/file/d/1IDdS28mTogrMDm9GZ4-2fcJ7Lg-yMifa/view?usp=sharing') 
+      .setThumbnail('https://cdn.discordapp.com/attachments/1185176243134537828/1218676497557225604/icon.png?ex=660887ee&is=65f612ee&hm=d8f42595762876087a6d175ad730e65df7f3eea0c8e75cf95b2ebc3637b9ae71&')
+      .setAuthor({ name: 'The Game Bot', iconURL: icon})
+      .setTimestamp()
+
+      message.channel.send({ embeds: [embed] });
+
+
+  } else if (command === 'warn') {
+    if (!message.member.permissions.has('KICK_MEMBERS')) return message.reply('You do not have permission to use this command.');
+    const user = message.mentions.users.first();
+    if (user) {
+      const member = message.guild.members.resolve(user);
+      if (member) {
+        const reason = args.slice(1).join(' '); // Get all arguments except the first one as the reason
+        member.send(`You have been warned in **${message.guild.name}** for **${reason}**!`).then(() => {
+          message.channel.send(`Successfully warned **${user.tag}** for **${reason}**!`);
+
+          // Store the warn in warns.json
+          const warnData = {
+            user: user.id,
+            guild: message.guild.id,
+            reason: reason
+          };
+
+          fs.readFile('warns.json', 'utf8', (err, data) => {
+            if (err) {
+              console.error('Error reading warns.json:', err);
+              return;
+            }
+
+            let warns = [];
+            if (data) {
+              warns = JSON.parse(data);
+            }
+
+            warns.push(warnData);
+
+            fs.writeFile('warns.json', JSON.stringify(warns), 'utf8', (err) => {
+              if (err) {
+                console.error('Error writing to warns.json:', err);
+              }
+            });
+          });
+        }).catch(err => {
+          message.reply('unable to send a direct message to the member. Check the console for more information.');
+          console.error('Error sending direct message to member:', err);
+        });
+      } else {
+        message.reply('That user isn\'t in this server!');
+      }
+    } else {
+      message.reply('You didn\'t mention the user to warn!');
+    }
+  } else if (command === 'delwarn') {
+    if (!message.member.permissions.has('KICK_MEMBERS')) return message.reply('You do not have permission to use this command.');
+    const user = message.mentions.users.first();
+    if (user) {
+      const member = message.guild.members.resolve(user);
+      if (member) {
+        fs.readFile('warns.json', 'utf8', (err, data) => {
+          if (err) {
+            console.error('Error reading warns.json:', err);
+            return;
+          }
+
+          let warns = [];
+          if (data) {
+            warns = JSON.parse(data);
+          }
+
+          const filteredWarns = warns.filter(warn => warn.user !== user.id);
+
+          fs.writeFile('warns.json', JSON.stringify(filteredWarns), 'utf8', (err) => {
+            if (err) {
+              console.error('Error writing to warns.json:', err);
+            }
+          });
+
+          message.channel.send(`Successfully deleted all warns for **${user.tag}**!`);
+        });
+      } else {
+        message.reply('That user isn\'t in this server!');
+      }
+    } else {
+      message.reply('You didn\'t mention the user to delete warns for!');
+    }
+
+
+  } else if (command === 'warnings') {
+    const user = message.mentions.users.first();
+    if (user) {
+      const member = message.guild.members.resolve(user);
+      if (member) {
+        fs.readFile('warns.json', 'utf8', (err, data) => {
+          if (err) {
+            console.error('Error reading warns.json:', err);
+            return;
+          }
+
+          let warns = [];
+          if (data) {
+            warns = JSON.parse(data);
+          }
+
+          const userWarns = warns.filter(warn => warn.user === user.id);
+
+          if (userWarns.length > 0) {
+            const embed = new Discord.MessageEmbed()
+              .setColor('#FF0000')
+              .setTitle(`Warnings for ${user.tag}`)
+              .setDescription(userWarns.map((warn, index) => `${index + 1}. Reason: ${warn.reason}`).join('\n'))
+              .setTimestamp();
+
+            message.channel.send({ embeds: [embed] });
+          } else {
+            message.reply('This user has no warnings.');
+          }
+        });
+      } else {
+        message.reply('That user isn\'t in this server!');
+      }
+    } else {
+      message.reply('You didn\'t mention the user to view warnings for!');
+    }
+
+
+  } else if (command === 'mute') {
+    if (!message.member.permissions.has('MANAGE_ROLES')) return message.reply('You do not have permission to use this command.');
+    const user = message.mentions.users.first();
+    if (user) {
+      const member = message.guild.members.resolve(user);
+      if (member) {
+        const reason = args.slice(1).join(' '); // Get all arguments except the first one as the reason
+        let muteRole = message.guild.roles.cache.find(role => role.name === 'Muted');
+        if (!muteRole) {
+          // Create the 'Muted' role if it doesn't exist
+          muteRole = await message.guild.roles.create({
+            name: 'Muted',
+            color: '#000000',
+            permissions: []
+          });
+
+          // Prevent the 'Muted' role from sending messages in all text channels
+          message.guild.channels.cache.forEach(async (channel, id) => {
+            await channel.permissionOverwrites.edit(muteRole, {
+              SEND_MESSAGES: false,
+              ADD_REACTIONS: false
+            });
+          });
+        }
+
+        member.roles.add(muteRole, `You were muted in the server. Reason: ${reason}`).then(() => {
+          message.channel.send(`Successfully muted **${user.tag}** for **${reason}**!`);
+        }).catch(err => {
+          message.reply('unable to mute the member. Check the console for more information.');
+          console.error('Error muting member:', err);
+        });
+      } else {
+        message.reply('That user isn\'t in this server!');
+      }
+    } else {
+      message.reply('You didn\'t mention the user to mute!');
+    }
+
+
+  } else if (command === 'unmute') {
+    if (!message.member.permissions.has('MANAGE_ROLES')) return message.reply('You do not have permission to use this command.');
+    const user = message.mentions.users.first();
+    if (user) {
+      const member = message.guild.members.resolve(user);
+      if (member) {
+        let muteRole = message.guild.roles.cache.find(role => role.name === 'Muted');
+        if (muteRole) {
+          member.roles.remove(muteRole, `You were unmuted in the server.`).then(() => {
+            message.channel.send(`Successfully unmuted **${user.tag}** from the server!`);
+          }).catch(err => {
+            message.reply('unable to unmute the member. Check the console for more information.');
+            console.error('Error unmuting member:', err);
+          });
+        } else {
+          message.reply('The user is not muted!');
+        }
+      } else {
+        message.reply('That user isn\'t in this server!');
+      }
+    } else {
+      message.reply('You didn\'t mention the user to unmute!');
+    }
+
+
+  } else if (command === 'lock') {
+    if (!message.member.permissions.has('MANAGE_CHANNELS')) return message.reply('You do not have permission to use this command.');
+    const channel = message.mentions.channels.first() || message.channel;
+    channel.permissionOverwrites.edit(message.guild.roles.everyone, {
+      SEND_MESSAGES: false
+    }).then(() => {
+      message.channel.send(`Successfully locked the channel **${channel.name}**!`);
+    }).catch(err => {
+      message.reply('unable to lock the channel. Check the console for more information.');
+      console.error('Error locking channel:', err);
+    });
+
+  } else if (command === 'unlock') {
+    if (!message.member.permissions.has('MANAGE_CHANNELS')) return message.reply('You do not have permission to use this command.');
+    const channel = message.mentions.channels.first() || message.channel;
+    channel.permissionOverwrites.edit(message.guild.roles.everyone, {
+      SEND_MESSAGES: true
+    }).then(() => {
+      message.channel.send(`Successfully unlocked the channel **${channel.name}**!`);
+    }).catch(err => {
+      message.reply('unable to unlock the channel. Check the console for more information.');
+      console.error('Error unlocking channel:', err);
+    });
+
+  } else if (command === 'pack-god') {
+    message.channel.send('idk')
+
+  } else if (command === 'mod') {
+  if (!message.guild) return message.reply("This command only works in a server.");
+
+  // Check if the member exists
+  if (!message.member) return message.reply("You must be in a server to use this command.");
+
+  // Get the user mentioned in the command
+  const user = message.mentions.members.first();
+  if (!user) return message.reply("Please mention a user to promote.");
+
+  // Get the role to add
+  const roleName = "𝖠𝖽𝗆𝗂𝗇";
+  const role = message.guild.roles.cache.find(role => role.name === roleName);
+  if (!role) return message.reply("Error, role not found. Check code.");
+
+  // Add the role to the user
+  try {
+      await user.roles.add(role);
+      message.channel.send(`**${user.user.tag}** Has been promoted to the **Admin** role!`);
+  } catch (error) {
+      console.error(error);
+      message.channel.send("There was an error adding the role.");
+  }
+
+} 
+
+});
+
+client.login(config.token)
