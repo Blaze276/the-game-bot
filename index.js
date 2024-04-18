@@ -341,7 +341,7 @@ client.on('messageCreate', async (message) => {
 
   } else if (command === 'purge') {
     if (!message.member.permissions.has('MANAGE_MESSAGES')) return message.reply('You do not have permission to use this command.');
-    const amount = parseInt(args[0], 10);
+    const amount = parseInt(args[0], 10) + 1;
     // ty Raccle taccle
 if (isNaN(amount)) {
   return message.channel.send('That doesn\'t seem to be a valid number.');
@@ -353,7 +353,7 @@ if (amount < 1 || amount > 100) {
 
 message.channel.bulkDelete(amount, true)
  .then(() => {
-    message.channel.send(`Successfully deleted ${amount} messages!`);
+    message.channel.send(`Successfully deleted **${amount - 1}** messages!`);
   })
  .catch(err => {
     console.error('Error deleting messages:', err);
