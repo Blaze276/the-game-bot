@@ -84,6 +84,18 @@ client.once('ready', async () => {
       // Add more status messages here
     ];
 
+    const randomIndex = Math.floor(Math.random() * statusMessages.length);
+      const status = statusMessages[randomIndex];
+
+      client.user.setPresence({
+        status: 'online',
+        activities: [{
+          name: status,
+          type: 'LISTENING'
+        }]
+      });
+      
+      // run the status change
     setInterval(() => {
       const randomIndex = Math.floor(Math.random() * statusMessages.length);
       const status = statusMessages[randomIndex];
