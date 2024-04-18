@@ -329,16 +329,24 @@ client.on('messageCreate', async (message) => {
 
   } else if (command === 'purge') {
     if (!message.member.permissions.has('MANAGE_MESSAGES')) return message.reply('You do not have permission to use this command.');
-    const amount = parseInt(args[0], +1);
+    const amount = parseInt(args[0], 10);
 
-    if (isNaN(amount)) return message.channel.send('that doesn\'t seem to be a valid number.');
-    if (amount < 1 || amount > 100) return message.channel.send('you need to input a number between 1 and 100.');
+if (isNaN(amount)) {
+  return message.channel.send('That doesn\'t seem to be a valid number.');
+}
 
-    message.channel.bulkDelete(amount, true).catch(err => {
-      console.error('Error deleting messages:', err);
-      message.reply('there was an error trying to delete messages in this channel!');
-    });
-    message.channel.send(`Successfully deleted **${amount}** messages!`)
+if (amount < 1 || amount > 100) {
+  return message.channel.send('You need to input a number between 1 and 100.');
+}
+
+message.channel.bulkDelete(amount, true)
+ .then(() => {
+    message.channel.send(`Successfully deleted ${amount} messages!`);
+  })
+ .catch(err => {
+    console.error('Error deleting messages:', err);
+    message.reply('There was an error trying to delete messages in this channel!');
+  });
 
 
   } else if (command === 'sigma') {
@@ -621,7 +629,7 @@ client.on('messageCreate', async (message) => {
   } else if (command === 'pack-god') {
     message.channel.send('idk')
 
-  } else if (command === 'mod') {
+  /*} else if (command === 'mod') {
   if (!message.guild) return message.reply("This command only works in a server.");
 
   // Check if the member exists
@@ -645,7 +653,12 @@ client.on('messageCreate', async (message) => {
       message.channel.send("There was an error adding the role.");
   }
 
-} 
+*/
+} else if (command === 'rizz') {
+  message.channel.send('Rizard,')
+  message.channel.send('just like my lizard')
+
+}
 
 });
 
