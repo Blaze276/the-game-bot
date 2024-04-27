@@ -344,21 +344,37 @@ client.on('messageCreate', async (message) => {
     const amount = parseInt(args[0], 10) + 1;
     // ty Raccle taccle
 if (isNaN(amount)) {
-  return message.channel.send('That doesn\'t seem to be a valid number.');
-}
+  return message.channel.send('That doesn\'t seem to be a valid number.').then(msg => {
+    setTimeout(() => {
+      msg.delete();
+    }, 5000);
+    })
+  };
 
 if (amount < 1 || amount > 100) {
-  return message.channel.send('You need to input a number between 1 and 100.');
-}
+  return message.channel.send('You need to input a number between 1 and 100.').then(msg => {
+    setTimeout(() => {
+      msg.delete();
+    }, 5000);
+    })
+  };
 
 message.channel.bulkDelete(amount, true)
  .then(() => {
-    message.channel.send(`Successfully deleted **${amount - 1}** messages!`);
+    message.channel.send(`Successfully deleted **${amount - 1}** messages!`).then(msg => {
+  setTimeout(() => {
+    msg.delete();
+  }, 5000);
+});
   })
  .catch(err => {
     console.error('Error deleting messages:', err);
-    message.reply('There was an error trying to delete messages in this channel!');
-  });
+    message.reply('There was an error trying to delete messages in this channel!').then(msg => {
+  setTimeout(() => {
+    msg.delete();
+  }, 5000);
+  })
+});
 
 
   } else if (command === 'sigma') {
