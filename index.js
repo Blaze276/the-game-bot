@@ -174,8 +174,10 @@ client.on('messageCreate', async (message) => {
       { name: '?unmute', value: 'Unmutes a user'},
       { name: '?lock', value: 'Locks a channel'},
       { name: '?unlock', value: 'Unlocks a channel'},
+      { name: '?rizz', value: 'secret'},
+      { name: '?placholder', value: '// do things'},
       { name: 'Coming Soon!', value: 'More commands will be added soon. Keep an eye out!'}
-  )
+    )
   .setThumbnail(icon)
   .setAuthor({ name: 'The Game Bot', iconURL: icon})
   .setTimestamp()
@@ -686,8 +688,12 @@ message.channel.bulkDelete(amount, true)
   message.channel.send('Rizard,')
   message.channel.send('just like my lizard')
 
-}
+} else if (command === 'placeholder') {
+  // do things
+  message.channel.send('// do things')
+  message.channel.send('https://cdn.discordapp.com/attachments/1118509756492021802/1238088107568398397/image.png?ex=663e02e7&is=663cb167&hm=5591864d6e0c0296226066af2d256a702f2c4add318c50a5e350086013e7814a&')
 
+}
 });
 
 client.login(config.token)
