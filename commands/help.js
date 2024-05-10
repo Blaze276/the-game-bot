@@ -32,6 +32,8 @@ module.exports = {
           { name: '?unmute', value: 'Unmutes a user'},
           { name: '?lock', value: 'Locks a channel'},
           { name: '?unlock', value: 'Unlocks a channel'},
+          { name: '?rizz', value: 'secret'},
+          { name: '?placholder', value: '// do things'},
           { name: 'Coming Soon!', value: 'More commands will be added soon. Keep an eye out!'}
         )
         .setThumbnail('https://cdn.discordapp.com/avatars/1145327542723686451/e4c781dee18a7f1146e53c45f0c3350c.png?size=4096')
