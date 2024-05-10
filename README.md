@@ -28,5 +28,5 @@ Now available as a public repo and available to everyone
 
 Currently 100% ported to Lua with Discordia.
 
-Made by @Blaze276 and @RACSpeedster for exclusive use with Gaming To The People and other partnered servers.
+Made by @Blaze276 and @RACSpeedster for exclusive use with Gaming To The People
 
