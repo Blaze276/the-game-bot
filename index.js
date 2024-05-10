@@ -693,6 +693,28 @@ message.channel.bulkDelete(amount, true)
   message.channel.send('// do things')
   message.channel.send('https://cdn.discordapp.com/attachments/1118509756492021802/1238088107568398397/image.png?ex=663e02e7&is=663cb167&hm=5591864d6e0c0296226066af2d256a702f2c4add318c50a5e350086013e7814a&')
 
+} else if (command === 'bottles') {
+  const args = message.content.slice('$bottles'.length).trim().split(/ +/);
+  const liquid = args.join(1);
+  const amount = Math.floor(Math.random() * 100) + 1;
+
+  if (liquid === 'water') {
+    message.channel.send(`${amount} bottles of water on the wall!`);
+  } else if (liquid === 'beer') {
+    message.channel.send(`${amount} bottles of beer on the wall!`);
+  } else if (liquid === 'wine') {
+    message.channel.send(`${amount} bottles of wine on the wall!`);
+  } else if (liquid === 'gin') {
+    message.channel.send(`${amount} bottles of gin on the wall!`);
+  } else if (liquid === 'rum') {
+    message.channel.send(`${amount} bottles of rum on the wall!`);
+  } else if (liquid === 'whiskey') {
+    message.channel.send(`${amount} bottles of whiskey on the wall!`);
+  } else if (liquid === 'cider') {
+    message.channel.send(`${amount} bottles of cider on the wall!`);
+  } else {
+    message.channel.send('Invalid liquid provided. Please choose from water, beer, wine, gin, rum, whiskey, or cider.');
+  }
 }
 });
 
