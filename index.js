@@ -11,8 +11,6 @@ const client = new Discord.Client({
   intents: []
 });
 
-const port = process.env.PORT || 3000;
-
 // keepalive
 const http = require('http');
 
