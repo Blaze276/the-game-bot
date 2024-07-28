@@ -147,7 +147,7 @@ client.once('ready', async () => {
 });
 
 const icon = 'https://cdn.discordapp.com/avatars/1145327542723686451/e4c781dee18a7f1146e53c45f0c3350c.png?size=4096';
-const accentColour = '#095de3';
+const accentColour = 0x095de3;
 
 
 const prefix = '?'; // command prefix
@@ -453,7 +453,7 @@ message.channel.bulkDelete(amount, true)
 
   } else if (command === 'gdps') {
     const embed = new EmbedBuilder()
-      .setColor('#0099ff')
+      .setColor(0x0099ff)
       .setTitle('PrismGDPS')
       .setDescription('A Geometry Dash Private Server made by Blaze. You can join the server with the link on the embed or click [Here](https://drive.google.com/file/d/1IDdS28mTogrMDm9GZ4-2fcJ7Lg-yMifa/view?usp=sharing)')
       .setURL('https://drive.google.com/file/d/1IDdS28mTogrMDm9GZ4-2fcJ7Lg-yMifa/view?usp=sharing') 
@@ -565,7 +565,7 @@ message.channel.bulkDelete(amount, true)
 
           if (userWarns.length > 0) {
             const embed = new EmbedBuilder()
-              .setColor('#FF0000')
+              .setColor(0xFF0000)
               .setTitle(`Warnings for ${user.tag}`)
               .setDescription(userWarns.map((warn, index) => `${index + 1}. Reason: ${warn.reason}`).join('\n'))
               .setTimestamp();
