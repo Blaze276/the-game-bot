@@ -4,6 +4,8 @@ const Discord = require('discord.js');
 const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
 const { clientId, guildId, token } = require('./config.json'); 
+const axios = require('axios');
+const cheerio = require('cheerio');
 const fs = require("fs");
 const client = new Discord.Client({
   intents: [
@@ -144,7 +146,7 @@ client.on('messageCreate', async (message) => {
   const command = args.shift().toLowerCase();
   
   if (command === 'ip') {
-      message.channel.send("Deprecated. use /ip for better results!\nThe IP is **purpursmp.my.pebble.host** \nversion **1.17.1**");
+      message.channel.send("Deprecated. use /ip for better results!\nThe IP is **sox-the-sigma.my.pebble.host** \nversion **1.17.1+**");
 
   } else if (command === 'help') {
   // add more commands here
@@ -715,6 +717,72 @@ message.channel.bulkDelete(amount, true)
   } else {
     message.channel.send('Invalid liquid provided. Please choose from water, beer, wine, gin, rum, whiskey, or cider.');
   }
+
+
+} else if (command === 'assprune') {
+  console.log('Executing massprune command...');
+
+  // Check if the user has the necessary permissions
+  if (!message.member.permissions.has('KICK_MEMBERS')) {
+    message.reply('You do not have permission to use this command.');
+    return;
+  }
+
+  // Get the role to check for
+  const pruneRole = message.guild.roles.cache.find(role => role.name === 'prune');
+
+  // Check if the 'prune_this_user' role exists
+  if (!pruneRole) {
+    console.log("Error: 'prune_this_user' role not found.");
+    message.channel.send("Error: 'prune_this_user' role not found.");
+    return;
+  }
+
+  // Get all members with the 'prune_this_user' role
+  const pruneMembers = message.guild.members.cache.filter(member => member.roles.cache.has(pruneRole.id));
+
+  console.log(`Found ${pruneMembers.size} members with the prune role.`);
+
+  // Loop through each member and kick them
+  pruneMembers.forEach(async (member) => {
+    try {
+      console.log(`Kicking ${member.user.tag}...`);
+      await member.kick(`Mass prune command executed by ${message.author.tag}`);
+      await message.channel.send('kicked ' + member.user.tag + ' ');
+    } catch (error) {
+      console.error(`Error kicking ${member.user.tag}:`, error);
+    }
+  });
+
+  // Send a message in the channel the command was used in
+  message.channel.send('Mass pruning completed successfully!');
+} else if (command === 'notices') {
+  const args = message.content.split(' ');
+        const url = args[1];
+
+        if (!url) {
+            message.channel.send('Please provide a URL.');
+            return;
+        }
+
+        try {
+            const response = await axios.get(url);
+            const html = response.data;
+            const $ = cheerio.load(html);
+
+            // Extract text content from a specific element (for example, all <p> tags)
+            let textContent = '';
+            $('p').each((i, elem) => {
+                textContent += $(elem).text() + '\n';
+            });
+
+            // Send the extracted text to the Discord channel
+            message.channel.send(textContent.length > 2000 ? textContent.substring(0, 1997) + '...' : textContent);
+
+        } catch (error) {
+            console.error(error);
+            message.channel.send('Failed to scrape the webpage. Please check the URL and try again.');
+        }
 }
 });
 
