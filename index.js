@@ -22,7 +22,7 @@ const { EmbedBuilder } = require('@discordjs/builders');
 
 const server = http.createServer((req, res) => {
   res.writeHead(200, { 'Content-Type': 'text/plain' });
-  res.end('a');
+  res.end('Zelda is best mario kart 8 deluxe mod.\nalso kaleb is a good friend.\nLeevi is a sweat at mario kart rn.\nbest mario kart 8 deluxe track would have to be either mario kart stadium or coconut mall\nthe game bot is a dead project :( no one rlly uses it.\nmaybe i should work on... latest update for this text: latestUpdate(28/07/24);
 });
 
 const port = 3000;
