@@ -8,8 +8,13 @@ const { clientId, guildId, token } = require('./config.json');
 const axios = require('axios');
 const cheerio = require('cheerio');
 const fs = require("fs");
-const client = new Discord.Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent] });
-
+const client = new Client({
+    intents: [
+        GatewayIntentBits.Guilds,
+        GatewayIntentBits.GuildMessages,
+        GatewayIntentBits.MessageContent
+    ]
+});
 
 // keepalive
 const http = require('http');
