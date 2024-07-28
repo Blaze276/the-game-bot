@@ -1,19 +1,20 @@
 {
-  "name": "the-game-bot",
+  "name": "express-hello-world",
   "version": "1.0.0",
-  "description": "The Official GTTP discord bot",
-  "main": "index.js",
+  "description": "Express Hello World on Render",
+  "main": "app.js",
+  "repository": "https://github.com/render-examples/express-hello-world",
+  "author": "Render Developers",
+  "license": "MIT",
+  "private": false,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
-  "author": "Blaze276",
-  "license": "ISC",
   "dependencies": {
-    "@discordjs/builders": "^1.7.0",
-    "@discordjs/rest": "^2.2.0",
-    "discord-api-types": "^0.37.70",
-    "discord.js": "^13.17.1",
-    "fs": "^0.0.1-security",
-    "slash-create": "^6.0.2"
+    "express": "^4.18.2",
+    "axios":"1.7.2"
+  },
+  "engines": {
+    "node": ">=14"
   }
 }
