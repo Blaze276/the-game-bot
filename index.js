@@ -18,6 +18,7 @@ const client = new Client({
 
 // keepalive
 const http = require('http');
+const { EmbedBuilder } = require('@discordjs/builders');
 
 const server = http.createServer((req, res) => {
   res.writeHead(200, { 'Content-Type': 'text/plain' });
@@ -162,7 +163,7 @@ client.on('messageCreate', async (message) => {
 
   } else if (command === 'help') {
   // add more commands here
-    const embed = new Discord.MessageEmbed()
+    const embed = new EmbedBuilder()
     .setColor(accentColour)
     .setTitle('The Game Bot commands')
     .setDescription('a list of commands included with The Game Bot')
@@ -404,7 +405,7 @@ message.channel.bulkDelete(amount, true)
 
 
   } else if (command === 'kofi') {
-    const embed = new Discord.MessageEmbed()
+    const embed = new EmbedBuilder()
       .setColor(accentColour)
       .setTitle('Support Us on Ko-fi!')
       .setURL('https://ko-fi.com/gamingtothepeople')
@@ -417,7 +418,7 @@ message.channel.bulkDelete(amount, true)
 
 
   } else if (command === 'patreon') {
-    const embed = new Discord.MessageEmbed()
+    const embed = new EmbedBuilder()
       .setColor(accentColour)
       .setTitle('Support Us on Patreon!')
       .setURL('https://www.patreon.com/gamingtothepeople')
@@ -430,7 +431,7 @@ message.channel.bulkDelete(amount, true)
 
 
   } else if (command === 'credits') {
-    const embed = new Discord.MessageEmbed()
+    const embed = new EmbedBuilder()
       .setColor(accentColour)
       .setTitle('The Game Bot Credits')
       .setDescription('The Game Bot was made by **Blaze276** and other cool people!')
@@ -451,7 +452,7 @@ message.channel.bulkDelete(amount, true)
 
 
   } else if (command === 'gdps') {
-    const embed = new Discord.MessageEmbed()
+    const embed = new EmbedBuilder()
       .setColor('#0099ff')
       .setTitle('PrismGDPS')
       .setDescription('A Geometry Dash Private Server made by Blaze. You can join the server with the link on the embed or click [Here](https://drive.google.com/file/d/1IDdS28mTogrMDm9GZ4-2fcJ7Lg-yMifa/view?usp=sharing)')
@@ -563,7 +564,7 @@ message.channel.bulkDelete(amount, true)
           const userWarns = warns.filter(warn => warn.user === user.id);
 
           if (userWarns.length > 0) {
-            const embed = new Discord.MessageEmbed()
+            const embed = new EmbedBuilder()
               .setColor('#FF0000')
               .setTitle(`Warnings for ${user.tag}`)
               .setDescription(userWarns.map((warn, index) => `${index + 1}. Reason: ${warn.reason}`).join('\n'))
