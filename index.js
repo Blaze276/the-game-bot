@@ -10,6 +10,20 @@ const fs = require("fs");
 const client = new Discord.Client({
   intents: []
 });
+
+// keepalive
+const http = require('http');
+
+const server = http.createServer((req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.end('a');
+});
+
+const port = 3000;
+server.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});
+
 // slash commands shit
 client.commands = new Collection(); // Initialize client.commands
 
