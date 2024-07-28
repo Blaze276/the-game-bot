@@ -1,6 +1,7 @@
 const config = require('./config.json');
 const { Collection } = require('discord.js');
 const Discord = require('discord.js');
+const { Client, Intents } = require('discord.js');
 const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
 const { clientId, guildId, token } = require('./config.json'); 
