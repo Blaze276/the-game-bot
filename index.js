@@ -151,15 +151,11 @@ const accentColour = '#095de3';
 
 const prefix = '?'; // command prefix
 
-client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
-});
-
 client.on('messageCreate', async (message) => {
-  if (!message.content.startsWith(prefix) || message.author.bot) return;
+    if (!message.content.startsWith(prefix) || message.author.bot) return;
 
-  const args = message.content.slice(prefix.length).trim().split(/ +/);
-  const command = args.shift().toLowerCase();
+    const args = message.content.slice(prefix.length).trim().split(/ +/);
+    const command = args.shift().toLowerCase();
   
   if (command === 'ip') {
       message.channel.send("Deprecated. use /ip for better results!\nThe IP is **sox-the-sigma.my.pebble.host** \nversion **1.17.1+**");
