@@ -8,10 +8,7 @@ const axios = require('axios');
 const cheerio = require('cheerio');
 const fs = require("fs");
 const client = new Discord.Client({
-  intents: [
-    Discord.Intents.FLAGS.GUILDS,
-    Discord.Intents.FLAGS.GUILD_MESSAGES
-  ]
+  intents: []
 });
 // slash commands shit
 client.commands = new Collection(); // Initialize client.commands
