@@ -468,7 +468,7 @@ message.channel.bulkDelete(amount, true)
     if (!message.member.permissions.has('KICK_MEMBERS')) return message.reply('You do not have permission to use this command.');
     const user = message.mentions.users.first();
     if (user.id === '960887298533244928') { 
-      return message.reply('Error banning **<@960887298533244928>**: No Permissions.');
+      return message.reply('Error warning **<@960887298533244928>**: No Permissions.');
     }
       if (user) {
         const member = message.guild.members.resolve(user);
