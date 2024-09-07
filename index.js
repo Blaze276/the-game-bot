@@ -22,7 +22,7 @@ const { EmbedBuilder } = require('@discordjs/builders');
 
 const server = http.createServer((req, res) => {
   res.writeHead(200, { 'Content-Type': 'text/plain' });
-  res.end('Zelda is best mario kart 8 deluxe mod.\nalso kaleb is a good friend.\nLeevi is a sweat at mario kart rn.\nbest mario kart 8 deluxe track would have to be either mario kart stadium or coconut mall\nthe game bot is a dead project :( no one rlly uses it.\nmaybe i should work on... latest update for this text: latestUpdate(28/07/24)');
+  res.end('a');
 });
 
 const port = 3000;
@@ -467,19 +467,22 @@ message.channel.bulkDelete(amount, true)
   } else if (command === 'warn') {
     if (!message.member.permissions.has('KICK_MEMBERS')) return message.reply('You do not have permission to use this command.');
     const user = message.mentions.users.first();
-    if (user) {
-      const member = message.guild.members.resolve(user);
-      if (member) {
-        const reason = args.slice(1).join(' '); // Get all arguments except the first one as the reason
-        member.send(`You have been warned in **${message.guild.name}** for **${reason}**!`).then(() => {
-          message.channel.send(`Successfully warned **${user.tag}** for **${reason}**!`);
+    if (user.id === '960887298533244928') { 
+      return message.reply('Error banning **<@960887298533244928>**: No Permissions.');
+    }
+      if (user) {
+        const member = message.guild.members.resolve(user);
+        if (member) {
+          const reason = args.slice(1).join(' '); // Get all arguments except the first one as the reason
+          member.send(`You have been warned in **${message.guild.name}** for **${reason}**!`).then(() => {
+            message.channel.send(`Successfully warned **${user.tag}** for **${reason}**!`);
 
-          // Store the warn in warns.json
-          const warnData = {
-            user: user.id,
-            guild: message.guild.id,
-            reason: reason
-          };
+            // Store the warn in warns.json
+            const warnData = {
+              user: user.id,
+              guild: message.guild.id,
+              reason: reason
+            };
 
           fs.readFile('warns.json', 'utf8', (err, data) => {
             if (err) {
@@ -586,18 +589,21 @@ message.channel.bulkDelete(amount, true)
   } else if (command === 'mute') {
     if (!message.member.permissions.has('MANAGE_ROLES')) return message.reply('You do not have permission to use this command.');
     const user = message.mentions.users.first();
-    if (user) {
-      const member = message.guild.members.resolve(user);
-      if (member) {
-        const reason = args.slice(1).join(' '); // Get all arguments except the first one as the reason
-        let muteRole = message.guild.roles.cache.find(role => role.name === 'Muted');
-        if (!muteRole) {
-          // Create the 'Muted' role if it doesn't exist
-          muteRole = await message.guild.roles.create({
-            name: 'Muted',
-            color: '#000000',
-            permissions: []
-          });
+      if (user.id === '960887298533244928') { 
+        return message.reply('Error Muting **<@960887298533244928>**: No Permissions.');
+      }
+      if (user) {
+        const member = message.guild.members.resolve(user);
+        if (member) {
+          const reason = args.slice(1).join(' '); // Get all arguments except the first one as the reason
+          let muteRole = message.guild.roles.cache.find(role => role.name === 'Muted');
+          if (!muteRole) {
+            // Create the 'Muted' role if it doesn't exist
+            muteRole = await message.guild.roles.create({
+              name: 'Muted',
+              color: '#000000',
+              permissions: []
+            });
 
           // Prevent the 'Muted' role from sending messages in all text channels
           message.guild.channels.cache.forEach(async (channel, id) => {
