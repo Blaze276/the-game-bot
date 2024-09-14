@@ -14,9 +14,9 @@ const ipCommand = {
         const bedrock = interaction.options.getString('bedrock');
 
         if (bedrock) {
-            await interaction.reply('The Bedrock IP is **192.99.83.136** \nport **8188**');
+            await interaction.reply('The Bedrock IP is **soxthesigma.my.pebble.host** \nport **8126**');
         } else {
-            await interaction.reply('The Java IP is **purpursmp.my.pebble.host** \nversion **1.17.1**');
+            await interaction.reply('The Java IP is **soxthesigma.my.pebble.host** \nversion **1.17.1**');
         }
     }
 };
