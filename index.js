@@ -22,7 +22,7 @@ const { EmbedBuilder } = require('@discordjs/builders');
 
 const server = http.createServer((req, res) => {
   res.writeHead(200, { 'Content-Type': 'text/plain' });
-  res.end('a');
+  res.end('woah look, its a super secret page!!');
 });
 
 const port = 3000;
