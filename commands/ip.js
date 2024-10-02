@@ -7,7 +7,7 @@ const ipCommand = {
         .addStringOption(option =>
             option
                 .setName('bedrock')
-                .setDescription('Gets the bedrock server IP address (add any value to the option!)')
+                .setDescription('Gets the bedrock server IP address (add anything to the option!)')
                 .setRequired(false)
         ),
     async execute(interaction) {
