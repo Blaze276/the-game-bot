@@ -15,8 +15,8 @@ module.exports = {
         .addFields(
           { name: '?ip', value: 'Gets The Minecraft Server IP address (use /ip for better results)' },
           { name: '?help', value: 'Shows this menu' },
-          { name: '?promote', value: 'Promotes a user to the moderators' },
-          { name: '?adminify', value: 'same as promote but administrator role' },
+          { name: '?promote', value: 'Promotes a user to the knights' },
+          { name: '?nobility', value: 'same as promote but for Nobles' },
           { name: '?say', value: 'Makes the bot say something' },
           { name: '?kick', value: 'Kicks a user from the server' },
           { name: '?ban', value: 'Bans a user from the server' },
