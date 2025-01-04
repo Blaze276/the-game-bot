@@ -14,7 +14,6 @@ module.exports = {
         .setDescription('a list of commands included with The Game Bot')
         .addFields(
           { name: '?ip', value: 'Gets The Minecraft Server IP address (use /ip for better results)' },
-          { name: '?help', value: 'Shows this menu' },
           { name: '?promote', value: 'Promotes a user to the knights' },
           { name: '?nobility', value: 'same as promote but for Nobles' },
           { name: '?say', value: 'Makes the bot say something' },
@@ -23,8 +22,6 @@ module.exports = {
           { name: '?unban', value: 'Unbans a user from the server' },
           { name: '?purge', value: 'Deletes a certain amount of messages from the channel' },
           { name: '?sigma', value: 'secret command (hint: september 9th)' },
-          { name: '?kofi', value: 'Support us on Ko-fi!' },
-          { name: '?patreon', value: 'Support us on Patreon!' },
           { name: '?credits', value: 'Shows the credits for the bot' },
           { name: '?gdps', value: 'Gets the GDPS Download link and info' },
           { name: '?warn', value: 'Warns a user' },
@@ -36,6 +33,7 @@ module.exports = {
           { name: '?unlock', value: 'Unlocks a channel' },
           { name: '?rizz', value: 'secret' },
           { name: '?placholder', value: '// do things' },
+          { name: '?bottles', value: 'insert description here' },
           { name: 'Coming Soon!', value: 'More commands will be added soon. Keep an eye out!' }
         )
         .setThumbnail(icon1)
