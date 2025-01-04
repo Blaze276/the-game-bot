@@ -16,7 +16,7 @@ const ipCommand = {
        // if (bedrock) {
            // await interaction.reply('The Bedrock IP is **soxthesigma.my.pebble.host** \nport **8126**\n You can also find another method to login to the server at this (website)[https://Le-Server-docs.onrender.com]');
        // } else {
-            await interaction.reply('The IP is **soxthesigma.my.pebble.host** \nversion **1.18.1**');
+            await interaction.reply('The IP is **soxthesigma.my.pebble.host** \nversion **1.18.1**\n**REQUIRES ORIGINS MOD**');
         }
     
 };
