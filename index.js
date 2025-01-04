@@ -216,14 +216,14 @@ client.on('messageCreate', async (message) => {
     if (!user) return message.reply("Please mention a user to promote.");
 
     // Get the role to add
-    const roleName = "Moderator";
+    const roleName = "Knight";
     const role = message.guild.roles.cache.find(role => role.name === roleName);
     if (!role) return message.reply("Error, role not found. Check code.");
 
     // Add the role to the user
     try {
         await user.roles.add(role);
-        message.channel.send(`**${user.user.tag}** Has been promoted to The **Moderators**!`);
+        message.channel.send(`**${user.user.tag}** Has been promoted to The **Knights**!`);
     } catch (error) {
         console.error(error);
         message.channel.send("There was an error adding the role.");
@@ -247,7 +247,7 @@ client.on('messageCreate', async (message) => {
   if (!user) return message.reply("Please mention a user to promote.");
 
   // Get the role to add
-  const roleName = "Administrator";
+  const roleName = "Noble";
   const role = message.guild.roles.cache.find(role => role.name === roleName);
   if (!role) return message.reply("Error, role not found. Check code.");
 
@@ -403,7 +403,7 @@ message.channel.bulkDelete(amount, true)
     }
 
 
-  } else if (command === 'kofi') {
+  } /*else if (command === 'kofi') {
     const embed = new EmbedBuilder()
       .setColor(accentColour)
       .setTitle('Support Us on Ko-fi!')
@@ -429,22 +429,18 @@ message.channel.bulkDelete(amount, true)
       message.channel.send({ embeds: [embed] });
 
 
-  } else if (command === 'credits') {
+  } */else if (command === 'credits') {
     const embed = new EmbedBuilder()
       .setColor(accentColour)
       .setTitle('The Game Bot Credits')
       .setDescription('The Game Bot was made by **Blaze276** and other cool people!')
       .addFields(
-        { name: 'Blaze276', value: 'The Man Himself!'},
+        { name: 'Blaze276', value: 'The maintainer and creator of the bot'},
         { name: 'RACSpeedster', value: 'Created a basic python bot that started it all!, (and made the lua version)'},
-        { name: 'Gaming to the People', value: 'The Team that made this bot possible'},
-        { name: 'Discord.js', value: 'The library that made this bot possible'},
-        { name: 'Node.js', value: 'The language that made this bot possible'},
-        { name: 'GitHub', value: 'The place where the code is stored'},
-        { name: 'GitHub Copilot', value: 'The AI that helped with the code _(a lot, helped make purge, kick, ban, unban)_'},
+        { name: 'Chat.openai', value: 'helped to debug certain errors and show examples of commands'},
       )
-      .setThumbnail('https://cdn.discordapp.com/avatars/960887298533244928/0f96a702500b6f698980da9df708f38f.png?size=4096')
-      .setAuthor({ name: 'Blaze276', iconURL: 'https://cdn.discordapp.com/avatars/960887298533244928/0f96a702500b6f698980da9df708f38f.png?size=4096'})
+      .setThumbnail('https://cdn.discordapp.com/avatars/1164696267310506034/da13efd53cd5bb201b025f29d71b17c5.png?size=4096')
+      .setAuthor({ name: 'Blaze276', iconURL: 'https://cdn.discordapp.com/avatars/1164696267310506034/da13efd53cd5bb201b025f29d71b17c5.png?size=4096'})
       .setTimestamp()
 
       message.channel.send({ embeds: [embed] });
@@ -454,7 +450,7 @@ message.channel.bulkDelete(amount, true)
     const embed = new EmbedBuilder()
       .setColor(0x0099ff)
       .setTitle('PrismGDPS')
-      .setDescription('A Geometry Dash Private Server made by Blaze. You can join the server with the link on the embed or click [Here](https://drive.google.com/file/d/1IDdS28mTogrMDm9GZ4-2fcJ7Lg-yMifa/view?usp=sharing)')
+      .setDescription('**THIS NO LONGER EXISTS** \nA Geometry Dash Private Server made by Blaze. You can join the server with the link on the embed or click [Here](https://drive.google.com/file/d/1IDdS28mTogrMDm9GZ4-2fcJ7Lg-yMifa/view?usp=sharing)')
       .setURL('https://drive.google.com/file/d/1IDdS28mTogrMDm9GZ4-2fcJ7Lg-yMifa/view?usp=sharing') 
       .setThumbnail('https://cdn.discordapp.com/attachments/1185176243134537828/1218676497557225604/icon.png?ex=660887ee&is=65f612ee&hm=d8f42595762876087a6d175ad730e65df7f3eea0c8e75cf95b2ebc3637b9ae71&')
       .setAuthor({ name: 'The Game Bot', iconURL: icon})
@@ -467,7 +463,7 @@ message.channel.bulkDelete(amount, true)
     if (!message.member.permissions.has('KICK_MEMBERS')) return message.reply('You do not have permission to use this command.');
     const user = message.mentions.users.first();
     if (user.id === '960887298533244928') { 
-      return message.reply('Error banning **<@960887298533244928>**: No Permissions.');
+      return message.reply('Error warning **<@960887298533244928>**: No Permissions.');
     }
       if (user) {
         const member = message.guild.members.resolve(user);
@@ -711,7 +707,7 @@ message.channel.bulkDelete(amount, true)
 } else if (command === 'placeholder') {
   // do things
   message.channel.send('// do things')
-  message.channel.send('https://cdn.discordapp.com/attachments/1118509756492021802/1238088107568398397/image.png?ex=663e02e7&is=663cb167&hm=5591864d6e0c0296226066af2d256a702f2c4add318c50a5e350086013e7814a&')
+  message.channel.send('https://www.dropbox.com/scl/fi/q6erpi2m3yuskvkdl8zdr/Screenshot-2025-01-04-184818.png?rlkey=qic7gml9luawa77hkw91kj5mc&st=zrv8hkzq&dl=1')
 
 } else if (command === 'bottles') {
   const args = message.content.slice('$bottles'.length).trim().split(/ +/);
@@ -737,7 +733,7 @@ message.channel.bulkDelete(amount, true)
   }
 
 
-} else if (command === 'assprune') {
+} /*else if (command === 'assprune') {
   console.log('Executing massprune command...');
 
   // Check if the user has the necessary permissions
@@ -774,7 +770,7 @@ message.channel.bulkDelete(amount, true)
 
   // Send a message in the channel the command was used in
   message.channel.send('Mass pruning completed successfully!');
-} else if (command === 'notices') {
+} */else if (command === 'notices') {
   const args = message.content.split(' ');
         const url = args[1];
 
