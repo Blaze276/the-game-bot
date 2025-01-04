@@ -26,7 +26,7 @@ module.exports = {
           { name: '?kofi', value: 'Support us on Ko-fi!' },
           { name: '?patreon', value: 'Support us on Patreon!' },
           { name: '?credits', value: 'Shows the credits for the bot' },
-          { name: '?gdps', value: 'Gets the PowershotGDPS Download link and info' },
+          { name: '?gdps', value: 'Gets the GDPS Download link and info' },
           { name: '?warn', value: 'Warns a user' },
           { name: '?delwarn', value: 'Deletes warnings from a user' },
           { name: '?warnings', value: 'Shows the warnings of a user' },
