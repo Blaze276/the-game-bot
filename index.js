@@ -158,7 +158,7 @@ client.on('messageCreate', async (message) => {
     const command = args.shift().toLowerCase();
   
   if (command === 'ip') {
-      message.channel.send("Deprecated. use /ip.");
+      message.channel.send("The IP is **soxthesigma.my.pebble.host** \nversion **1.18.1** \n**REQUIRES ORIGINS MOD**");
 
   } else if (command === 'promote') {
     // Check if the message was sent in a server
