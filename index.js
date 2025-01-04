@@ -22,7 +22,7 @@ const { EmbedBuilder } = require('@discordjs/builders');
 
 const server = http.createServer((req, res) => {
   res.writeHead(200, { 'Content-Type': 'text/plain' });
-  res.end('woah look, its a super secret page!!');
+  res.end('a');
 });
 
 const port = 3000;
@@ -94,11 +94,10 @@ client.once('ready', async () => {
     // start of bot code
     const statusMessages = [
       'The Minecraft OST',
-      'The Geometry Dash OST',
       'The Hitman III OST',
       'The Terraria OST',
       'The Fortnite OST',
-      'The PrismGDPS OST',
+      'Bolero by the london symphony orchestra',
       'The OG MW2 OST',
       // Add more status messages here
     ];
@@ -146,8 +145,8 @@ client.once('ready', async () => {
   }
 });
 
-const icon = 'https://cdn.discordapp.com/avatars/1145327542723686451/e4c781dee18a7f1146e53c45f0c3350c.png?size=4096';
-const accentColour = 0x095de3;
+const icon = 'https://cdn.discordapp.com/avatars/1145327542723686451/357962c9bc83d6aff4106fcd655b06a3.png?size=4096';
+const accentColour = 0xF7DF1E;
 
 
 const prefix = '?'; // command prefix
@@ -159,7 +158,7 @@ client.on('messageCreate', async (message) => {
     const command = args.shift().toLowerCase();
   
   if (command === 'ip') {
-      message.channel.send("Deprecated. use /ip for better results!\nThe IP is **sox-the-sigma.my.pebble.host** \nversion **1.17.1+**");
+      message.channel.send("Deprecated. use /ip.");
 
   } else if (command === 'help') {
   // add more commands here
@@ -468,7 +467,7 @@ message.channel.bulkDelete(amount, true)
     if (!message.member.permissions.has('KICK_MEMBERS')) return message.reply('You do not have permission to use this command.');
     const user = message.mentions.users.first();
     if (user.id === '960887298533244928') { 
-      return message.reply('Error warning **<@960887298533244928>**: No Permissions.');
+      return message.reply('Error banning **<@960887298533244928>**: No Permissions.');
     }
       if (user) {
         const member = message.guild.members.resolve(user);
