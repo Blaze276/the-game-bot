@@ -230,7 +230,7 @@ client.on('messageCreate', async (message) => {
     }
 
 
-} else if (command === 'adminify') {
+} else if (command === 'nobility') {
   // Check if the message was sent in a server
   if (!message.guild) return message.reply("This command only works in a server.");
 
@@ -254,7 +254,7 @@ client.on('messageCreate', async (message) => {
   // Add the role to the user
   try {
       await user.roles.add(role);
-      message.channel.send(`**${user.user.tag}** Has been promoted to The **Administrators**!`);
+      message.channel.send(`**${user.user.tag}** Has been promoted to The **Nobles**!`);
   } catch (error) {
       console.error(error);
       message.channel.send("There was an error adding the role.");
