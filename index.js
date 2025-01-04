@@ -160,45 +160,6 @@ client.on('messageCreate', async (message) => {
   if (command === 'ip') {
       message.channel.send("Deprecated. use /ip.");
 
-  } else if (command === 'help') {
-  // add more commands here
-    const embed = new EmbedBuilder()
-    .setColor(accentColour)
-    .setTitle('The Game Bot commands')
-    .setDescription('a list of commands included with The Game Bot')
-    .addFields(
-      { name: '?ip', value: 'Gets The Minecraft Server IP address'},
-      { name: '?help', value: 'Shows this menu'},
-      { name: '?promote', value: 'Promotes a user to the moderators'},
-      { name: '?adminify', value: 'same as promote but administrator role'},
-      { name: '?say', value: 'Makes the bot say something'},
-      { name: '?kick', value: 'Kicks a user from the server'},
-      { name: '?ban', value: 'Bans a user from the server'},
-      { name: '?unban', value: 'Unbans a user from the server'},
-      { name: '?purge', value: 'Deletes a certain amount of messages from the channel'},
-      { name: '?sigma', value: 'secret command (hint: september 9th)'},
-      { name: '?kofi', value: 'Support us on Ko-fi!'},
-      { name: '?patreon', value: 'Support us on Patreon!'},
-      { name: '?credits', value: 'Shows the credits for the bot'},
-      { name: '?gdps', value: 'Gets the PowershotGDPS Download link and info'},
-      { name: '?warn', value: 'Warns a user'},
-      { name: '?delwarn', value: 'Deletes warnings from a user'},
-      { name: '?warnings', value: 'Shows the warnings of a user'},
-      { name: '?mute', value: 'Mutes a user'},
-      { name: '?unmute', value: 'Unmutes a user'},
-      { name: '?lock', value: 'Locks a channel'},
-      { name: '?unlock', value: 'Unlocks a channel'},
-      { name: '?rizz', value: 'secret'},
-      { name: '?placholder', value: '// do things'},
-      { name: 'Coming Soon!', value: 'More commands will be added soon. Keep an eye out!'}
-    )
-  .setThumbnail(icon)
-  .setAuthor({ name: 'The Game Bot', iconURL: icon})
-  .setTimestamp()
-  
-      message.channel.send({ embeds: [embed] });
-
-
   } else if (command === 'promote') {
     // Check if the message was sent in a server
     if (!message.guild) return message.reply("This command only works in a server.");
@@ -282,7 +243,7 @@ client.on('messageCreate', async (message) => {
     const user = message.mentions.users.first();
 
     if (user.id === '960887298533244928') {
-        return message.reply('Error kicking **<@960887298533244928>**: No Permissions.');
+        return message.channel.send('Error kicking **<@960887298533244928>**: No Permissions.');
       }
 
     if (user) {
@@ -309,7 +270,7 @@ client.on('messageCreate', async (message) => {
     const user = message.mentions.users.first();
 
     if (user.id === '960887298533244928') { 
-        return message.reply('Error banning **<@960887298533244928>**: No Permissions.');
+        return message.channel.send('Error banning **<@960887298533244928>**: No Permissions.');
       }
     
     if (user) {
@@ -463,7 +424,7 @@ message.channel.bulkDelete(amount, true)
     if (!message.member.permissions.has('KICK_MEMBERS')) return message.reply('You do not have permission to use this command.');
     const user = message.mentions.users.first();
     if (user.id === '960887298533244928') { 
-      return message.reply('Error warning **<@960887298533244928>**: No Permissions.');
+      return message.channel.send('Error warning **<@960887298533244928>**: No Permissions.');
     }
       if (user) {
         const member = message.guild.members.resolve(user);
@@ -585,7 +546,7 @@ message.channel.bulkDelete(amount, true)
     if (!message.member.permissions.has('MANAGE_ROLES')) return message.reply('You do not have permission to use this command.');
     const user = message.mentions.users.first();
       if (user.id === '960887298533244928') { 
-        return message.reply('Error Muting **<@960887298533244928>**: No Permissions.');
+        return message.channel.send('Error Muting **<@960887298533244928>**: No Permissions.');
       }
       if (user) {
         const member = message.guild.members.resolve(user);
