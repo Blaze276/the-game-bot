@@ -1,5 +1,7 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { MessageEmbed } = require('discord.js');
+const icon1 = 'https://cdn.discordapp.com/avatars/1145327542723686451/357962c9bc83d6aff4106fcd655b06a3.png?size=4096'
+const accentColour1 = 0xF7DF1E
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -7,11 +9,11 @@ module.exports = {
         .setDescription('Displays a menu of commands'),
     async execute(interaction) {
         const embed = new MessageEmbed()
-        .setColor('#095de3')
+        .setColor(accentColour1)
         .setTitle('The Game Bot commands')
         .setDescription('a list of commands included with The Game Bot')
         .addFields(
-          { name: '?ip', value: 'Gets The Minecraft Server IP address'},
+          { name: '?ip', value: 'Gets The Minecraft Server IP address (use /ip for better results)'},
           { name: '?help', value: 'Shows this menu'},
           { name: '?promote', value: 'Promotes a user to the moderators'},
           { name: '?adminify', value: 'same as promote but administrator role'},
@@ -36,8 +38,8 @@ module.exports = {
           { name: '?placholder', value: '// do things'},
           { name: 'Coming Soon!', value: 'More commands will be added soon. Keep an eye out!'}
         )
-        .setThumbnail('https://cdn.discordapp.com/avatars/1145327542723686451/e4c781dee18a7f1146e53c45f0c3350c.png?size=4096')
-        .setAuthor({ name: 'The Game Bot', iconURL: 'https://cdn.discordapp.com/avatars/1145327542723686451/e4c781dee18a7f1146e53c45f0c3350c.png?size=4096'})
+        .setThumbnail(icon1)
+        .setAuthor({ name: 'The Game Bot', iconURL: icon1})
         .setTimestamp()
 
         await interaction.reply({ embeds: [embed] });
