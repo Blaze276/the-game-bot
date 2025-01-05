@@ -798,7 +798,7 @@ message.channel.bulkDelete(amount, true)
 });
 
 // no mo delete stuff spicy
-const MONITORED_USER_ID = '960887298533244928';
+const MONITORED_USER_ID = '801570169843089458';
 const userMessages = [];
 const messagesFile = path.join(__dirname, 'user_messages.txt');
 
