@@ -14,6 +14,7 @@ module.exports = {
         .setDescription('a list of commands included with The Game Bot')
         .addFields(
           { name: '?ip', value: 'Gets The Minecraft Server IP address (use /ip for better results)' },
+          { name: '?savearguement', value: 'Saves the last 200 msgs, a truly legendary OG command.(**We love you bobot!!!**)'},
           { name: '?promote', value: 'Promotes a user to the knights' },
           { name: '?nobility', value: 'same as promote but for Nobles' },
           { name: '?say', value: 'Makes the bot say something' },
