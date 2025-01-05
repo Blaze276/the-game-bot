@@ -8,6 +8,8 @@ const { clientId, guildId, token } = require('./config.json');
 const axios = require('axios');
 const cheerio = require('cheerio');
 const fs = require("fs");
+const path = require('path');
+const { setInterval } = require('timers');
 const client = new Client({
     intents: [
         GatewayIntentBits.Guilds,
@@ -759,6 +761,56 @@ message.channel.bulkDelete(amount, true)
             message.channel.send('Failed to scrape the webpage. Please check the URL and try again.');
         }
 }
+});
+
+// New functionality: Monitoring user messages
+const MONITORED_USER_ID = '960887298533244928';
+const userMessages = [];
+const messagesFile = path.join(__dirname, 'user_messages.txt');
+
+// Check if the messages file exists, if not, create it
+if (!fs.existsSync(messagesFile)) {
+    fs.writeFileSync(messagesFile, '');
+}
+
+// Load messages from file into the deque
+function loadMessages() {
+    const data = fs.readFileSync(messagesFile, 'utf8');
+    data.split('\n').forEach((line) => {
+        if (line.trim()) {
+            userMessages.push(line.trim());
+        }
+    });
+}
+
+// Save a new message to the file
+function saveMessage(message) {
+    fs.appendFileSync(messagesFile, `${message}\n`);
+}
+
+// Asynchronous function to continuously monitor and process messages
+async function processMessages() {
+    client.on('messageCreate', (message) => {
+        if (message.author.id === MONITORED_USER_ID) {
+            userMessages.push(message.content);
+            if (userMessages.length > 20) userMessages.shift();  // Keep only last 20 messages
+            saveMessage(message.content);
+        }
+    });
+
+    client.on('messageDelete', (message) => {
+        if (message.author.id === MONITORED_USER_ID) {
+            const deletedMessage = userMessages.find((msg) => msg === message.content);
+            if (deletedMessage) {
+                message.channel.send(`**Spicy camel deleted a message... Resending**\n${deletedMessage}`);
+            }
+        }
+    });
+}
+
+client.once('ready', async () => {
+    loadMessages();  // Load the messages when the bot is ready
+    processMessages();  // Start the message processing
 });
 
 client.login(config.token)
