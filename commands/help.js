@@ -1,5 +1,5 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
-const { EmbedBuilder } = require('discord.js');  // Use EmbedBuilder instead of MessageEmbed
+const { EmbedBuilder, MessageFlags } = require('discord.js');  // Use EmbedBuilder instead of MessageEmbed
 const icon1 = 'https://cdn.discordapp.com/avatars/1145327542723686451/357962c9bc83d6aff4106fcd655b06a3.png?size=4096';
 const accentColour1 = 0xF7DF1E;
 
@@ -41,6 +41,9 @@ module.exports = {
         .setAuthor({ name: 'The Game Bot', iconURL: icon1 })
         .setTimestamp();
 
-        await interaction.reply({ embeds: [embed] });
+        await interaction.reply({ 
+            embeds: [embed], 
+            flags: MessageFlags.Ephemeral // Use flags instead of ephemeral
+        });
     },
 };
