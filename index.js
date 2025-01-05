@@ -162,7 +162,41 @@ client.on('messageCreate', async (message) => {
   if (command === 'ip') {
       message.channel.send("The IP is **soxthesigma.my.pebble.host** \nversion **1.18.1** \n**REQUIRES ORIGINS MOD**");
 
-  } else if (command === 'promote') {
+  } else if (command === 'saveargument') {
+    try {
+        const MESSAGE_LIMIT = 200;
+        const messages = [];
+
+        // Fetch the last 200 messages in the channel
+        const fetchedMessages = await message.channel.messages.fetch({ limit: MESSAGE_LIMIT });
+        
+        fetchedMessages.forEach((msg) => messages.push(msg));
+
+        // Reverse the order to save in chronological order
+        messages.reverse();
+
+        // Write messages to the file
+        const filePath = 'argument.txt';
+        fs.writeFileSync(filePath, ''); // Clear the file before writing new messages
+
+        messages.forEach((msg) => {
+            fs.appendFileSync(filePath, `${msg.author.username} (${msg.author.id}): ${msg.content}\n`);
+        });
+
+        // Send the file back to the channel
+        await message.channel.send({
+            content: 'Here are the last 200 messages saved:',
+            files: [{
+                attachment: filePath,
+                name: 'argument.txt'
+            }]
+        });
+    } catch (error) {
+        console.error("Error saving messages:", error);
+        message.channel.send("An error occurred while trying to save the messages.");
+    }
+    
+} else if (command === 'promote') {
     // Check if the message was sent in a server
     if (!message.guild) return message.reply("This command only works in a server.");
 
@@ -763,7 +797,7 @@ message.channel.bulkDelete(amount, true)
 }
 });
 
-// New functionality: Monitoring user messages
+// no mo delete stuff spicy
 const MONITORED_USER_ID = '960887298533244928';
 const userMessages = [];
 const messagesFile = path.join(__dirname, 'user_messages.txt');
@@ -802,7 +836,7 @@ async function processMessages() {
         if (message.author.id === MONITORED_USER_ID) {
             const deletedMessage = userMessages.find((msg) => msg === message.content);
             if (deletedMessage) {
-                message.channel.send(`**Spicy camel deleted a message... Resending**\n${deletedMessage}`);
+                message.channel.send(`**Spicycamelvr_yt deleted a message... Resending**\n${deletedMessage}`);
             }
         }
     });
