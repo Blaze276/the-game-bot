@@ -2,6 +2,7 @@ const config = require('./config.json');
 const { Collection } = require('discord.js');
 const Discord = require('discord.js');
 const { Client, GatewayIntentBits } = require('discord.js');
+const { ActivityType } = require("discord.js");
 const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
 const { clientId, guildId, token } = require('./config.json'); 
@@ -93,59 +94,57 @@ client.once('ready', async () => {
 
   
 
-    // start of bot code
-    const statusMessages = [
-      'The Minecraft OST',
-      'The Hitman III OST',
-      'The Terraria OST',
-      'The Fortnite OST',
-      'Bolero by the london symphony orchestra',
-      'The OG MW2 OST',
-      // Add more status messages here
-    ];
+    // Start of bot code
+const statusMessages = [
+  'Infinite Amethyst by Lena Raine',
+  'Death Awaits by Niels Bye Nielsen ',
+  'Overworld Day by Scott Lloyd Shelly',
+  'Fortnite Chapter 5 theme by Phil Boucher ',
+  'Bolero by Maurice Ravel',
+  'MW2 Opening titles by Hans Zimmer',
+  'Sweden by C148'
+  // Add more status messages here
+];
 
-    const randomIndex = Math.floor(Math.random() * statusMessages.length);
-      const status = statusMessages[randomIndex];
+// Function to set a random status
+ const setRandomStatus = () => {
+  const randomIndex = Math.floor(Math.random() * statusMessages.length);
+  const status = statusMessages[randomIndex];
 
-      client.user.setPresence({
-        status: 'online',
-        activities: [{
-          name: status,
-          type: 'LISTENING'
-        }]
-      });
-      
-      // run the status change
-    setInterval(() => {
-      const randomIndex = Math.floor(Math.random() * statusMessages.length);
-      const status = statusMessages[randomIndex];
+  client.user.setPresence({
+    activities: [{ name: status, type: ActivityType.Listening}],
+    status: "idle",
+});
+};
 
-      client.user.setPresence({
-        status: 'online',
-        activities: [{
-          name: status,
-          type: 'LISTENING'
-        }]
-      });
-    }, 1800000); // 30 minutes in milliseconds
-
-  // Special status message
-  const specialStatusMessage = 'Kotlin\'s just better.';
-
-  // Generate a random number between 1 and 100
+// Function to possibly set the special status
+const maybeSetSpecialStatus = () => {
   const randomNumber = Math.floor(Math.random() * 100) + 1;
-
-  // If the random number is 1, set the special status message
   if (randomNumber === 1) {
     client.user.setPresence({
-      status: 'dnd',
-      activities: [{
-        name: specialStatusMessage,
-        type: 'WATCHING'
-      }]
-    });
+      activities: [{ name: `Kotlins just better`, type: ActivityType.Watching}],
+      status: "dnd",
+  });
   }
+};
+
+
+  // Initial random status update
+  console.log("status set")
+  setRandomStatus();
+
+  // Possibly set the special status
+  maybeSetSpecialStatus();
+
+  // Schedule recurring status updates every 30 minutes
+  setInterval(() => {
+    setRandomStatus();
+    console.log("status updated")
+  }, 1800000); // 30 minutes in milliseconds
+
 });
+
+
 
 const icon = 'https://cdn.discordapp.com/avatars/1145327542723686451/357962c9bc83d6aff4106fcd655b06a3.png?size=4096';
 const accentColour = 0xF7DF1E;
@@ -798,7 +797,7 @@ message.channel.bulkDelete(amount, true)
 });
 
 // no mo delete stuff spicy
-const MONITORED_USER_ID = '801570169843089458';
+const MONITORED_USER_ID = '960887298533244928';
 const userMessages = [];
 const messagesFile = path.join(__dirname, 'user_messages.txt');
 
