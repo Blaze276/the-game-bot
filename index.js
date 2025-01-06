@@ -102,7 +102,8 @@ const statusMessages = [
   'Fortnite Chapter 5 theme by Phil Boucher ',
   'Bolero by Maurice Ravel',
   'MW2 Opening titles by Hans Zimmer',
-  'Sweden by C148'
+  'Sweden by C148',
+  'And the winner is by Embark Studios'
   // Add more status messages here
 ];
 
