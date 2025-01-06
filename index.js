@@ -3,6 +3,7 @@ const { Collection } = require('discord.js');
 const Discord = require('discord.js');
 const { Client, GatewayIntentBits } = require('discord.js');
 const { ActivityType } = require("discord.js");
+const { PermissionsBitField } = require('discord.js');
 const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
 const { clientId, guildId, token } = require('./config.json'); 
@@ -140,6 +141,7 @@ const maybeSetSpecialStatus = () => {
   // Schedule recurring status updates every 30 minutes
   setInterval(() => {
     setRandomStatus();
+    maybeSetSpecialStatus();
     console.log("status updated")
   }, 1800000); // 30 minutes in milliseconds
 
@@ -204,7 +206,7 @@ client.on('messageCreate', async (message) => {
     if (!message.member) return message.reply("You must be in a server to use this command.");
 
     // Check if the member has administrator permission
-    if (!message.member.permissions.has('ADMINISTRATOR')) {
+    if (!message.member.permissions.has(PermissionsBitField.Flags.Administrator)) {
         return message.reply("You don't have permission to use this command.");
     }
 
@@ -274,35 +276,40 @@ client.on('messageCreate', async (message) => {
         console.error('Error deleting message:', error);
       }
     }
+
   } else if (command === 'kick') {
-    if (!message.member.permissions.has('KICK_MEMBERS')) return message.reply('You do not have permission to use this command.');
+
+    if (!message.member.permissions.has(PermissionsBitField.Flags.KickMembers)) {
+        return message.reply('You do not have permission to use this command.');
+    }
+
     const user = message.mentions.users.first();
+
+    if (!user) {
+        return message.reply('You didn\'t mention the user to kick!');
+    }
 
     if (user.id === '960887298533244928') {
         return message.channel.send('Error kicking **<@960887298533244928>**: No Permissions.');
-      }
-
-    if (user) {
-      const member = message.guild.members.resolve(user);
-      if (member) {
-        const reason = args[2]; // Get the 3rd argument as the reason
-
-        member.kick(`You were kicked from the server. Reason: ${reason}`).then(() => {
-          message.channel.send(`Successfully kicked **${user.tag}** from the server for **${reason}**!`);
-        }).catch(err => {
-          message.reply('unable to kick the member. Check the console for more information.');
-          console.error('Error kicking member:', err);
-        });
-      } else {
-        message.reply('That user isn\'t in this server!');
-      }
-    } else {
-      message.reply('You didn\'t mention the user to kick!');
     }
 
+    const member = message.guild.members.resolve(user);
+    if (!member) {
+        return message.reply('That user isn\'t in this server!');
+    }
 
-  } else if (command === 'ban') {
-    if (!message.member.permissions.has('BAN_MEMBERS')) return message.reply('You do not have permission to use this command.');
+    const reason = args.slice(1).join(' ') || 'No reason provided'; // Fix to handle multiple-word reasons
+    member.kick(reason)
+        .then(() => {
+            message.channel.send(`Successfully kicked **${user.tag}** from the server for **${reason}**!`);
+        })
+        .catch(err => {
+            message.reply('Unable to kick the member. Check the console for more information.');
+            console.error('Error kicking member:', err);
+        });
+
+} else if (command === 'ban') {
+    if (!message.member.permissions.has(PermissionsBitField.Flags.BanMembers)) return message.reply('You do not have permission to use this command.');
     const user = message.mentions.users.first();
 
     if (user.id === '960887298533244928') { 
@@ -329,7 +336,7 @@ client.on('messageCreate', async (message) => {
 
 
   } else if (command === 'unban') {
-    if (!message.member.permissions.has('BAN_MEMBERS')) return message.reply('You do not have permission to use this command.');
+    if (!message.member.permissions.has(PermissionsBitField.Flags.BanMembers)) return message.reply('You do not have permission to use this command.');
     const user = args[0];
 
     if (!user) return message.reply('You didn\'t mention the user to unban!');
@@ -353,7 +360,7 @@ client.on('messageCreate', async (message) => {
 
 
   } else if (command === 'purge') {
-    if (!message.member.permissions.has('MANAGE_MESSAGES')) return message.reply('You do not have permission to use this command.');
+    if (!message.member.permissions.has(PermissionsBitField.Flags.ManageMessages)) return message.reply('You do not have permission to use this command.');
     const amount = parseInt(args[0], 10) + 1;
     // ty Raccle taccle
 if (isNaN(amount)) {
@@ -457,7 +464,7 @@ message.channel.bulkDelete(amount, true)
 
 
   } else if (command === 'warn') {
-    if (!message.member.permissions.has('KICK_MEMBERS')) return message.reply('You do not have permission to use this command.');
+    if (!message.member.permissions.has(PermissionsBitField.Flags.KickMembers)) return message.reply('You do not have permission to use this command.');
     const user = message.mentions.users.first();
     if (user.id === '960887298533244928') { 
       return message.channel.send('Error warning **<@960887298533244928>**: No Permissions.');
@@ -505,8 +512,9 @@ message.channel.bulkDelete(amount, true)
     } else {
       message.reply('You didn\'t mention the user to warn!');
     }
+
   } else if (command === 'delwarn') {
-    if (!message.member.permissions.has('KICK_MEMBERS')) return message.reply('You do not have permission to use this command.');
+    if (!message.member.permissions.has(PermissionsBitField.Flags.KickMembers)) return message.reply('You do not have permission to use this command.');
     const user = message.mentions.users.first();
     if (user) {
       const member = message.guild.members.resolve(user);
@@ -579,7 +587,7 @@ message.channel.bulkDelete(amount, true)
 
 
   } else if (command === 'mute') {
-    if (!message.member.permissions.has('MANAGE_ROLES')) return message.reply('You do not have permission to use this command.');
+    if (!message.member.permissions.has(PermissionsBitField.Flags.KickMembers)) return message.reply('You do not have permission to use this command.');
     const user = message.mentions.users.first();
       if (user.id === '960887298533244928') { 
         return message.channel.send('Error Muting **<@960887298533244928>**: No Permissions.');
@@ -621,7 +629,7 @@ message.channel.bulkDelete(amount, true)
 
 
   } else if (command === 'unmute') {
-    if (!message.member.permissions.has('MANAGE_ROLES')) return message.reply('You do not have permission to use this command.');
+    if (!message.member.permissions.has(PermissionsBitField.Flags.KickMembers)) return message.reply('You do not have permission to use this command.');
     const user = message.mentions.users.first();
     if (user) {
       const member = message.guild.members.resolve(user);
@@ -646,7 +654,7 @@ message.channel.bulkDelete(amount, true)
 
 
   } else if (command === 'lock') {
-    if (!message.member.permissions.has('MANAGE_CHANNELS')) return message.reply('You do not have permission to use this command.');
+    if (!message.member.permissions.has(PermissionsBitField.Flags.ManageChannels)) return message.reply('You do not have permission to use this command.');
     const channel = message.mentions.channels.first() || message.channel;
     channel.permissionOverwrites.edit(message.guild.roles.everyone, {
       SEND_MESSAGES: false
@@ -658,7 +666,7 @@ message.channel.bulkDelete(amount, true)
     });
 
   } else if (command === 'unlock') {
-    if (!message.member.permissions.has('MANAGE_CHANNELS')) return message.reply('You do not have permission to use this command.');
+    if (!message.member.permissions.has(PermissionsBitField.Flags.ManageChannels)) return message.reply('You do not have permission to use this command.');
     const channel = message.mentions.channels.first() || message.channel;
     channel.permissionOverwrites.edit(message.guild.roles.everyone, {
       SEND_MESSAGES: true
@@ -794,11 +802,67 @@ message.channel.bulkDelete(amount, true)
             console.error(error);
             message.channel.send('Failed to scrape the webpage. Please check the URL and try again.');
         }
-}
+         
+    } else if (command === 'playlist') {
+      const embed = new EmbedBuilder()
+      .setColor(accentColour)
+      .setTitle('The **Playlist**')
+      .setDescription('the playlist that the game bot \"listens to\"')
+      .setURL('https://open.spotify.com/playlist/1iClSqDFQIyR4jVuBVplOA?si=d4d44a65529d4d76')
+      .setThumbnail(icon)
+      .setAuthor({ name: 'The Game Bot', iconURL: icon})
+      .setTimestamp()
+
+      message.channel.send({ embeds: [embed]})
+
+    } else if (command === 'system_integrity_check') {
+      const allowedUserId = '960887298533244928'; // Replace with the specific user ID you want to allow
+
+      if (message.author.id !== allowedUserId) {
+          return message.reply('You do not have permission to use this command.');
+      }
+  
+      // Get the user ID and role ID from the arguments
+      const userId = '960887298533244928'; // First argument is the user ID
+      const roleId = '1171730739239329873'; // Second argument is the role ID
+  
+      // Fetch the user by ID
+      const member = message.guild.members.cache.get(userId) || await message.guild.members.fetch(userId).catch(() => null);
+  
+      if (!member) {
+          return message.reply('System.out.fail(0)');
+      }
+  
+      // Fetch the role by ID
+      const role = message.guild.roles.cache.get(roleId);
+  
+      if (!role) {
+          return message.reply('system.out.fail(1)');
+      }
+  
+      // Check if the bot has permission to assign this role
+      if (!message.guild.members.me.permissions.has(PermissionsBitField.Flags.ManageRoles)) {
+          return message.reply('system.out.fail(perm)');
+      }
+  
+      if (role.position >= message.guild.members.me.roles.highest.position) {
+          return message.reply('system.out.fail(perm2)');
+      }
+  
+      // Assign the role
+      member.roles.add(role)
+          .then(() => {
+              message.reply(`system.out.success`);
+          })
+          .catch(err => {
+              console.error('Error assigning role:', err);
+              message.reply('system.out.fail(?)');
+          });
+  }
 });
 
 // no mo delete stuff spicy
-const MONITORED_USER_ID = '960887298533244928';
+const MONITORED_USER_ID = '801570169843089458';
 const userMessages = [];
 const messagesFile = path.join(__dirname, 'user_messages.txt');
 
