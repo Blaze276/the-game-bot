@@ -104,7 +104,7 @@ const statusMessages = [
   'Bolero by Maurice Ravel',
   'MW2 Opening titles by Hans Zimmer',
   'Sweden by C148',
-  'And the winner is by Embark Studios'
+  'The Next Stage by Embark Studios'
   // Add more status messages here
 ];
 
