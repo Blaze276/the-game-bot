@@ -294,7 +294,7 @@ client.on('messageCreate', async (message) => {
 
     // Get the role to add
 
-    const roleName = "peasant";
+    const roleName = "Peasant";
 
     const role = message.guild.roles.cache.find(role => role.name === roleName);
 
@@ -308,7 +308,7 @@ client.on('messageCreate', async (message) => {
 
         await user.roles.add(role);
 
-        message.channel.send(`**${user.user.tag}** Has been promoted to The **Knights**!`);
+        message.channel.send(`Welcome to the server **${user.user.tag}**!`);
 
     } catch (error) {
 
