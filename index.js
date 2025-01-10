@@ -260,7 +260,65 @@ client.on('messageCreate', async (message) => {
   }
 
 
-  } else if (command === 'say') {
+  } else if (command === 'welcome') {
+
+    // Check if the message was sent in a server
+
+    if (!message.guild) return message.reply("This command only works in a server.");
+
+
+
+    // Check if the member exists
+
+    if (!message.member) return message.reply("You must be in a server to use this command.");
+
+
+
+    // Check if the member has administrator permission
+
+    if (!message.member.permissions.has(PermissionsBitField.Flags.Administrator)) {
+
+        return message.reply("You don't have permission to use this command.");
+
+    }
+
+
+
+    // Get the user mentioned in the command
+
+    const user = message.mentions.members.first();
+
+    if (!user) return message.reply("Please mention a user to promote.");
+
+
+
+    // Get the role to add
+
+    const roleName = "peasant";
+
+    const role = message.guild.roles.cache.find(role => role.name === roleName);
+
+    if (!role) return message.reply("Error, role not found. Check code.");
+
+
+
+    // Add the role to the user
+
+    try {
+
+        await user.roles.add(role);
+
+        message.channel.send(`**${user.user.tag}** Has been promoted to The **Knights**!`);
+
+    } catch (error) {
+
+        console.error(error);
+
+        message.channel.send("There was an error adding the role.");
+
+    }
+      
+} else if (command === 'say') {
     if (message.member.permissions.has('ADMINISTRATOR')) {
       message.channel.send(args.join(' '));
       try {
