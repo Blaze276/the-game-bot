@@ -288,7 +288,7 @@ client.on('messageCreate', async (message) => {
 
     const user = message.mentions.members.first();
 
-    if (!user) return message.reply("Please mention a user to promote.");
+    if (!user) return message.reply("Please mention a user.");
 
 
 
