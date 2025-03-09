@@ -18,7 +18,7 @@ const ipCommand = {
        } else {
             await interaction.reply('The IP is **soxthesigma.my.pebble.host** \nversion **1.16.5** or above');
         }
-    
+    }
 };
 
 module.exports = ipCommand;
