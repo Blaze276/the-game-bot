@@ -16,7 +16,7 @@ const ipCommand = {
        if (bedrock) { // The Bedrock IP is **soxthesigma.my.pebble.host** \nport **8135**\n there is also the \'le server method\'
             await interaction.reply('**This subcommand is disabled**');
        } else { // The IP is **soxthesigma.my.pebble.host** \nversion **1.16.5** or above
-            await interaction.reply('**The command _\'/ip\'_ is disabled');
+            await interaction.reply('**You should like ask if u want another server (im not paying for it tho)**');
         }
     }
 };
