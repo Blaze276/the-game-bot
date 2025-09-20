@@ -1,7 +1,7 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { EmbedBuilder, MessageFlags } = require('discord.js');  // Use EmbedBuilder instead of MessageEmbed
-const icon1 = 'https://cdn.discordapp.com/avatars/1145327542723686451/357962c9bc83d6aff4106fcd655b06a3.png?size=4096';
-const accentColour1 = 0xF7DF1E;
+const icon1 = 'https://cdn.discordapp.com/avatars/1145327542723686451/f672cf67c0c14674c0596f4e30315519.png?size=4096';
+const accentColour1 = 0x478c4e;
 
 module.exports = {
     data: new SlashCommandBuilder()
