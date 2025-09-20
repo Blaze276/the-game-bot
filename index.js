@@ -26,7 +26,7 @@ const { EmbedBuilder } = require('@discordjs/builders');
 
 const server = http.createServer((req, res) => {
   res.writeHead(200, { 'Content-Type': 'text/plain' });
-  res.end('a');
+  res.end('BROKE NIGGA DETECTION SOFTWARE™ State-of-the-art AI-powered financial analysis system utilizing quantum computing and advanced machine learning to detect broke niggas with 100% accuracy. Introducing $N2: The First Fully AI-Powered Layer 2 Solution 0 second block times. The only quantum-resistant Layer 2 solution on Solana. Yeah nigga, we thought of everything. Google didn\'t even think this shit was possible.');
 });
 
 const port = 3000;
@@ -97,14 +97,10 @@ client.once('ready', async () => {
 
     // Start of bot code
 const statusMessages = [
-  'Infinite Amethyst by Lena Raine',
-  'Death Awaits by Niels Bye Nielsen ',
-  'Overworld Day by Scott Lloyd Shelly',
-  'Fortnite Chapter 5 theme by Phil Boucher ',
-  'Bolero by Maurice Ravel',
-  'MW2 Opening titles by Hans Zimmer',
-  'Sweden by C148',
-  'The Next Stage by Embark Studios'
+  'The Cockle Train',
+  'The Highlander',
+  'The Bugle Ranger',
+  'The Teddy Bears Picnic'
   // Add more status messages here
 ];
 
@@ -124,7 +120,7 @@ const maybeSetSpecialStatus = () => {
   const randomNumber = Math.floor(Math.random() * 100) + 1;
   if (randomNumber === 1) {
     client.user.setPresence({
-      activities: [{ name: `Kotlins just better`, type: ActivityType.Watching}],
+      activities: [{ name: `Kotlin's just better`, type: ActivityType.Watching}],
       status: "dnd",
   });
   }
@@ -149,8 +145,8 @@ const maybeSetSpecialStatus = () => {
 
 
 
-const icon = 'https://cdn.discordapp.com/avatars/1145327542723686451/357962c9bc83d6aff4106fcd655b06a3.png?size=4096';
-const accentColour = 0xF7DF1E;
+const icon = 'https://cdn.discordapp.com/avatars/1145327542723686451/f672cf67c0c14674c0596f4e30315519.png?size=4096';
+const accentColour = 0x478c4e;
 
 
 const prefix = '?'; // command prefix
@@ -161,8 +157,8 @@ client.on('messageCreate', async (message) => {
     const args = message.content.slice(prefix.length).trim().split(/ +/);
     const command = args.shift().toLowerCase();
   
-  if (command === 'ip') {
-      message.channel.send("The IP is **soxthesigma.my.pebble.host** \nversion **1.18.1** \n**REQUIRES ORIGINS MOD**");
+  if (command === 'ip') { // The IP is **soxthesigma.my.pebble.host** \nversion **1.18.1** \n**REQUIRES ORIGINS MOD**
+      message.channel.send("**This command is currently disabled**");
 
   } else if (command === 'saveargument') {
     try {
