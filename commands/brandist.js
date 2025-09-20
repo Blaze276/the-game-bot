@@ -14,11 +14,12 @@ module.exports = {
     .setName("brandist")
     .setDescription("The Game Bot's Proud Sponsor"),
   async execute(interaction) {
-    const randomImage = randomImages[Math.floor(Math.random() * randomImages.length)];
-    const attachment = new MessageAttachment(randomImage);
-    await interaction.reply({
+    //const randomImage = randomImages[Math.floor(Math.random() * randomImages.length)];
+    //const attachment = new MessageAttachment(randomImage);
+    /*await interaction.reply({
       content: `**You know the type.\nBrandist.** \n[Check out Brandist!](https://www.instagram.com/_brandist_/)`,
       files: [attachment] 
-    });
+    });*/
+    await interaction.reply('**This command is currently disabled.**');
   }
 };
