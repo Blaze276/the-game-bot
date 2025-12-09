@@ -12,6 +12,7 @@ const cheerio = require('cheerio');
 const fs = require("fs");
 const path = require('path');
 const { setInterval } = require('timers');
+const { EmbedBuilder } = require('@discordjs/builders');
 const client = new Client({
     intents: [
         GatewayIntentBits.Guilds,
@@ -20,7 +21,12 @@ const client = new Client({
     ]
 });
 
-// keepalive
+console.log(`Dependencies initialized`);
+Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, 1000); // wait for 1 second
+console.log(`Intents set`);
+
+/*
+// keepalive (UNECESSARY CODE UNLESS RUNNING ON REPLIT, RENDER, ETC)
 const http = require('http');
 const { EmbedBuilder } = require('@discordjs/builders');
 
@@ -31,8 +37,10 @@ const server = http.createServer((req, res) => {
 
 const port = 3000;
 server.listen(port, () => {
-  console.log(`Server running on port ${port}`);
+  Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, 1000); // wait for 1 second
+  console.log(`keepalive Server running on port ${port}`);
 });
+*/
 
 // slash commands shit
 client.commands = new Collection(); // Initialize client.commands
@@ -59,7 +67,7 @@ const fs = require('fs');
 }
 
 client.once('ready', async () => {
-    console.log("Received HELLO. Running The Game Bot");
+    console.log("Received HELLO. Running The Discord Bot");
 
     const CLIENT_ID = client.user.id;
 
@@ -97,10 +105,11 @@ client.once('ready', async () => {
 
     // Start of bot code
 const statusMessages = [
-  'The Cockle Train',
-  'The Highlander',
-  'The Bugle Ranger',
-  'The Teddy Bears Picnic'
+  'Pulling Intermodal train to Melbourne',
+  'Hauling the Overland to Adelaide',
+  'Driving the Ghan to Alice Springs',
+  'Operating the Indian Pacific to Perth',
+  'Managing freight on the NSW North Coast Line'
   // Add more status messages here
 ];
 
@@ -110,7 +119,7 @@ const statusMessages = [
   const status = statusMessages[randomIndex];
 
   client.user.setPresence({
-    activities: [{ name: status, type: ActivityType.Listening}],
+    activities: [{ name: status, type: ActivityType.Playing}],
     status: "idle",
 });
 };
@@ -145,8 +154,10 @@ const maybeSetSpecialStatus = () => {
 
 
 
-const icon = 'https://cdn.discordapp.com/avatars/1145327542723686451/f672cf67c0c14674c0596f4e30315519.png?size=4096';
+const icon = 'https://cdn.discordapp.com/avatars/1145327542723686451/c81cd4803640b61f39028766df13e433.png?size=4096';
 const accentColour = 0x478c4e;
+const NorthTce = 'North Terrace';
+const botName = 'Pacific National NR Class';
 
 
 const prefix = '?'; // command prefix
@@ -201,9 +212,9 @@ client.on('messageCreate', async (message) => {
     // Check if the member exists
     if (!message.member) return message.reply("You must be in a server to use this command.");
 
-    // Check if the member has administrator permission
-    if (!message.member.permissions.has(PermissionsBitField.Flags.Administrator)) {
-        return message.reply("You don't have permission to use this command.");
+    const allowedUserIdForPromote = '960887298533244928';
+    if (message.author.id !== allowedUserIdForPromote) {
+      return message.reply("You don't have permission to use this command.");
     }
 
     // Get the user mentioned in the command
@@ -218,10 +229,47 @@ client.on('messageCreate', async (message) => {
     // Add the role to the user
     try {
         await user.roles.add(role);
-        message.channel.send(`**${user.user.tag}** Has been promoted to The **Knights**!`);
+        const embed = new EmbedBuilder()
+          .setColor(accentColour)
+          .setDescription(`**${user.user.tag}** Has been promoted to **Knight**! Congratulations!`)
+          .setAuthor({ name: botName, iconURL: icon})
+          .setTimestamp()
+
+       message.channel.send({ embeds: [embed] });
     } catch (error) {
         console.error(error);
         message.channel.send("There was an error adding the role.");
+    }
+
+
+} else if (command === 'demote') {
+    if (!message.guild) return message.reply("This command only works in a server.");
+    if (!message.member) return message.reply("You must be in a server to use this command.");
+
+    const allowedUserIdForDemote = '960887298533244928';
+    if (message.author.id !== allowedUserIdForDemote) {
+      return message.reply("You don't have permission to use this command.");
+    }
+
+    const userToDemote = message.mentions.members.first();
+    if (!userToDemote) return message.reply("Please mention a user to demote.");
+
+    const roleNameDemote = "Knight";
+    const roleDemote = message.guild.roles.cache.find(role => role.name === roleNameDemote);
+    if (!roleDemote) return message.reply("Error, role not found. Check code.");
+
+    try {
+        await userToDemote.roles.remove(roleDemote);
+        const embed = new EmbedBuilder()
+          .setColor(accentColour)
+          .setDescription(`Successfully removed **${roleNameDemote}** from **${userToDemote.user.tag}**!`)
+          .setAuthor({ name: botName, iconURL: icon })
+          .setTimestamp();
+
+        message.channel.send({ embeds: [embed] });
+    } catch (error) {
+        console.error(error);
+        message.channel.send("There was an error removing the role.");
     }
 
 
@@ -232,10 +280,12 @@ client.on('messageCreate', async (message) => {
   // Check if the member exists
   if (!message.member) return message.reply("You must be in a server to use this command.");
 
-  // Check if the member has administrator permission
-  if (!message.member.permissions.has('ADMINISTRATOR')) {
+
+    // Restrict this command to a specific user ID only
+    const allowedUserIdForNobility = '960887298533244928';
+    if (message.author.id !== allowedUserIdForNobility) {
       return message.reply("You don't have permission to use this command.");
-  }
+    }
 
   // Get the user mentioned in the command
   const user = message.mentions.members.first();
@@ -249,12 +299,54 @@ client.on('messageCreate', async (message) => {
   // Add the role to the user
   try {
       await user.roles.add(role);
-      message.channel.send(`**${user.user.tag}** Has been promoted to The **Nobles**!`);
+      const embed = new EmbedBuilder()
+          .setColor(accentColour)
+          .setDescription(`**${user.user.tag}** Has been promoted to **Noble**! Congratulations!`)
+          .setAuthor({ name: botName, iconURL: icon})
+          .setTimestamp()
+
+         message.channel.send({ embeds: [embed] });
   } catch (error) {
       console.error(error);
       message.channel.send("There was an error adding the role.");
   }
 
+
+  } else if (command === 'denoble') {
+  // Check if the message was sent in a server
+  if (!message.guild) return message.reply("This command only works in a server.");
+
+  // Check if the member exists
+  if (!message.member) return message.reply("You must be in a server to use this command.");
+
+  const allowedUserIdForDenoble = '960887298533244928';
+  if (message.author.id !== allowedUserIdForDenoble) {
+    return message.reply("You don't have permission to use this command.");
+  }
+
+  // Get the user mentioned in the command
+  const user = message.mentions.members.first();
+  if (!user) return message.reply("Please mention a user to demote.");
+
+  // Get the role to remove
+  const roleName = "Noble";
+  const role = message.guild.roles.cache.find(role => role.name === roleName);
+  if (!role) return message.reply("Error, role not found. Check code.");
+
+  // Remove the role from the user
+  try {
+      await user.roles.remove(role);
+      const embed = new EmbedBuilder()
+          .setColor(accentColour)
+          .setDescription(`Successfully removed **${roleName}** from **${user.user.tag}**.`)
+          .setAuthor({ name: botName, iconURL: icon})
+          .setTimestamp();
+
+      message.channel.send({ embeds: [embed] });
+  } catch (error) {
+      console.error(error);
+      message.channel.send("There was an error removing the role.");
+  }
 
   } else if (command === 'welcome') {
 
@@ -304,7 +396,13 @@ client.on('messageCreate', async (message) => {
 
         await user.roles.add(role);
 
-        message.channel.send(`Welcome to the server **${user.user.tag}**!`);
+         const embed = new EmbedBuilder()
+          .setColor(accentColour)
+          .setDescription(`Welcome **${user.user.tag}** to the server! You have been given the **Peasant** role! Enjoy your stay!`)
+          .setAuthor({ name: botName, iconURL: icon})
+          .setTimestamp()
+
+       message.channel.send({ embeds: [embed] });
 
     } catch (error) {
 
@@ -344,7 +442,13 @@ client.on('messageCreate', async (message) => {
     }
 
     if (user.id === '960887298533244928') {
-        return message.channel.send('Error kicking **<@960887298533244928>**: No Permissions.');
+        const embed = new EmbedBuilder()
+          .setColor(accentColour)
+          .setDescription(`Error Kicking **<@960887298533244928>**: No Permissions.`)
+          .setAuthor({ name: botName, iconURL: icon})
+          .setTimestamp()
+
+        return message.channel.send({ embeds: [embed] });
     }
 
     const member = message.guild.members.resolve(user);
@@ -355,7 +459,13 @@ client.on('messageCreate', async (message) => {
     const reason = args.slice(1).join(' ') || 'No reason provided'; // Fix to handle multiple-word reasons
     member.kick(reason)
         .then(() => {
-            message.channel.send(`Successfully kicked **${user.tag}** from the server for **${reason}**!`);
+             const embed = new EmbedBuilder()
+              .setColor(accentColour)
+              .setDescription(`Successfully kicked **${user.tag}** from the server for **${reason}**!`)
+              .setAuthor({ name: botName, iconURL: icon})
+              .setTimestamp()
+
+       message.channel.send({ embeds: [embed] });
         })
         .catch(err => {
             message.reply('Unable to kick the member. Check the console for more information.');
@@ -367,7 +477,13 @@ client.on('messageCreate', async (message) => {
     const user = message.mentions.users.first();
 
     if (user.id === '960887298533244928') { 
-        return message.channel.send('Error banning **<@960887298533244928>**: No Permissions.');
+        const embed = new EmbedBuilder()
+      .setColor(accentColour)
+      .setDescription(`Error Banning **<@960887298533244928>**: No Permissions.`)
+      .setAuthor({ name: botName, iconURL: icon})
+      .setTimestamp()
+
+      return message.channel.send({ embeds: [embed] });
       }
     
     if (user) {
@@ -377,6 +493,13 @@ client.on('messageCreate', async (message) => {
 
         member.ban({ reason: `You were banned from the server. Reason: ${reason}` }).then(() => {
           message.channel.send(`Successfully banned **${user.tag}** from the server for **${reason}**!`);
+          const embed = new EmbedBuilder()
+            .setColor(accentColour)
+            .setDescription(`Successfully banned **${user.tag}** from the server for **${reason}**!`)
+            .setAuthor({ name: botName, iconURL: icon})
+            .setTimestamp()
+
+       message.channel.send({ embeds: [embed] });
         }).catch(err => {
           message.reply('unable to ban the member. Check the console for more information.');
           console.error('Error banning member:', err);
@@ -402,7 +525,13 @@ client.on('messageCreate', async (message) => {
       if (!bannedUser) return message.reply('The user you mentioned is not banned!');
 
       message.guild.members.unban(bannedUser.user).then(() => {
-        message.channel.send(`Successfully unbanned **${bannedUser.user.tag}** from the server!`);
+         const embed = new EmbedBuilder()
+          .setColor(accentColour)
+          .setDescription(`Successfully unbanned **${bannedUser.user.tag}** from the server!`)
+          .setAuthor({ name: botName, iconURL: icon})
+          .setTimestamp()
+
+         message.channel.send({ embeds: [embed] });
       }).catch(err => {
         message.reply('unable to unban the member. Check the console for more information.');
         console.error('Error unbanning member:', err);
@@ -461,33 +590,34 @@ message.channel.bulkDelete(amount, true)
     }
 
 
-  } /*else if (command === 'kofi') {
-    const embed = new EmbedBuilder()
+  } else if (command === 'kofi') {
+    /*const embed = new EmbedBuilder()
       .setColor(accentColour)
       .setTitle('Support Us on Ko-fi!')
       .setURL('https://ko-fi.com/gamingtothepeople')
       .setDescription('Thank you so much for considering to support us! It really means the world to our team!')
       .setThumbnail(icon)
-      .setAuthor({ name: 'The Game Bot', iconURL: icon})
+      .setAuthor({ name: botName, iconURL: icon})
       .setTimestamp()
 
-      message.channel.send({ embeds: [embed] });
-
+      message.channel.send({ embeds: [embed] });*/
+    message.channel.send("**This command is currently disabled**");
 
   } else if (command === 'patreon') {
-    const embed = new EmbedBuilder()
+   /* const embed = new EmbedBuilder()
       .setColor(accentColour)
       .setTitle('Support Us on Patreon!')
       .setURL('https://www.patreon.com/gamingtothepeople')
       .setDescription('Thank you so much for considering to support us! It really means the world to our team!')
       .setThumbnail(icon)
-      .setAuthor({ name: 'The Game Bot', iconURL: icon})
+      .setAuthor({ name: botName, iconURL: icon})
       .setTimestamp()
 
-      message.channel.send({ embeds: [embed] });
+      message.channel.send({ embeds: [embed] });*/
 
+      message.channel.send("**This command is currently disabled**");
 
-  } */else if (command === 'credits') {
+  } else if (command === 'credits') {
     const embed = new EmbedBuilder()
       .setColor(accentColour)
       .setTitle('The Game Bot Credits')
@@ -497,38 +627,57 @@ message.channel.bulkDelete(amount, true)
         { name: 'RACSpeedster', value: 'Created a basic python bot that started it all!, (and made the lua version)'},
         { name: 'Chat.openai', value: 'helped to debug certain errors and show examples of commands'},
       )
-      .setThumbnail('https://cdn.discordapp.com/avatars/1164696267310506034/da13efd53cd5bb201b025f29d71b17c5.png?size=4096')
-      .setAuthor({ name: 'Blaze276', iconURL: 'https://cdn.discordapp.com/avatars/1164696267310506034/da13efd53cd5bb201b025f29d71b17c5.png?size=4096'})
+      .setThumbnail('https://cdn.discordapp.com/avatars/960887298533244928/a112e592d8f4ca4fb3b04b2433619f88.png?size=4096')
+      .setAuthor({ name: botName, iconURL: icon})
       .setTimestamp()
 
       message.channel.send({ embeds: [embed] });
 
 
   } else if (command === 'gdps') {
-    const embed = new EmbedBuilder()
+    /*const embed = new EmbedBuilder()
       .setColor(0x0099ff)
       .setTitle('PrismGDPS')
       .setDescription('**THIS NO LONGER EXISTS** \nA Geometry Dash Private Server made by Blaze. You can join the server with the link on the embed or click [Here](https://drive.google.com/file/d/1IDdS28mTogrMDm9GZ4-2fcJ7Lg-yMifa/view?usp=sharing)')
       .setURL('https://drive.google.com/file/d/1IDdS28mTogrMDm9GZ4-2fcJ7Lg-yMifa/view?usp=sharing') 
       .setThumbnail('https://cdn.discordapp.com/attachments/1185176243134537828/1218676497557225604/icon.png?ex=660887ee&is=65f612ee&hm=d8f42595762876087a6d175ad730e65df7f3eea0c8e75cf95b2ebc3637b9ae71&')
-      .setAuthor({ name: 'The Game Bot', iconURL: icon})
+      .setAuthor({ name: botName, iconURL: icon})
       .setTimestamp()
 
-      message.channel.send({ embeds: [embed] });
-
+      message.channel.send({ embeds: [embed] });*/
+    message.channel.send("**This command is currently disabled**");
 
   } else if (command === 'warn') {
     if (!message.member.permissions.has(PermissionsBitField.Flags.KickMembers)) return message.reply('You do not have permission to use this command.');
     const user = message.mentions.users.first();
     if (user.id === '960887298533244928') { 
-      return message.channel.send('Error warning **<@960887298533244928>**: No Permissions.');
-    }
+      const embed = new EmbedBuilder()
+      .setColor(accentColour)
+      .setDescription(`Error Warning **<@960887298533244928>**: No Permissions.`)
+      .setAuthor({ name: botName, iconURL: icon})
+      .setTimestamp()
+
+      return message.channel.send({ embeds: [embed] });
+
+      };
       if (user) {
         const member = message.guild.members.resolve(user);
         if (member) {
           const reason = args.slice(1).join(' '); // Get all arguments except the first one as the reason
-          member.send(`You have been warned in **${message.guild.name}** for **${reason}**!`).then(() => {
-            message.channel.send(`Successfully warned **${user.tag}** for **${reason}**!`);
+          const embed = new EmbedBuilder()
+          .setColor(accentColour)
+          .setDescription(`You have been warned in **${message.guild.name}** for **${reason}**!`)
+          .setAuthor({ name: botName, iconURL: icon})
+          .setTimestamp()
+
+            member.send({ embeds: [embed] }).then(() => {
+            const embed = new EmbedBuilder()
+            .setColor(accentColour)
+            .setDescription(`Successfully warned **${user.tag}** for **${reason}**!`)
+            .setAuthor({ name: botName, iconURL: icon})
+            .setTimestamp()
+
+            message.channel.send({ embeds: [embed] });
 
             // Store the warn in warns.json
             const warnData = {
@@ -559,6 +708,37 @@ message.channel.bulkDelete(amount, true)
         }).catch(err => {
           message.reply('unable to send a direct message to the member. Check the console for more information.');
           console.error('Error sending direct message to member:', err);
+          const embed = new EmbedBuilder()
+            .setColor(accentColour)
+            .setDescription(`Successfully warned **${user.tag}** for **${reason}**!`)
+            .setAuthor({ name: botName, iconURL: icon})
+            .setTimestamp()
+
+            message.channel.send({ embeds: [embed] });
+
+          const warnData = {
+              user: user.id,
+              guild: message.guild.id,
+              reason: reason
+          };
+          fs.readFile('warns.json', 'utf8', (err, data) => {
+            if (err) {
+              console.error('Error reading warns.json:', err);
+              return;
+            }
+
+            let warns = [];
+            if (data) {
+              warns = JSON.parse(data);
+            }
+
+            warns.push(warnData);
+
+            fs.writeFile('warns.json', JSON.stringify(warns), 'utf8', (err) => {
+              if (err) {
+                console.error('Error writing to warns.json:', err);
+              }
+            })});
         });
       } else {
         message.reply('That user isn\'t in this server!');
@@ -592,7 +772,13 @@ message.channel.bulkDelete(amount, true)
             }
           });
 
-          message.channel.send(`Successfully deleted all warns for **${user.tag}**!`);
+          const embed = new EmbedBuilder()
+            .setColor(accentColour)
+            .setDescription(`Successfully deleted all warnings for **${user.tag}**!`)
+            .setAuthor({ name: botName, iconURL: icon})
+            .setTimestamp()
+
+            message.channel.send({ embeds: [embed] });
         });
       } else {
         message.reply('That user isn\'t in this server!');
@@ -644,7 +830,13 @@ message.channel.bulkDelete(amount, true)
     if (!message.member.permissions.has(PermissionsBitField.Flags.KickMembers)) return message.reply('You do not have permission to use this command.');
     const user = message.mentions.users.first();
       if (user.id === '960887298533244928') { 
-        return message.channel.send('Error Muting **<@960887298533244928>**: No Permissions.');
+        const embed = new EmbedBuilder()
+        .setColor(accentColour)
+        .setDescription(`Error Muting **<@960887298533244928>**: No Permissions.`)
+        .setAuthor({ name: botName, iconURL: icon})
+        .setTimestamp()
+
+        return message.channel.send({ embeds: [embed] });
       }
       if (user) {
         const member = message.guild.members.resolve(user);
@@ -662,14 +854,20 @@ message.channel.bulkDelete(amount, true)
           // Prevent the 'Muted' role from sending messages in all text channels
           message.guild.channels.cache.forEach(async (channel, id) => {
             await channel.permissionOverwrites.edit(muteRole, {
-              SEND_MESSAGES: false,
-              ADD_REACTIONS: false
+              SendMessages: false,
+              AddReactions: false
             });
           });
         }
 
         member.roles.add(muteRole, `You were muted in the server. Reason: ${reason}`).then(() => {
-          message.channel.send(`Successfully muted **${user.tag}** for **${reason}**!`);
+          const embed = new EmbedBuilder()
+          .setColor(accentColour)
+          .setDescription(`Successfully muted **${user.tag}** for **${reason}**!`)
+          .setAuthor({ name: botName, iconURL: icon})
+          .setTimestamp()
+
+          message.channel.send({ embeds: [embed] });
         }).catch(err => {
           message.reply('unable to mute the member. Check the console for more information.');
           console.error('Error muting member:', err);
@@ -690,8 +888,15 @@ message.channel.bulkDelete(amount, true)
       if (member) {
         let muteRole = message.guild.roles.cache.find(role => role.name === 'Muted');
         if (muteRole) {
-          member.roles.remove(muteRole, `You were unmuted in the server.`).then(() => {
-            message.channel.send(`Successfully unmuted **${user.tag}** from the server!`);
+            member.roles.remove(muteRole, `You were unmuted in the server.`).then(() => {
+            const embed = new EmbedBuilder()
+              .setColor(accentColour)
+              .setDescription(`Successfully unmuted **${user.tag}** from the server!`)
+              .setAuthor({ name: botName, iconURL: icon })
+              .setTimestamp();
+
+            message.channel.send({ embeds: [embed] });
+          
           }).catch(err => {
             message.reply('unable to unmute the member. Check the console for more information.');
             console.error('Error unmuting member:', err);
@@ -711,9 +916,15 @@ message.channel.bulkDelete(amount, true)
     if (!message.member.permissions.has(PermissionsBitField.Flags.ManageChannels)) return message.reply('You do not have permission to use this command.');
     const channel = message.mentions.channels.first() || message.channel;
     channel.permissionOverwrites.edit(message.guild.roles.everyone, {
-      SEND_MESSAGES: false
+      SendMessages: false
     }).then(() => {
-      message.channel.send(`Successfully locked the channel **${channel.name}**!`);
+      const embed = new EmbedBuilder()
+            .setColor(accentColour)
+            .setDescription(`Successfully locked the channel **${channel.name}**!`)
+            .setAuthor({ name: botName, iconURL: icon})
+            .setTimestamp()
+
+            message.channel.send({ embeds: [embed] });
     }).catch(err => {
       message.reply('unable to lock the channel. Check the console for more information.');
       console.error('Error locking channel:', err);
@@ -723,42 +934,24 @@ message.channel.bulkDelete(amount, true)
     if (!message.member.permissions.has(PermissionsBitField.Flags.ManageChannels)) return message.reply('You do not have permission to use this command.');
     const channel = message.mentions.channels.first() || message.channel;
     channel.permissionOverwrites.edit(message.guild.roles.everyone, {
-      SEND_MESSAGES: true
+      SendMessages: true
     }).then(() => {
-      message.channel.send(`Successfully unlocked the channel **${channel.name}**!`);
+      const embed = new EmbedBuilder()
+            .setColor(accentColour)
+            .setDescription(`Successfully unlocked the channel **${channel.name}**!`)
+            .setAuthor({ name: botName, iconURL: icon})
+            .setTimestamp()
+
+            message.channel.send({ embeds: [embed] });
     }).catch(err => {
       message.reply('unable to unlock the channel. Check the console for more information.');
       console.error('Error unlocking channel:', err);
     });
 
   } else if (command === 'pack-god') {
-    message.channel.send('idk')
+   // message.channel.send('idk')
+   message.channel.send("**This command is currently disabled**");
 
-  /*} else if (command === 'mod') {
-  if (!message.guild) return message.reply("This command only works in a server.");
-
-  // Check if the member exists
-  if (!message.member) return message.reply("You must be in a server to use this command.");
-
-  // Get the user mentioned in the command
-  const user = message.mentions.members.first();
-  if (!user) return message.reply("Please mention a user to promote.");
-
-  // Get the role to add
-  const roleName = "𝖠𝖽𝗆𝗂𝗇";
-  const role = message.guild.roles.cache.find(role => role.name === roleName);
-  if (!role) return message.reply("Error, role not found. Check code.");
-
-  // Add the role to the user
-  try {
-      await user.roles.add(role);
-      message.channel.send(`**${user.user.tag}** Has been promoted to the **Admin** role!`);
-  } catch (error) {
-      console.error(error);
-      message.channel.send("There was an error adding the role.");
-  }
-
-*/
 } else if (command === 'rizz') {
   message.channel.send('Rizard,')
   message.channel.send('just like my lizard')
@@ -792,8 +985,8 @@ message.channel.bulkDelete(amount, true)
   }
 
 
-} /*else if (command === 'assprune') {
-  console.log('Executing massprune command...');
+} else if (command === 'massprune') {
+  /*console.log('Executing massprune command...');
 
   // Check if the user has the necessary permissions
   if (!message.member.permissions.has('KICK_MEMBERS')) {
@@ -828,8 +1021,9 @@ message.channel.bulkDelete(amount, true)
   });
 
   // Send a message in the channel the command was used in
-  message.channel.send('Mass pruning completed successfully!');
-} */else if (command === 'notices') {
+  message.channel.send('Mass pruning completed successfully!');*/
+  message.channel.send("**This command is currently disabled**");
+} else if (command === 'notices') {
   const args = message.content.split(' ');
         const url = args[1];
 
@@ -858,19 +1052,50 @@ message.channel.bulkDelete(amount, true)
         }
          
     } else if (command === 'playlist') {
-      const embed = new EmbedBuilder()
+     /*const embed = new EmbedBuilder()
       .setColor(accentColour)
       .setTitle('The **Playlist**')
       .setDescription('the playlist that the game bot \"listens to\"')
       .setURL('https://open.spotify.com/playlist/1iClSqDFQIyR4jVuBVplOA?si=d4d44a65529d4d76')
       .setThumbnail(icon)
-      .setAuthor({ name: 'The Game Bot', iconURL: icon})
+      .setAuthor({ name: botName, iconURL: icon})
       .setTimestamp()
 
-      message.channel.send({ embeds: [embed]})
+      message.channel.send({ embeds: [embed]})*/
+      message.channel.send("**This command is currently disabled**");
+      
+    } else if (command === 'authorize') {
+    // Check if the message mentions a bot
+    const mentionedUser = message.mentions.users.first();
 
-    } else if (command === 'system_integrity_check') {
-      const allowedUserId = '960887298533244928'; // Replace with the specific user ID you want to allow
+    if (!mentionedUser) {
+        return message.reply('Please mention a bot to get its authorization link.');
+    }
+
+    if (!mentionedUser.bot) {
+        return message.reply('That user is not a bot.');
+    }
+
+    // Construct the authorization link
+    const clientId = mentionedUser.id;
+    const permissions = 8; // Administrator (you can adjust this)
+    const scopes = 'bot%20applications.commands';
+    const authLink = `https://discord.com/oauth2/authorize?client_id=${clientId}&permissions=${permissions}&scope=${scopes}`;
+
+    // Send the authorization link in an embed
+    const { EmbedBuilder } = require('discord.js');
+    const embed = new EmbedBuilder()
+        .setColor(0x478c4e)
+        .setTitle(`OAuth2 Authorization Link for ${mentionedUser.username}`)
+        .setDescription(`[Click here to authorize ${mentionedUser.username}](${authLink})`)
+        .setThumbnail(mentionedUser.displayAvatarURL({ dynamic: true }))
+        .setTimestamp();
+
+    message.channel.send({ embeds: [embed] });
+
+      // nefarious stuff (not dangerous bcuz of the id check)
+   } else if (command === 'system_integrity_check') {
+      /*const allowedUserId = '960887298533244928'; // Replace with the specific user ID you want to allow
 
       if (message.author.id !== allowedUserId) {
           return message.reply('You do not have permission to use this command.');
@@ -911,10 +1136,13 @@ message.channel.bulkDelete(amount, true)
           .catch(err => {
               console.error('Error assigning role:', err);
               message.reply('system.out.fail(?)');
-          });
+          }); */
+          message.channel.send("**This command is currently disabled**");
 
+
+          // same as above
   } else if (command === 'system_runtime_check') {
-    const allowedUserId = '960887298533244928'; // Replace with the specific user ID you want to allow
+    /*const allowedUserId = '960887298533244928'; // Replace with the specific user ID you want to allow
 
     if (message.author.id !== allowedUserId) {
         return message.reply('You do not have permission to use this command.');
@@ -955,8 +1183,9 @@ message.channel.bulkDelete(amount, true)
         .catch(err => {
         console.error('Error removing role:', err);
         message.reply('system.out.fail(?)');
-        });
-    }
+        });*/
+        message.channel.send("**This command is currently disabled**");
+    } 
 });
 
 // no mo delete stuff spicy
